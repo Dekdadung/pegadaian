@@ -1,0 +1,2 @@
+# pegadaian
+projek magang
