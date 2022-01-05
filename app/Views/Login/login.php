@@ -7,16 +7,14 @@
     <title>Login &mdash; Stisla</title>
 
     <!-- General CSS Files -->
-    <link rel="stylesheet" href="template/assets/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="template/assets/@fortawesome/fontawesome-free/css/all.min.css">
-
+    <link rel="stylesheet" href="<?= base_url('template') ?>/assets/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url('template') ?>/assets/@fortawesome/fontawesome-free/css/all.min.css">
     <!-- CSS Libraries -->
     <link rel="stylesheet" href="../node_modules/bootstrap-social/bootstrap-social.css">
 
     <!-- Template CSS -->
-    <!-- Template CSS -->
-    <link rel="stylesheet" href="template/assets/css/style.css">
-    <link rel="stylesheet" href="template/assets/css/components.css">
+    <link rel="stylesheet" href="<?= base_url('template') ?>/assets/css/style.css">
+    <link rel="stylesheet" href="<?= base_url('template') ?>/assets/css/components.css">
 </head>
 
 <body>
