@@ -12,72 +12,22 @@
         <div class="card-body">
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputtext4">Kode Pinjaman</label>
-                    <input type="text" class="form-control" id="inputtext4">
+                    <label for="inputtext4">Kode Cabang</label>
+                    <input type="text" name="kode_cabang" class="form-control" id="inputtext4">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputtext4">Tanggal Gadai</label>
-                    <input type="date" class="form-control" id="inputtext4">
+                    <label for="inputtext4">Nama Cabang</label>
+                    <input type="text" name="nama_cabang" class="form-control" id="inputtext4">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputtext4">Nama Nasabah</label>
-                    <input type="text" class="form-control" id="inputtext4">
+                    <label for="inputtext4">Alamat</label>
+                    <textarea class="form-control" name="alamat"></textarea>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputtext4">Tgl. Jatuh Tempo</label>
-                    <input type="date" class="form-control" id="inputtext4">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputtext4">No. Telpon</label>
-                    <input type="text" class="form-control" id="inputtext4">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputtext4">Tgl. Lelang</label>
-                    <input type="date" class="form-control" id="inputtext4">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputtext4">Jumlah Pinjaman</label>
-                    <input type="text" class="form-control" id="inputtext4">
-                </div>
-                <div class="form-group col-md-2">
-                    <label for="inputtext4">Bunga</label>
-                    <input type="text" class="form-control" id="inputtext4">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputCity">Jenis Barang</label>
-                    <input type="text" class="form-control" id="inputCity">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="inputState">No. IMEI/Seri</label>
-                    <input type="text" class="form-control" id="inputSeri">
-                </div>
-                <div class="form-group col-md-2">
-                    <label for="inputZip">Jumlah Barang</label>
-                    <input type="text" class="form-control" id="inputZip">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputtext4">Kelengkapan</label>
-                    <!-- <input type="text" class="form-control" id="inputtext4"> -->
-                    <textarea class="form-control" name="" id=""></textarea>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputtext4">Kondisi</label>
-                    <div class="form-label-group">
-                        <select class="form-control" name="kondisi">
-                            <option value="Baru">Baru</option>
-                            <option value="Bekas">Bekas</option>
-                        </select>
-                    </div>
+                    <label for="inputtext4">Kode Toko</label>
+                    <input type="text" name="kode_toko" class="form-control" id="inputtext4">
                 </div>
             </div>
         </div>

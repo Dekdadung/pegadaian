@@ -12,21 +12,21 @@
         <div class="card-body">
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputtext4">Kode Pinjaman</label>
-                    <input type="text" class="form-control" id="inputtext4">
+                    <label for="inputtext4">Nama Nasabah</label>
+                    <input type="text" name="nama" class="form-control" id="inputtext4">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputtext4">Tanggal Gadai</label>
-                    <input type="date" class="form-control" id="inputtext4">
+                    <label for="inputtext4">Alamat</label>
+                    <input type="date" name="alamat" class="form-control" id="inputtext4">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputtext4">Nama Nasabah</label>
-                    <input type="text" class="form-control" id="inputtext4">
+                    <label for="inputtext4">Telpon</label>
+                    <input type="text" name="no_telp" class="form-control" id="inputtext4">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputtext4">Tgl. Jatuh Tempo</label>
+                    <label for="inputtext4">Kode Cabang</label>
                     <input type="date" class="form-control" id="inputtext4">
                 </div>
             </div>

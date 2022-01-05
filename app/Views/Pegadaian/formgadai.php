@@ -47,7 +47,7 @@
                 </div>
                 <div class="form-group col-md-2">
                     <label for="inputtext4">Bunga</label>
-                    <input type="text" class="form-control" id="inputtext4">
+                    <input type="text" class="form-control" id="inputtext4"><span>%</span>
                 </div>
             </div>
             <div class="form-row">
