@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputtext4">Alamat</label>
-                    <input type="date" name="alamat" class="form-control" id="inputtext4">
+                    <input type="text" name="alamat" class="form-control" id="inputtext4">
                 </div>
             </div>
             <div class="form-row">
@@ -27,55 +27,16 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputtext4">Kode Cabang</label>
-                    <input type="date" class="form-control" id="inputtext4">
+                    <input type="text" name="kode_cabang" class="form-control" id="inputtext4">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputtext4">No. Telpon</label>
-                    <input type="text" class="form-control" id="inputtext4">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputtext4">Tgl. Lelang</label>
-                    <input type="date" class="form-control" id="inputtext4">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputtext4">Jumlah Pinjaman</label>
-                    <input type="text" class="form-control" id="inputtext4">
-                </div>
-                <div class="form-group col-md-2">
-                    <label for="inputtext4">Bunga</label>
-                    <input type="text" class="form-control" id="inputtext4">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputCity">Jenis Barang</label>
-                    <input type="text" class="form-control" id="inputCity">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="inputState">No. IMEI/Seri</label>
-                    <input type="text" class="form-control" id="inputSeri">
-                </div>
-                <div class="form-group col-md-2">
-                    <label for="inputZip">Jumlah Barang</label>
-                    <input type="text" class="form-control" id="inputZip">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputtext4">Kelengkapan</label>
-                    <!-- <input type="text" class="form-control" id="inputtext4"> -->
-                    <textarea class="form-control" name="" id=""></textarea>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputtext4">Kondisi</label>
+                    <label for="inputtext4">Status</label>
                     <div class="form-label-group">
-                        <select class="form-control" name="kondisi">
-                            <option value="Baru">Baru</option>
-                            <option value="Bekas">Bekas</option>
+                        <select class="form-control" name="status">
+                            <option value="aktif">Aktif</option>
+                            <option value="tidak_aktif">Tidak Aktif</option>
                         </select>
                     </div>
                 </div>

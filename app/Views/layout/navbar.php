@@ -30,6 +30,15 @@ $session = session();
                 <li class="nav-item"><a href="<?= site_url('laporan') ?>" class="nav-link">Laporan</a>
                 </li>
             </ul>
+
+            <ul class="navbar-nav ml-auto align-items-lg-center d-none d-lg-block">
+                <li class="ml-lg-3 nav-item">
+                    <a href="https://getstisla.com/download" class="btn btn-round smooth btn-icon icon-left"
+                        target="_blank">
+                        <i class="fas fa-sign-out-alt"></i>Logout
+                    </a>
+                </li>
+            </ul>
             <!-- <ul class="navbar-nav ml-auto align-items-lg-center d-none d-lg-block">
                             <li class="ml-lg-3 nav-item">
                                 <a href="https://getstisla.com/download" class="btn btn-round smooth btn-icon icon-left"

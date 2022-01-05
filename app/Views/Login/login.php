@@ -37,11 +37,11 @@
                             <div class="card-body">
                                 <form method="POST" action="#" class="needs-validation" novalidate="">
                                     <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input id="email" type="email" class="form-control" name="email" tabindex="1"
-                                            required autofocus>
+                                        <label for="username">Username</label>
+                                        <input id="username" type="text" class="form-control" name="username"
+                                            tabindex="1" required autofocus>
                                         <div class="invalid-feedback">
-                                            Please fill in your email
+                                            Please fill in your Username
                                         </div>
                                     </div>
 
@@ -69,24 +69,20 @@
         </section>
     </div>
 
-    <!-- General JS Scripts -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="../assets/js/stisla.js"></script>
+    <script src="template/assets/jquery/dist/jquery.min.js"></script>
+    <script src="template/assets/popper.js/dist/popper.min.js"></script>
+    <!-- <script src="template/assets/modules/tooltip.js"></script> -->
+    <script src="template/assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="template/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="template/assets/jquery.nicescroll/dist/jquery.nicescroll.min.js"></script>
+    <script src="<?= base_url('template') ?>/assets/moment/moment.js"></script>
+    <script src="<?= base_url('template') ?>/assets/js/stisla.js"></script>
 
     <!-- JS Libraies -->
 
     <!-- Template JS File -->
-    <script src="../assets/js/scripts.js"></script>
-    <script src="../assets/js/custom.js"></script>
+    <script src="<?= base_url('template') ?>/assets/js/scripts.js"></script>
+    <script src="<?= base_url('template') ?>/assets/js/custom.js"></script>
 
     <!-- Page Specific JS File -->
 </body>

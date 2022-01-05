@@ -80,6 +80,17 @@
                     </div>
                 </div>
             </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputtext4">Nama Nasabah</label>
+                    <div class="form-label-group">
+                        <select class="form-control" name="id_nasabah">
+                            <option value="Baru">Mutoa</option>
+                            <option value="Bekas">Muklis</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="card-footer">
             <button class="btn btn-primary">Submit</button>
