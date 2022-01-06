@@ -49,7 +49,19 @@ class Pegadaian extends BaseController
                     'required'  => '{field} Harus Diisi'
                 ]
             ],
+            'no_telp' => [
+                'rules' => 'required',
+                'errors'    => [
+                    'required'  => '{field} Harus Diisi'
+                ]
+            ],
             'jenis_barang' => [
+                'rules' => 'required',
+                'errors'    => [
+                    'required'  => '{field} Harus Diisi'
+                ]
+            ],
+            'seri' => [
                 'rules' => 'required',
                 'errors'    => [
                     'required'  => '{field} Harus Diisi'
@@ -109,7 +121,7 @@ class Pegadaian extends BaseController
                     'required'  => '{field} Harus Diisi'
                 ]
             ],
-            'status' => [
+            'status_bayar' => [
                 'rules' => 'required',
                 'errors'    => [
                     'required'  => '{field} Harus Diisi'
@@ -122,7 +134,9 @@ class Pegadaian extends BaseController
 
         $this->PegadaianModel->save([
             'id_nasabah' => $this->request->getVar('id_nasabah'),
+            'no_telp' => $this->request->getVar('no_telp'),
             'jenis_barang' => $this->request->getVar('jenis_barang'),
+            'seri' => $this->request->getVar('seri'),
             'kelengkapan' => $this->request->getVar('kelengkapan'),
             'jumlah' => $this->request->getVar('jumlah'),
             'kondisi' => $this->request->getVar('kondisi'),
@@ -132,7 +146,7 @@ class Pegadaian extends BaseController
             'jumlah_pinjaman' => $this->request->getVar('jumlah_pinjaman'),
             'bunga' => $this->request->getVar('bunga'),
             'kode_cabang' => $this->request->getVar('kode_cabang'),
-            'status' => $this->request->getVar('status')
+            'status_bayar' => $this->request->getVar('status_bayar')
         ]);
 
         session()->setFlashdata('Pesan', 'Data Berhasil Ditambahkan');
@@ -161,7 +175,19 @@ class Pegadaian extends BaseController
                     'required'  => '{field} Harus Diisi'
                 ]
             ],
+            'no_telp' => [
+                'rules' => 'required',
+                'errors'    => [
+                    'required'  => '{field} Harus Diisi'
+                ]
+            ],
             'jenis_barang' => [
+                'rules' => 'required',
+                'errors'    => [
+                    'required'  => '{field} Harus Diisi'
+                ]
+            ],
+            'seri' => [
                 'rules' => 'required',
                 'errors'    => [
                     'required'  => '{field} Harus Diisi'
@@ -221,7 +247,7 @@ class Pegadaian extends BaseController
                     'required'  => '{field} Harus Diisi'
                 ]
             ],
-            'status' => [
+            'status_bayar' => [
                 'rules' => 'required',
                 'errors'    => [
                     'required'  => '{field} Harus Diisi'
@@ -234,7 +260,9 @@ class Pegadaian extends BaseController
 
         $this->PegadaianModel->update($kode_pinjaman, [
             'id_nasabah' => $this->request->getVar('id_nasabah'),
+            'no_telp' => $this->request->getVar('no_telp'),
             'jenis_barang' => $this->request->getVar('jenis_barang'),
+            'seri' => $this->request->getVar('seri'),
             'kelengkapan' => $this->request->getVar('kelengkapan'),
             'jumlah' => $this->request->getVar('jumlah'),
             'kondisi' => $this->request->getVar('kondisi'),
@@ -244,7 +272,7 @@ class Pegadaian extends BaseController
             'jumlah_pinjaman' => $this->request->getVar('jumlah_pinjaman'),
             'bunga' => $this->request->getVar('bunga'),
             'kode_cabang' => $this->request->getVar('kode_cabang'),
-            'status' => $this->request->getVar('status')
+            'status_bayar' => $this->request->getVar('status_bayar')
         ]);
 
         session()->setFlashdata('Pesan', 'Data Berhasil Diubah');

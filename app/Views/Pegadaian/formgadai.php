@@ -23,7 +23,12 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputtext4">Nama Nasabah</label>
-                    <input type="text" class="form-control" id="inputtext4">
+                    <div class="form-label-group">
+                        <select class="form-control" name="id_nasabah">
+                            <option value="Baru">Mutoa</option>
+                            <option value="Bekas">Muklis</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputtext4">Tgl. Jatuh Tempo</label>
@@ -76,17 +81,6 @@
                         <select class="form-control" name="kondisi">
                             <option value="Baru">Baru</option>
                             <option value="Bekas">Bekas</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputtext4">Nama Nasabah</label>
-                    <div class="form-label-group">
-                        <select class="form-control" name="id_nasabah">
-                            <option value="Baru">Mutoa</option>
-                            <option value="Bekas">Muklis</option>
                         </select>
                     </div>
                 </div>
