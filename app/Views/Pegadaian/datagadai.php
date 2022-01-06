@@ -3,99 +3,38 @@
 <?= $this->section('content'); ?>
 <section class="section">
     <div class="section-header">
-        <h1>Pegadaian</h1>
+        <h1>Data Gadai</h1>
         <div class="section-header-button">
             <a href="<?= site_url('formgadai') ?>" class="btn btn-primary">Tambah</a>
         </div>
     </div>
-
+    <?php if (session()->getFlashdata('Pesan')) : ?>
+    <div class="alert alert-success alert-has-icon">
+        <div class="alert-icon"><i class="far fa-lightbulb"></i></div>
+        <div class="alert-body">
+            <div class="alert-title">Sukses !</div>
+            <?= session()->getFlashdata('Pesan'); ?>
+        </div>
+    </div>
+    <?php endif; ?>
     <div class="card-body table-responsive">
         <table class="table table-striped table-md">
             <tbody>
-                <tr>
+                <tr class="text-center">
                     <th>No</th>
-                    <th>Rekening</th>
-                    <th>Nama Nasabah</th>
+                    <th>Kode Pinjaman</th>
+                    <th>Id Nasabah</th>
+                    <th>Jenis Barang</th>
+                    <th>Kelengkapan</th>
+                    <th>Jumlah</th>
+                    <th>Tgl. Gadai</th>
+                    <th>Jatuh Tempo</th>
+                    <th>Tgl. Lelang</th>
+                    <th>Jumlah Pinjaman</th>
+                    <th>Bunga</th>
+                    <th>Kode Cabang</th>
                     <th>Action</th>
                 </tr>
-                <div class="text-center">
-                    <tr>
-                        <td>1</td>
-                        <td>Kaleng</td>
-                        <td>5000</td>
-                        <td>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    Action
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Pembayaran</a>
-                                    <a class="dropdown-item" href="#">Perpanjangan</a>
-                                    <a class="dropdown-item" href="#">Edit</a>
-                                    <a class="dropdown-item" href="#">Delete</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Kaleng</td>
-                        <td>5000</td>
-                        <td>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    Action
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Pembayaran</a>
-                                    <a class="dropdown-item" href="#">Perpanjangan</a>
-                                    <a class="dropdown-item" href="#">Edit</a>
-                                    <a class="dropdown-item" href="#">Delete</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Kaleng</td>
-                        <td>5000</td>
-                        <td>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    Action
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Pembayaran</a>
-                                    <a class="dropdown-item" href="#">Perpanjangan</a>
-                                    <a class="dropdown-item" href="#">Edit</a>
-                                    <a class="dropdown-item" href="#">Delete</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Kaleng</td>
-                        <td>5000</td>
-                        <td>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    Action
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Pembayaran</a>
-                                    <a class="dropdown-item" href="#">Perpanjangan</a>
-                                    <a class="dropdown-item" href="#">Edit</a>
-                                    <a class="dropdown-item" href="#">Delete</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </div>
             </tbody>
         </table>
     </div>

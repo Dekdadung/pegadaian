@@ -6,18 +6,18 @@
         <div class="section-header-back">
             <a href="<?= site_url('datanasabah') ?>" class="btn"><i class="fas fa-arrow-left"></i></a>
         </div>
-        <h1>Tambah Data Nasabah</h1>
+        <h1>Ubah Data Nasabah</h1>
     </div>
     <div class="card">
         <div class="card-body">
-            <form action="/nasabah/save" method="post">
+            <form action="/nasabah/update/<?= $nasabah['id_nasabah']; ?>" method="post">
                 <?= csrf_field(); ?>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Nama Nasabah</label>
                         <input type="text" name="nama"
                             class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" id="
-                            inputtext4">
+                            inputtext4" value="<?= $nasabah['nama']; ?>">
                         <div class="invalid-feedback">
                             <?= $validation->getError('nama'); ?>
                         </div>
@@ -26,7 +26,7 @@
                         <label for="inputtext4">Alamat</label>
                         <input type="text" name="alamat"
                             class="form-control <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>"
-                            id="inputtext4">
+                            id="inputtext4" value="<?= $nasabah['alamat']; ?>">
                         <div class="invalid-feedback">
                             <?= $validation->getError('alamat'); ?>
                         </div>
@@ -37,7 +37,7 @@
                         <label for="inputtext4">Telpon</label>
                         <input type="text" name="no_telp"
                             class="form-control <?= ($validation->hasError('no_telp')) ? 'is-invalid' : ''; ?>"
-                            id="inputtext4">
+                            id="inputtext4" value="<?= $nasabah['no_telp']; ?>">
                         <div class="invalid-feedback">
                             <?= $validation->getError('no_telp'); ?>
                         </div>
@@ -46,7 +46,7 @@
                         <label for="inputtext4">Kode Cabang</label>
                         <select class="form-control <?= ($validation->hasError('kode_cabang')) ? 'is-invalid' : ''; ?>"
                             name=" kode_cabang">
-                            <option value="" hidden></option>
+                            <option hidden selected=""><?= $nasabah['kode_cabang']; ?></option>
                             <?php foreach ($cabang as $row) : ?>
                             <option value="<?= $row['kode_cabang']; ?>">
                                 <?= $row['nama_cabang']; ?>
@@ -64,8 +64,9 @@
                         <div class="form-label-group">
                             <select class="form-control <?= ($validation->hasError('status')) ? 'is-invalid' : ''; ?>"
                                 name="status">
-                                <option value="aktif">Aktif</option>
-                                <option value="tidak aktif">Tidak Aktif</option>
+                                <option selected=""><?= $nasabah['status']; ?></option>
+                                <option value="Aktif">Aktif</option>
+                                <option value="Tidak Aktif">Tidak Aktif</option>
                             </select>
                             <div class="invalid-feedback">
                                 <?= $validation->getError('status'); ?>

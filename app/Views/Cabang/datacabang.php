@@ -21,12 +21,16 @@
                     <th>Action</th>
                 </tr>
                 <div class="text-center">
+                    <?php
+                    $no = 1;
+                    foreach ($cabang as $row) :
+                    ?>
                     <tr>
-                        <td>1</td>
-                        <td>Kaleng</td>
-                        <td>5000</td>
-                        <td>Kaleng</td>
-                        <td>5000</td>
+                        <td><?= $no++; ?></td>
+                        <td><?= $row['kode_cabang']; ?></td>
+                        <td><?= $row['nama_cabang']; ?></td>
+                        <td><?= $row['alamat']; ?></td>
+                        <td><?= $row['kode_toko']; ?></td>
                         <td>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
@@ -34,13 +38,16 @@
                                     Action
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Edit</a>
-                                    <a class="dropdown-item" href="#">Delete</a>
+                                    <a class="dropdown-item" href="/cabang/edit/<?= $row['kode_cabang']; ?>">Edit</a>
+                                    <a class="dropdown-item" href="/cabang/delete/<?= $row['kode_cabang']; ?>"
+                                        onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</a>
                                 </div>
                             </div>
                         </td>
                     </tr>
-
+                    <?php
+                    endforeach;
+                    ?>
                 </div>
             </tbody>
         </table>
