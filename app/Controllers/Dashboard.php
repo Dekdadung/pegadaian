@@ -21,7 +21,8 @@ class Dashboard extends BaseController
     {
         $data = [
             'title' => 'Dashboard',
-            'home' => $this->PegadaianModel->getDataGadai()
+            'home' => $this->PegadaianModel->getDataGadai(),
+            'sisa_saldo' => $this->SaldoModel->getSisa()[0]['sisa_kas']
         ];
         return view('dashboard/homepage', $data);
     }

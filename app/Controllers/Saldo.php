@@ -17,7 +17,7 @@ class Saldo extends BaseController
     {
         $data = [
             'title' => 'Data Gadai',
-            'saldo' => $this->SaldoModel->getSisa()
+            'saldo' => $this->SaldoModel->getSisa()[0]['sisa_kas']
         ];
         return view('saldo/saldo', $data);
     }

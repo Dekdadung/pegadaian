@@ -23,7 +23,7 @@
                 <tr class="text-center">
                     <th>No</th>
                     <th>Kode Pinjaman</th>
-                    <th>Id Nasabah</th>
+                    <th>Nama Nasabah</th>
                     <th>Tgl. Gadai</th>
                     <th>Jatuh Tempo</th>
                     <th>Tgl. Lelang</th>
@@ -39,7 +39,7 @@
                     <tr>
                         <td><?= $no++; ?></td>
                         <td><?= $row['kode_pinjaman']; ?></td>
-                        <td><?= $row['id_nasabah']; ?></td>
+                        <td><?= $row['nama']; ?></td>
                         <td><?= $row['tgl_gadai']; ?></td>
                         <td><?= $row['tgl_jatuh_tempo']; ?></td>
                         <td><?= $row['tgl_lelang']; ?></td>

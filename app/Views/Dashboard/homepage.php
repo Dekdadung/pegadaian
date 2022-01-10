@@ -35,6 +35,7 @@
                                 <h4>Sisa Saldo</h4>
                             </div>
                             <div class="card-body">
+                                <?php echo rupiah($sisa_saldo); ?>
                             </div>
                         </div>
                     </div>

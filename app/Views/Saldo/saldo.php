@@ -22,7 +22,8 @@
                     <div class="hero align-items-center bg-white text-black">
                         <div class="hero-inner text-center">
                             <h2>Total Kas Pegadaian</h2>
-                            <p class="lead"> Cara manggil saldonya gimana?
+                            <p class="lead"> <?php echo rupiah($saldo); ?>
+
                             </p>
                             <form action="/saldo/save" method="post">
                                 <div class="text-center navbar-header search mt-2"

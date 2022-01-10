@@ -36,9 +36,9 @@
                         <label for="inputtext4">Nama Nasabah</label>
                         <div class="form-label-group">
                             <select class="form-control" name="id_nasabah">
-                                <option hidden selected=""><?= $gadai['id_nasabah']; ?></option>
                                 <?php foreach ($nasabah as $row) : ?>
-                                <option value="<?= $row['id_nasabah']; ?>">
+                                <option value="<?= $row['id_nasabah']; ?>"
+                                    <?= ($row['id_nasabah'] == $gadai['id_nasabah']) ? 'selected' : ''; ?>>
                                     <?= $row['nama']; ?>
                                 </option>
                                 <?php endforeach; ?>
