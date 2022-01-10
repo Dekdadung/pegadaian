@@ -3,7 +3,7 @@
 <?= $this->section('content'); ?>
 <section class="section">
     <div class="section-header">
-        <h1>Dashboard</h1>
+        <h1>Dashboard</h1><?= date('Y-m-d') ?>
     </div>
 
     <div class="section-body">
@@ -16,7 +16,7 @@
                         </div>
                         <div class="card-wrap">
                             <div class="card-header">
-                                <h4>Jumlah Peminjaman/bulan</h4>
+                                <h4>Peminjaman Bulan Ini</h4>
                             </div>
                             <div class="card-body">
                             </div>
@@ -32,7 +32,7 @@
                         </div>
                         <div class="card-wrap">
                             <div class="card-header">
-                                <h4>Sisa saldo</h4>
+                                <h4>Sisa Saldo</h4>
                             </div>
                             <div class="card-body">
                             </div>
@@ -48,10 +48,9 @@
                         </div>
                         <div class="card-wrap">
                             <div class="card-header">
-                                <h4>Total Pendapatan Bulan Ini</h4>
+                                <h4>Pendapatan Bulan Ini</h4>
                             </div>
                             <div class="card-body">
-
                             </div>
                         </div>
                     </div>
@@ -79,90 +78,56 @@
     <div class="card-body table-responsive">
         <table class="table table-striped table-md">
             <tbody>
-                <tr>
+                <tr class="text-center">
                     <th>No</th>
-                    <th>Rekening</th>
-                    <th>Nama Nasabah</th>
+                    <th>Kode Pinjaman</th>
+                    <th>Id Nasabah</th>
+                    <th>Tgl. Gadai</th>
+                    <th>Jatuh Tempo</th>
+                    <th>Tgl. Lelang</th>
+                    <th>Jumlah Pinjaman</th>
+                    <th>Kode Cabang</th>
                     <th>Action</th>
                 </tr>
                 <div class="text-center">
+                    <?php
+                    $no = 1;
+                    foreach ($home as $row) :
+                    ?>
                     <tr>
-                        <td>1</td>
-                        <td>Kaleng</td>
-                        <td>5000</td>
+                        <td><?= $no++; ?></td>
+                        <td><?= $row['kode_pinjaman']; ?></td>
+                        <td><?= $row['id_nasabah']; ?></td>
+                        <td><?= $row['tgl_gadai']; ?></td>
+                        <td><?= $row['tgl_jatuh_tempo']; ?></td>
+                        <td><?= $row['tgl_lelang']; ?></td>
+                        <td><?= rupiah($row['jumlah_pinjaman']); ?></td>
+                        <td><?= $row['kode_cabang']; ?></td>
                         <td>
+                            <textarea name="" hidden class="datarow-<?= $row['kode_pinjaman']; ?>"
+                                id=""><?= json_encode($row); ?></textarea>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
                                     Action
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Pembayaran</a>
-                                    <a class="dropdown-item" href="#">Perpanjangan</a>
-                                    <a class="dropdown-item" href="#">Edit</a>
-                                    <a class="dropdown-item" href="#">Delete</a>
+                                    <a class="dropdown-item btn-detail"
+                                        href="/pegadaian/detail/<?= $row['kode_pinjaman']; ?>"
+                                        data-kdpinjaman="<?= $row['kode_pinjaman']; ?>">Detail</a>
+                                    <a class="dropdown-item"
+                                        href="/pegadaian/edit/<?= $row['kode_pinjaman']; ?>">Edit</a>
+                                    <a class="dropdown-item" href="/pegadaian/delete/<?= $row['kode_pinjaman']; ?>"
+                                        onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</a>
                                 </div>
                             </div>
                         </td>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Kaleng</td>
-                        <td>5000</td>
-                        <td>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    Action
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Pembayaran</a>
-                                    <a class="dropdown-item" href="#">Perpanjangan</a>
-                                    <a class="dropdown-item" href="#">Edit</a>
-                                    <a class="dropdown-item" href="#">Delete</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Kaleng</td>
-                        <td>5000</td>
-                        <td>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    Action
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Pembayaran</a>
-                                    <a class="dropdown-item" href="#">Perpanjangan</a>
-                                    <a class="dropdown-item" href="#">Edit</a>
-                                    <a class="dropdown-item" href="#">Delete</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Kaleng</td>
-                        <td>5000</td>
-                        <td>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    Action
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Pembayaran</a>
-                                    <a class="dropdown-item" href="#">Perpanjangan</a>
-                                    <a class="dropdown-item" href="#">Edit</a>
-                                    <a class="dropdown-item" href="#">Delete</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
+                    <?php
+                    endforeach;
+                    ?>
                 </div>
+
             </tbody>
         </table>
     </div>

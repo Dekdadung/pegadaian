@@ -2,36 +2,38 @@
 <?= $this->section('content') ?>
 
 <section class="section">
-    <div class="section-header">
-        <div class="section-header-back">
-            <a href="<?= site_url('nasabah') ?>" class="btn"><i class="fas fa-arrow-left"></i></a>
-        </div>
-        <h1>Detail Nasabah</h1>
-    </div>
-
     <div class="section-body">
         <div class="card">
             <div class="card-header">
                 <h4>Data Keuangan Bank</h4>
-                <div class="card-header-action">
-                    <a href="/nasabah/edit/" class="btn btn-warning btn-sm"> <i class="fas fa-pencil-alt"></i></a>
-                    <a href="/nasabah/delete/" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i></a>
-                </div>
             </div>
-            <div class="card mb-3">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="" class="img-fluid rounded-start" alt="...">
+            <div class="card body">
+                <?php if (session()->getFlashdata('Pesan')) : ?>
+                <div class="alert alert-success alert-has-icon">
+                    <div class="alert-icon"><i class="far fa-lightbulb"></i></div>
+                    <div class="alert-body">
+                        <div class="alert-title">Sukses !</div>
+                        <?= session()->getFlashdata('Pesan'); ?>
                     </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title"></h5>
-                            <p class="card-text"><b>No. Rekening (Id Kas): 098765432</b></p>
-                            <p class="card-text"><b>Saldo: Rp.1000</b></p>
-                            <p class="card-text"><b>Tgl. Masuk: 04-08-2001</b></p>
-                            <p class="card-text"><b>Tgl. Keluar: 04-08-2001</b></p>
-                            <p class="card-text"><b>Keterangan: Akun Admin?</b></p>
-                            <p class="card-text"><b>Kode Cabang: CB001 </b></p>
+                </div>
+                <?php endif; ?>
+
+                <div class="col-12 mb-4">
+                    <div class="hero align-items-center bg-white text-black">
+                        <div class="hero-inner text-center">
+                            <h2>Total Kas Pegadaian</h2>
+                            <p class="lead"> Cara manggil saldonya gimana?
+                            </p>
+                            <form action="/saldo/save" method="post">
+                                <div class="text-center navbar-header search mt-2"
+                                    style="display: inline-block; float: none; margin: 0 auto;">
+                                    <input type="text" id="search" class="form-control" name="jumlah_kas"
+                                        placeholder="Masukkan Saldo">
+                                </div>
+                                <div class="mt-4">
+                                    <button class="btn btn-primary mr-1" type="submit">Submit</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

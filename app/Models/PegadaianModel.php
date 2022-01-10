@@ -8,7 +8,7 @@ class PegadaianModel extends Model
 {
     protected $table = 'pinjamangadai';
     protected $primaryKey = 'kode_pinjaman';
-    protected $allowedFields = ['id_nasabah', 'no_telp', 'jenis_barang', 'seri', 'kelengkapan', 'jumlah', 'kondisi', 'tgl_gadai', 'tgl_jatuh_tempo', 'tgl-lelang', 'jumlah_pinjaman', 'bunga', 'kode_cabang', 'status_bayar'];
+    protected $allowedFields = ['id_nasabah', 'no_telp', 'jenis_barang', 'seri', 'kelengkapan', 'jumlah', 'kondisi', 'tgl_gadai', 'tgl_jatuh_tempo', 'tgl_lelang', 'jumlah_pinjaman', 'bunga', 'kode_cabang', 'status_bayar'];
     protected $returnType = 'array';
 
     public function getDataGadai()

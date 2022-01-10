@@ -24,9 +24,9 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Alamat</label>
-                        <input type="text" name="alamat"
+                        <textarea type="text" name="alamat"
                             class="form-control <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>"
-                            id="inputtext4" value="<?= $nasabah['alamat']; ?>">
+                            id="inputtext4"><?= $nasabah['alamat']; ?></textarea>
                         <div class="invalid-feedback">
                             <?= $validation->getError('alamat'); ?>
                         </div>
@@ -64,7 +64,7 @@
                         <div class="form-label-group">
                             <select class="form-control <?= ($validation->hasError('status')) ? 'is-invalid' : ''; ?>"
                                 name="status">
-                                <option selected=""><?= $nasabah['status']; ?></option>
+                                <option hidden selected=""><?= $nasabah['status']; ?></option>
                                 <option value="Aktif">Aktif</option>
                                 <option value="Tidak Aktif">Tidak Aktif</option>
                             </select>

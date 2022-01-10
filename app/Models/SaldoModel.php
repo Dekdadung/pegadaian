@@ -8,6 +8,21 @@ class SaldoModel extends Model
 {
     protected $table = 'kas';
     protected $primaryKey = 'id_kas';
-    protected $allowedFields = ['jumlah_kas', 'tgl_masuk', 'tgl_keluar', 'keterangan', 'kode_cabang'];
+    protected $useTimestamps = true;
+    protected $createdField     = 'tgl_masuk';
+    protected $updatedField     = 'tgl_keluar';
+    protected $allowedFields = ['jumlah_kas', 'sisa_kas', 'keterangan', 'kode_cabang', 'jenis'];
     protected $returnType = 'array';
+
+    public function getSisa()
+    {
+        $builder = $this->select('sisa_kas');
+        $builder = $this->orderBy('id_kas', 'DESC');
+        $builder = $this->limit(1);
+        $data = $builder->get()->getResultArray();
+        // if (count($data)) {
+        return $data;
+        // }
+        // return null;
+    }
 }

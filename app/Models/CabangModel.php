@@ -8,6 +8,6 @@ class CabangModel extends Model
 {
     protected $table = 'cabang';
     protected $primaryKey = 'kode_cabang';
-    protected $allowedFields = ['nama_cabang', 'alamat', 'kode_toko'];
+    protected $allowedFields = ['kode_cabang', 'nama_cabang', 'alamat', 'kode_toko'];
     protected $returnType = 'array';
 }

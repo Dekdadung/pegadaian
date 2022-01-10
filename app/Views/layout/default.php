@@ -30,13 +30,11 @@
 
     <!-- General JS Scripts -->
     <script src="<?= base_url() ?>/template/assets/jquery/dist/jquery.min.js"></script>
-    <!-- <script src="<?= base_url() ?>/template/assets/jquery/dist/jquery.slim.js"></script>
-    <script src="<?= base_url() ?>/template/assets/jquery/dist/jquery.js"></script>
-    <script src="<?= base_url() ?>/template/assets/jquery/dist/core.js"></script> -->
     <script src="<?= base_url() ?>/template/assets/popper.js/dist/popper.min.js"></script>
     <script src="<?= base_url() ?>/template/assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="<?= base_url() ?>/template/assets/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="<?= base_url() ?>/template/assets/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="<?= base_url() ?>/template/assets/bootstrap/dist/js/modal.js"></script>
     <script src="<?= base_url() ?>/template/assets/jquery.nicescroll/dist/jquery.nicescroll.min.js"></script>
     <script src="<?= base_url() ?>/template/assets/js/stisla.js"></script>
 

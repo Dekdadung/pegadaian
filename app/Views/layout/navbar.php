@@ -31,14 +31,11 @@ $session = session();
                 </li>
             </ul>
 
-            <ul class="navbar-nav ml-auto align-items-lg-center d-none d-lg-block">
-                <li class="ml-lg-3 nav-item">
-                    <a href="https://getstisla.com/download" class="btn btn-round smooth btn-icon icon-left"
-                        target="_blank">
-                        <i class="fas fa-sign-out-alt"></i>Logout
-                    </a>
-                </li>
-            </ul>
+            <div class="form-inline my-2 my-lg-0">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a href="<?= site_url('login/logout') ?>" class="nav-link">Logout</a></li>
+                </ul>
+            </div>
             <!-- <ul class="navbar-nav ml-auto align-items-lg-center d-none d-lg-block">
                             <li class="ml-lg-3 nav-item">
                                 <a href="https://getstisla.com/download" class="btn btn-round smooth btn-icon icon-left"

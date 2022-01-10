@@ -35,7 +35,7 @@
                             </div>
 
                             <div class="card-body">
-                                <form method="POST" action="#" class="needs-validation" novalidate="">
+                                <form method="POST" action="/login/login" class="needs-validation" novalidate="">
                                     <div class="form-group">
                                         <label for="username">Username</label>
                                         <input id="username" type="text" class="form-control" name="username"

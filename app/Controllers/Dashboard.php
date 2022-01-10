@@ -2,20 +2,27 @@
 
 namespace App\Controllers;
 
-use App\Models\DashboardModel;
+use App\Models\PegadaianModel;
+use App\Models\SaldoModel;
 
 class Dashboard extends BaseController
 {
-    protected $DashboardModel;
+    protected $PegadaianModel;
+    protected $SaldoModel;
+
     public function __construct()
     {
-        $this->DashboardModel = new DashboardModel();
+        $this->PegadaianModel = new PegadaianModel();
+        $this->SaldoModel = new SaldoModel();
+        helper('currency');
     }
 
     public function index()
     {
-        // $pengepul = $this->jsampahModel->findAll();
-
-        return view('dashboard/homepage');
+        $data = [
+            'title' => 'Dashboard',
+            'home' => $this->PegadaianModel->getDataGadai()
+        ];
+        return view('dashboard/homepage', $data);
     }
 }

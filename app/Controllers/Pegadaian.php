@@ -5,18 +5,22 @@ namespace App\Controllers;
 use App\Models\PegadaianModel;
 use App\Models\NasabahModel;
 use App\Models\CabangModel;
+use App\Models\SaldoModel;
 
 class Pegadaian extends BaseController
 {
     protected $PegadaianModel;
     protected $NasabahModel;
     protected $CabangModel;
+    protected $SaldoModel;
 
     public function __construct()
     {
         $this->PegadaianModel = new PegadaianModel();
         $this->NasabahModel = new NasabahModel();
         $this->CabangModel = new CabangModel();
+        $this->SaldoModel = new SaldoModel();
+        helper('currency');
     }
 
     public function index()
@@ -34,6 +38,7 @@ class Pegadaian extends BaseController
             'gadai' => $this->PegadaianModel->findAll(),
             'nasabah' => $this->NasabahModel->findAll(),
             'cabang' => $this->CabangModel->findAll(),
+            'saldo' => $this->SaldoModel->findAll(),
             'title' => 'Form Data Gadai',
             'validation' => \Config\Services::validation()
         ];
@@ -131,7 +136,7 @@ class Pegadaian extends BaseController
             session()->setFlashdata('errors', $this->validator->listErrors());
             return redirect()->back()->withInput();
         }
-
+        $jumlah_pinjaman = $this->request->getVar('jumlah_pinjaman');
         $this->PegadaianModel->save([
             'id_nasabah' => $this->request->getVar('id_nasabah'),
             'no_telp' => $this->request->getVar('no_telp'),
@@ -143,12 +148,26 @@ class Pegadaian extends BaseController
             'tgl_gadai' => $this->request->getVar('tgl_gadai'),
             'tgl_jatuh_tempo' => $this->request->getVar('tgl_jatuh_tempo'),
             'tgl_lelang' => $this->request->getVar('tgl_lelang'),
-            'jumlah_pinjaman' => $this->request->getVar('jumlah_pinjaman'),
+            'jumlah_pinjaman' => $jumlah_pinjaman,
             'bunga' => $this->request->getVar('bunga'),
             'kode_cabang' => $this->request->getVar('kode_cabang'),
             'status_bayar' => $this->request->getVar('status_bayar')
         ]);
 
+        $get_sisa_kas =  $this->SaldoModel->getSisa();
+        if (!empty($this->SaldoModel->getSisa())) {
+            $sisa_kas = $get_sisa_kas[0]['sisa_kas'];
+        } else {
+            $sisa_kas = 0;
+        }
+        $total_kas = $sisa_kas - $jumlah_pinjaman;
+        $this->SaldoModel->save([
+            'jumlah_kas' => $jumlah_pinjaman,
+            'sisa_kas' => $total_kas,
+            'keterangan' => 'Transaksi Pegadaian Baru',
+            'kode_cabang' => '000',
+            'jenis' => 'keluar'
+        ]);
         session()->setFlashdata('Pesan', 'Data Berhasil Ditambahkan');
         return redirect()->to('/datagadai');
     }
@@ -283,6 +302,6 @@ class Pegadaian extends BaseController
     {
         $this->PegadaianModel->delete($kode_pinjaman);
         session()->setFlashdata('Pesan', 'Data Berhasil Dihapus');
-        return redirect()->to('/datanasabah');
+        return redirect()->to('/datagadai');
     }
 }

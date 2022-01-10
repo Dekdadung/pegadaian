@@ -32,6 +32,12 @@ class Cabang extends BaseController
     public function save()
     {
         if (!$this->validate([
+            'kode_cabang' => [
+                'rules' => 'required',
+                'errors'    => [
+                    'required'  => '{field} Harus Diisi'
+                ]
+            ],
             'nama_cabang' => [
                 'rules' => 'required',
                 'errors'    => [
@@ -56,6 +62,7 @@ class Cabang extends BaseController
         }
 
         $this->CabangModel->save([
+            'kode_cabang' => $this->request->getVar('kode_cabang'),
             'nama_cabang' => $this->request->getVar('nama_cabang'),
             'alamat' => $this->request->getVar('alamat'),
             'kode_toko' => $this->request->getVar('kode_toko')
@@ -78,6 +85,12 @@ class Cabang extends BaseController
     public function update($kode_cabang)
     {
         if (!$this->validate([
+            'kode_cabang' => [
+                'rules' => 'required',
+                'errors'    => [
+                    'required'  => '{field} Harus Diisi'
+                ]
+            ],
             'nama_cabang' => [
                 'rules' => 'required',
                 'errors'    => [
@@ -102,6 +115,7 @@ class Cabang extends BaseController
         }
 
         $this->CabangModel->update($kode_cabang, [
+            'kode_cabang' => $this->request->getVar('kode_cabang'),
             'nama_cabang' => $this->request->getVar('nama_cabang'),
             'alamat' => $this->request->getVar('alamat'),
             'kode_toko' => $this->request->getVar('kode_toko')
@@ -113,7 +127,6 @@ class Cabang extends BaseController
 
     public function delete($kode_cabang)
     {
-        $data = ['cabang' => $this->CabangModel->find($kode_cabang)];
         $this->CabangModel->delete($kode_cabang);
         session()->setFlashdata('Pesan', 'Data Berhasil Dihapus');
         return redirect()->to('/datacabang');

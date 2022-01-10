@@ -1,0 +1,10 @@
+__ci_last_regenerate|i:1641459247;_ci_previous_url|s:31:"http://localhost:8080/formgadai";errors|s:265:"<!-- DEBUG-VIEW START 1 SYSTEMPATH\Validation\Views\list.php -->
+	<div class="errors" role="alert">
+		<ul>
+					<li>kelengkapan Harus Diisi</li>
+					<li>jumlah Harus Diisi</li>
+				</ul>
+	</div>
+
+<!-- DEBUG-VIEW ENDED 1 SYSTEMPATH\Validation\Views\list.php -->
+";__ci_vars|a:3:{s:6:"errors";s:3:"old";s:13:"_ci_old_input";s:3:"old";s:21:"_ci_validation_errors";s:3:"old";}_ci_old_input|a:2:{s:3:"get";a:0:{}s:4:"post";a:14:{s:13:"kode_pinjaman";s:0:"";s:9:"tgl_gadai";s:10:"2022-01-06";s:10:"id_nasabah";s:1:"3";s:15:"tgl_jatuh_tempo";s:10:"2022-01-31";s:7:"no_telp";s:11:"08120546418";s:10:"tgl_lelang";s:10:"2022-02-01";s:15:"jumlah_pinjaman";s:7:"1000000";s:5:"bunga";s:1:"5";s:12:"jenis_barang";s:9:"Perhiasan";s:4:"seri";s:9:"Svarovski";s:13:"jumlah_barang";s:1:"2";s:7:"kondisi";s:4:"Baru";s:11:"kode_cabang";s:6:"PGYR01";s:12:"status_bayar";s:11:"Belum Lunas";}}_ci_validation_errors|s:95:"a:2:{s:11:"kelengkapan";s:23:"kelengkapan Harus Diisi";s:6:"jumlah";s:18:"jumlah Harus Diisi";}";
