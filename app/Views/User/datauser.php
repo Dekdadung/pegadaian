@@ -23,6 +23,7 @@
                 <tr>
                     <th>No</th>
                     <th>Nama</th>
+                    <th>Cabang</th>
                     <th>Level</th>
                     <th>Action</th>
                 </tr>
@@ -34,6 +35,7 @@
                     <tr>
                         <td><?= $no++; ?></td>
                         <td><?= $row['nama_user']; ?></td>
+                        <td><?= $row['cabang']; ?></td>
                         <td><?= $row['level']; ?></td>
                         <td>
                             <div class="btn-group">

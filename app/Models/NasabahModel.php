@@ -11,7 +11,7 @@ class NasabahModel extends Model
     protected $useTimestamps = true;
     protected $createdField     = 'created_at';
     protected $updatedField     = 'updated_at';
-    protected $allowedFields = ['nama', 'alamat', 'no_telp', 'kode_cabang', 'status'];
+    protected $allowedFields = ['nama', 'nik', 'alamat_nasabah', 'no_telp', 'kode_cabang', 'status'];
     protected $returnType = 'array';
 
     public function getDataNasabah()

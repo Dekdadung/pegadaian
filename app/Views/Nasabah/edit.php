@@ -24,11 +24,11 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Alamat</label>
-                        <textarea type="text" name="alamat"
-                            class="form-control <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>"
-                            id="inputtext4"><?= $nasabah['alamat']; ?></textarea>
+                        <textarea type="text" name="alamat_nasabah"
+                            class="form-control <?= ($validation->hasError('alamat_nasabah')) ? 'is-invalid' : ''; ?>"
+                            id="inputtext4"><?= $nasabah['alamat_nasabah']; ?></textarea>
                         <div class="invalid-feedback">
-                            <?= $validation->getError('alamat'); ?>
+                            <?= $validation->getError('alamat_nasabah'); ?>
                         </div>
                     </div>
                 </div>

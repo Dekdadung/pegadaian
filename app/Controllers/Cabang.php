@@ -33,9 +33,10 @@ class Cabang extends BaseController
     {
         if (!$this->validate([
             'kode_cabang' => [
-                'rules' => 'required',
+                'rules' => 'required|is_unique[cabang.kode_cabang]',
                 'errors'    => [
-                    'required'  => '{field} Harus Diisi'
+                    'required'  => '{field} Harus Diisi',
+                    'is_unique' => '{field} Sudah Terdaftar'
                 ]
             ],
             'nama_cabang' => [
@@ -45,7 +46,7 @@ class Cabang extends BaseController
                 ]
             ],
             'alamat' => [
-                'rules' => 'required',
+                'rules' => 'required|min_length[10]|max_length[60]',
                 'errors'    => [
                     'required'  => '{field} Harus Diisi'
                 ]
@@ -60,13 +61,17 @@ class Cabang extends BaseController
             session()->setFlashdata('errors', $this->validator->listErrors());
             return redirect()->back()->withInput();
         }
+        // var_dump($this->request->getVar());
+        // die;
 
-        $this->CabangModel->save([
+        $data = [
             'kode_cabang' => $this->request->getVar('kode_cabang'),
             'nama_cabang' => $this->request->getVar('nama_cabang'),
             'alamat' => $this->request->getVar('alamat'),
             'kode_toko' => $this->request->getVar('kode_toko')
-        ]);
+        ];
+
+        $this->CabangModel->simpan($data);
 
         session()->setFlashdata('Pesan', 'Data Berhasil Ditambahkan');
         return redirect()->to('/datacabang');

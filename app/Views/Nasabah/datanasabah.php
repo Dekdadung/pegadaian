@@ -37,7 +37,7 @@
                     <tr>
                         <td><?= $no++; ?></td>
                         <td><?= $row['nama']; ?></td>
-                        <td><?= $row['alamat']; ?></td>
+                        <td><?= $row['alamat_nasabah']; ?></td>
                         <td><?= $row['no_telp']; ?></td>
                         <td><?= $row['kode_cabang']; ?></td>
                         <td><?= $row['status']; ?></td>

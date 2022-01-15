@@ -1,0 +1,162 @@
+ERROR - 2022-01-13 09:05:13 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
+
+CRITICAL - 2022-01-13 09:05:13 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\pegadaian\app\Models\PegadaianModel.php(19): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(32): App\Models\PegadaianModel->getDataGadai()
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pegadaian->index()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-01-13 11:36:48 --> Undefined variable: cabang
+#0 C:\xampp\htdocs\pegadaian\app\Views\Saldo\saldo.php(13): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 13, Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('saldo/saldo', Array, true)
+#4 C:\xampp\htdocs\pegadaian\app\Controllers\Saldo.php(24): view('saldo/saldo', Array)
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Saldo->index()
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Saldo))
+#7 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-01-13 12:07:12 --> Undefined variable: cabang
+#0 C:\xampp\htdocs\pegadaian\app\Views\Saldo\saldo.php(39): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 39, Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('saldo/saldo', Array, true)
+#4 C:\xampp\htdocs\pegadaian\app\Controllers\Saldo.php(27): view('saldo/saldo', Array)
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Saldo->index()
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Saldo))
+#7 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-01-13 12:07:51 --> Undefined variable: kode_cabang
+#0 C:\xampp\htdocs\pegadaian\app\Views\Saldo\saldo.php(41): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 41, Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('saldo/saldo', Array, true)
+#4 C:\xampp\htdocs\pegadaian\app\Controllers\Saldo.php(28): view('saldo/saldo', Array)
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Saldo->index()
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Saldo))
+#7 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2022-01-13 13:30:36 --> Duplicate entry 'CB2-22201' for key 'PRIMARY'
+CRITICAL - 2022-01-13 13:30:36 --> Duplicate entry 'CB2-22201' for key 'PRIMARY'
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pi...', 0)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pi...')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pi...')
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pi...', Array, false)
+#4 C:\xampp\htdocs\pegadaian\app\Models\PegadaianModel.php(43): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(154): App\Models\PegadaianModel->simpan(Array)
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pegadaian->save()
+#7 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#8 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-01-13 13:34:13 --> A non-numeric value encountered
+#0 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric v...', 'C:\\xampp\\htdocs...', 137, Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pegadaian->save()
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-01-13 14:30:21 --> Call to undefined method App\Models\SaldoModel::getPengisi
+#0 C:\xampp\htdocs\pegadaian\app\Controllers\Saldo.php(25): CodeIgniter\Model->__call('getPengisi', Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Saldo->index()
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Saldo))
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-01-13 14:34:39 --> Undefined offset: 0
+#0 C:\xampp\htdocs\pegadaian\app\Controllers\Saldo.php(23): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 23, Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Saldo->index()
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Saldo))
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-01-13 14:42:48 --> Too few arguments to function App\Models\SaldoModel::getSisa(), 0 passed in C:\xampp\htdocs\pegadaian\app\Controllers\Saldo.php on line 23 and exactly 1 expected
+#0 C:\xampp\htdocs\pegadaian\app\Controllers\Saldo.php(23): App\Models\SaldoModel->getSisa()
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Saldo->index()
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Saldo))
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-01-13 14:54:36 --> Undefined offset: 0
+#0 C:\xampp\htdocs\pegadaian\app\Controllers\Saldo.php(24): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 24, Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Saldo->index()
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Saldo))
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-01-13 00:55:31 --> syntax error, unexpected 'if' (T_IF)
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(789): class_exists('\\App\\Controller...', true)
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(397): CodeIgniter\CodeIgniter->startController()
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-01-13 14:55:36 --> Undefined offset: 0
+#0 C:\xampp\htdocs\pegadaian\app\Controllers\Saldo.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Saldo->index()
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Saldo))
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-01-13 16:05:53 --> Undefined index: kode_cabang
+#0 C:\xampp\htdocs\pegadaian\app\Controllers\Login.php(40): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 40, Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Login->login()
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-01-13 16:47:53 --> A non-numeric value encountered
+#0 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(136): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric v...', 'C:\\xampp\\htdocs...', 136, Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pegadaian->save()
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-01-13 17:24:56 --> There is no data to update.
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(1574): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray(NULL, 'update')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Model.php(646): CodeIgniter\BaseModel->update(Array, NULL)
+#3 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(295): CodeIgniter\Model->update(Array)
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pegadaian->update('CB1-21301')
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-01-13 17:25:05 --> There is no data to update.
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(1574): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray(NULL, 'update')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Model.php(646): CodeIgniter\BaseModel->update(Array, NULL)
+#3 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(295): CodeIgniter\Model->update(Array)
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pegadaian->update('CB1-21301')
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}

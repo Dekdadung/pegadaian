@@ -7,28 +7,41 @@
             <a href="<?= site_url('datagadai') ?>" class="btn"><i class="fas fa-arrow-left"></i></a>
         </div>
         <h1>Pegadaian</h1>
+        <div class="section-header-button">
+
+        </div>
+        <div class="section-header-breadcrumb">
+            <form action="" method="get">
+                <div class="form-control">
+                    <label>Pilih Cabang</label>
+                    <select class="form-floating mb-3" name="kode_cabang" required onchange="this.form.submit()">
+                        <option value="">Pilih Cabang!</option>
+                        <?php foreach ($cabang as $row) : ?>
+                        <option value="<?= $row['kode_cabang']; ?>"
+                            <?= ($row['kode_cabang'] == $kode_cabang) ? 'selected' : ''; ?>>
+                            <?= $row['nama_cabang']; ?>
+                        </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            </form>
+        </div>
     </div>
     <div class="card">
         <div class="card-body">
-            <form action="/pegadaian/save" method="post">
+            <form action="/pegadaian/save" method="post" id="myForm">
+                <input hidden type="text" name="kode_cabang" value="<?= $kode_cabang ?>">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Kode Pinjaman</label>
-                        <input type="text"
-                            class="form-control <?= ($validation->hasError('kode_pinjaman')) ? 'is-invalid' : ''; ?>"
-                            id="inputtext4" name="kode_pinjaman" disabled>
-                        <div class="invalid-feedback">
-                            <?= $validation->getError('kode_pinjaman'); ?>
-                        </div>
+                        <input type="hidden" name="kode_pinjaman" value="<?= $kode_pinjaman ?>">
+                        <input type="text" class="form-control" id="inputtext4" name="kode_pinjaman" disabled
+                            value="<?= $kode_pinjaman ?>">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Tanggal Gadai</label>
-                        <input type="date"
-                            class="form-control <?= ($validation->hasError('tgl_gadai')) ? 'is-invalid' : ''; ?>"
-                            id="inputtext4" name="tgl_gadai">
-                        <div class="invalid-feedback">
-                            <?= $validation->getError('tgl_gadai'); ?>
-                        </div>
+                        <input type="date" class="form-control" id="inputtext4" name="tgl_gadai"
+                            value="<?= date('Y-m-d') ?>">
                     </div>
                 </div>
                 <div class="form-row">
@@ -46,27 +59,43 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Tgl. Jatuh Tempo</label>
-                        <input type="date" class="form-control" id="inputtext4" name="tgl_jatuh_tempo">
+                        <input type="date" class="form-control" id="inputtext4" name="tgl_jatuh_tempo"
+                            value="<?= date('Y-m-d') ?>">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputtext4">No. Telpon</label>
-                        <input type="text" class="form-control" id="inputtext4" name="no_telp">
+                        <input type="text"
+                            class="form-control <?= ($validation->hasError('no_telp')) ? 'is-invalid' : ''; ?>"
+                            id="inputtext4" name="no_telp">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('no_telp'); ?>
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Tgl. Lelang</label>
-                        <input type="date" class="form-control" id="inputtext4" name="tgl_lelang">
+                        <input type="date" class="form-control" id="inputtext4" name="tgl_lelang"
+                            value="<?= date('Y-m-d') ?>">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Jumlah Pinjaman</label>
-                        <input type="text" class="form-control" id="inputtext4" name="jumlah_pinjaman">
+                        <input type="text"
+                            class="form-control <?= ($validation->hasError('jumlah_pinjaman')) ? 'is-invalid' : ''; ?>"
+                            id="rupiah" name="jumlah_pinjaman">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('jumlah_pinjaman'); ?>
+                        </div>
                     </div>
                     <div class="form-group col-md-2">
+                        <label for="inputtext4">Bunga %</label>
+                        <input type="number" class="form-control" min="1" max="100" id="myPercent" name="bungaP">
+                    </div>
+                    <div class="form-group col-md-4" hidden>
                         <label for="inputtext4">Bunga</label>
-                        <input type="text" class="form-control" id="inputtext4" name="bunga">
+                        <input type="number" hidden class="form-control" id="inputtext4" name="bunga">
                     </div>
                 </div>
                 <div class="form-row">
@@ -80,9 +109,15 @@
                     </div>
                     <div class="form-group col-md-2">
                         <label for="inputZip">Jumlah Barang</label>
-                        <input type="text" class="form-control" id="inputZip" name="jumlah">
+                        <input type="text"
+                            class="form-control <?= ($validation->hasError('jumlah')) ? 'is-invalid' : ''; ?>"
+                            id="inputZip" name="jumlah">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('jumlah'); ?>
+                        </div>
                     </div>
                 </div>
+
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Kelengkapan</label>
@@ -98,31 +133,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputtext4">Kode Cabang</label>
-                        <div class="form-label-group">
-                            <select class="form-control" name="kode_cabang">
-                                <?php foreach ($cabang as $row) : ?>
-                                <option value="<?= $row['kode_cabang']; ?>">
-                                    <?= $row['nama_cabang']; ?>
-                                </option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputtext4">Satus Bayar</label>
-                        <div class="form-label-group">
-                            <select class="form-control" name="status_bayar">
-                                <option value="Lunas">Lunas</option>
-                                <option value="Belum Lunas">Belum Lunas</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
                 <div class="card-footer">
-                    <button class="btn btn-primary">Submit</button>
+                    <button class="btn btn-primary" type="submit">Submit</button>
                 </div>
             </form>
         </div>

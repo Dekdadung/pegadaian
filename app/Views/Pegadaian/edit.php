@@ -66,13 +66,16 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Jumlah Pinjaman</label>
-                        <input type="text" class="form-control" id="inputtext4" name="jumlah_pinjaman"
+                        <input type="text" class="form-control" id="rupiah" name="jumlah_pinjaman"
                             value="<?= $gadai['jumlah_pinjaman']; ?>">
                     </div>
                     <div class="form-group col-md-2">
+                        <label for="inputtext4">Bunga %</label>
+                        <input type="number" class="form-control" min="1" max="100" id="myPercent" name="bungaP">
+                    </div>
+                    <div class="form-group col-md-4" hidden>
                         <label for="inputtext4">Bunga</label>
-                        <input type="text" class="form-control" id="inputtext4" name="bunga"
-                            value="<?= $gadai['bunga']; ?>">
+                        <input type="number" hidden class="form-control" id="inputtext4" name="bunga">
                     </div>
                 </div>
                 <div class="form-row">

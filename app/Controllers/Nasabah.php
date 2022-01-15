@@ -44,7 +44,7 @@ class Nasabah extends BaseController
                     'required'  => '{field} Harus Diisi'
                 ]
             ],
-            'alamat' => [
+            'alamat_nasabah' => [
                 'rules' => 'required',
                 'errors'    => [
                     'required'  => '{field} Harus Diisi'
@@ -75,7 +75,7 @@ class Nasabah extends BaseController
 
         $this->NasabahModel->save([
             'nama' => $this->request->getVar('nama'),
-            'alamat' => $this->request->getVar('alamat'),
+            'alamat_nasabah' => $this->request->getVar('alamat_nasabah'),
             'no_telp' => $this->request->getVar('no_telp'),
             'kode_cabang' => $this->request->getVar('kode_cabang'),
             'status' => $this->request->getVar('status')
@@ -106,7 +106,7 @@ class Nasabah extends BaseController
                     'required'  => '{field} Harus Diisi'
                 ]
             ],
-            'alamat' => [
+            'alamat_nasabah' => [
                 'rules' => 'required',
                 'errors'    => [
                     'required'  => '{field} Harus Diisi'
@@ -137,7 +137,7 @@ class Nasabah extends BaseController
 
         $this->NasabahModel->update($id_nasabah, [
             'nama' => $this->request->getVar('nama'),
-            'alamat' => $this->request->getVar('alamat'),
+            'alamat_nasabah' => $this->request->getVar('alamat_nasabah'),
             'no_telp' => $this->request->getVar('no_telp'),
             'kode_cabang' => $this->request->getVar('kode_cabang'),
             'status' => $this->request->getVar('status')

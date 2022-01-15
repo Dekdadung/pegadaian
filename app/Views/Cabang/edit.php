@@ -6,7 +6,7 @@
         <div class="section-header-back">
             <a href="<?= site_url('datacabang') ?>" class="btn"><i class="fas fa-arrow-left"></i></a>
         </div>
-        <h1>Tambah Data Cabang</h1>
+        <h1>Ubah Data Cabang</h1>
     </div>
     <div class="card">
         <div class="card-body">

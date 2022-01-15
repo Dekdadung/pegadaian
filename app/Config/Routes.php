@@ -33,24 +33,24 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('a', 'Home::index');
 
-$routes->get('datagadai', 'Pegadaian::index');
-$routes->get('formgadai', 'Pegadaian::create');
+$routes->get('datagadai', 'Pegadaian::index', ['filter' => 'auth']);
+$routes->get('formgadai', 'Pegadaian::create', ['filter' => 'auth']);
 
-$routes->get('datanasabah', 'Nasabah::index');
-$routes->get('formnasabah', 'Nasabah::create');
+$routes->get('datanasabah', 'Nasabah::index', ['filter' => 'auth']);
+$routes->get('formnasabah', 'Nasabah::create', ['filter' => 'auth']);
 
-$routes->get('datauser', 'User::index');
-$routes->get('formuser', 'User::create');
+$routes->get('datauser', 'User::index', ['filter' => 'auth']);
+$routes->get('formuser', 'User::create', ['filter' => 'auth']);
 
-$routes->get('datalaporan', 'Laporan::index');
-$routes->get('formlaporan', 'Laporan::create');
+$routes->get('datalaporan', 'Laporan::index', ['filter' => 'auth']);
+$routes->get('formlaporan', 'Laporan::create', ['filter' => 'auth']);
 
-$routes->get('datacabang', 'Cabang::index');
-$routes->get('formcabang', 'Cabang::create');
+$routes->get('datacabang', 'Cabang::index', ['filter' => 'auth']);
+$routes->get('formcabang', 'Cabang::create', ['filter' => 'auth']);
 
-$routes->get('saldo', 'Saldo::index');
+$routes->get('saldo', 'Saldo::index', ['filter' => 'auth']);
 
-$routes->get('homepage', 'Dashboard::index');
+$routes->get('homepage', 'Dashboard::index', ['filter' => 'auth']);
 
 /*
  * --------------------------------------------------------------------

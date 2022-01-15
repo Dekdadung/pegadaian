@@ -10,6 +10,15 @@
     </div>
 
     <div class="card-body table-responsive">
+        <?php if (session()->getFlashdata('Pesan')) : ?>
+        <div class="alert alert-success alert-has-icon">
+            <div class="alert-icon"><i class="far fa-lightbulb"></i></div>
+            <div class="alert-body">
+                <div class="alert-title">Sukses !</div>
+                <?= session()->getFlashdata('Pesan'); ?>
+            </div>
+        </div>
+        <?php endif; ?>
         <table class="table table-striped table-md">
             <tbody>
                 <tr>

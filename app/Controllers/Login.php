@@ -14,7 +14,9 @@ class Login extends BaseController
 
     public function index()
     {
-
+        if (session('id_user')) {
+            return redirect()->to(site_url('dashboard'));
+        }
         return view('login/login');
     }
 
@@ -37,11 +39,12 @@ class Login extends BaseController
                     'nama_user' => $data['nama_user'],
                     'username'  => $data['username'],
                     'level'     => $data['level'],
+                    'kode_cabang' => $data['cabang'],
                     'logged_in' => TRUE
                 ];
 
                 $session->set($sessData);
-                return redirect()->to('/dashboard');
+                return redirect()->to('/homepage');
             } else {
                 $session->setFlashdata('pesan', 'Password Anda Salah');
                 return redirect()->to('/login');

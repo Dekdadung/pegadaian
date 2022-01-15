@@ -1,9 +1,0 @@
-__ci_last_regenerate|i:1641374815;_ci_previous_url|s:33:"http://localhost:8080/formnasabah";errors|s:232:"<!-- DEBUG-VIEW START 1 SYSTEMPATH\Validation\Views\list.php -->
-	<div class="errors" role="alert">
-		<ul>
-					<li>kode_cabang Harus Diisi</li>
-				</ul>
-	</div>
-
-<!-- DEBUG-VIEW ENDED 1 SYSTEMPATH\Validation\Views\list.php -->
-";__ci_vars|a:3:{s:6:"errors";s:3:"old";s:13:"_ci_old_input";s:3:"old";s:21:"_ci_validation_errors";s:3:"old";}_ci_old_input|a:2:{s:3:"get";a:0:{}s:4:"post";a:5:{s:14:"csrf_test_name";s:32:"3ac9b87f306f63b8f5713d8957f9f392";s:4:"nama";s:8:"Agustika";s:6:"alamat";s:19:"BrainStormingStreet";s:7:"no_telp";s:11:"08120546418";s:6:"status";s:5:"aktif";}}_ci_validation_errors|s:56:"a:1:{s:11:"kode_cabang";s:23:"kode_cabang Harus Diisi";}";

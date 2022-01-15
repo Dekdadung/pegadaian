@@ -1,0 +1,10 @@
+__ci_last_regenerate|i:1642130364;id_user|s:1:"3";nama_user|s:9:"dadungzzz";username|s:10:"superadmin";level|s:10:"superadmin";kode_cabang|s:4:"FG01";logged_in|b:1;_ci_previous_url|s:48:"http://localhost:8080/formgadai?kode_cabang=FG01";errors|s:276:"<!-- DEBUG-VIEW START 1 SYSTEMPATH\Validation\Views\list.php -->
+	<div class="errors" role="alert">
+		<ul>
+					<li>Data Isi minimal 10 angka</li>
+					<li>Pinjaman minimal Rp.100.000</li>
+				</ul>
+	</div>
+
+<!-- DEBUG-VIEW ENDED 1 SYSTEMPATH\Validation\Views\list.php -->
+";__ci_vars|a:3:{s:6:"errors";s:3:"old";s:13:"_ci_old_input";s:3:"old";s:21:"_ci_validation_errors";s:3:"old";}_ci_old_input|a:2:{s:3:"get";a:0:{}s:4:"post";a:15:{s:11:"kode_cabang";s:4:"FG01";s:13:"kode_pinjaman";s:9:"CB1-21401";s:9:"tgl_gadai";s:10:"2022-01-14";s:10:"id_nasabah";s:1:"3";s:15:"tgl_jatuh_tempo";s:10:"2022-01-14";s:7:"no_telp";s:3:"081";s:10:"tgl_lelang";s:10:"2022-01-14";s:15:"jumlah_pinjaman";s:4:"1000";s:6:"bungaP";s:2:"10";s:5:"bunga";s:0:"";s:12:"jenis_barang";s:5:"Surat";s:4:"seri";s:10:"0128301231";s:6:"jumlah";s:1:"1";s:11:"kelengkapan";s:7:"asasada";s:7:"kondisi";s:4:"Baru";}}_ci_validation_errors|s:111:"a:2:{s:7:"no_telp";s:25:"Data Isi minimal 10 angka";s:15:"jumlah_pinjaman";s:27:"Pinjaman minimal Rp.100.000";}";

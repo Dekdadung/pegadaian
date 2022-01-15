@@ -2129,12 +2129,17 @@ h6 .badge {
 
 /* 3.18 Navbar */
 .navbar {
-  height: 70px;
+  /* height: 70px;
   left: 250px;
-  right: 5px;
+  right: 5px;*/
   position: absolute;
   z-index: 890;
   background-color: #6777ef;
+  left: 0;
+  right: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: auto;
 }
 .navbar.active {
   background-color: #6777ef;

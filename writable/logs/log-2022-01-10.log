@@ -1,0 +1,308 @@
+CRITICAL - 2022-01-10 13:40:56 --> Call to a member function findAll() on null
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pembayaran->createBayar('4')
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembayaran))
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-01-10 13:41:24 --> Call to a member function findAll() on null
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pembayaran->createBayar('4')
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembayaran))
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-01-10 13:56:25 --> Undefined index: sisa_bayar
+#0 C:\xampp\htdocs\pegadaian\app\Views\Pegadaian\formbayar.php(40): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 40, Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('pegadaian/formb...', Array, true)
+#4 C:\xampp\htdocs\pegadaian\app\Controllers\Pembayaran.php(38): view('pegadaian/formb...', Array)
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pembayaran->createBayar('4')
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembayaran))
+#7 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-01-10 14:01:22 --> Call to a member function find() on null
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pembayaran->createBayar('4')
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembayaran))
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-01-10 14:01:39 --> Call to a member function find() on null
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pembayaran->createBayar('4')
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembayaran))
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-01-10 14:07:51 --> Call to a member function get_sisa_bayar() on null
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pembayaran->createBayar('4')
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembayaran))
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+ERROR - 2022-01-10 14:08:39 --> Not unique table/alias: 'pembayaran'
+CRITICAL - 2022-01-10 14:08:39 --> Not unique table/alias: 'pembayaran'
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `sisa_ba...', 0)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `sisa_ba...')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `sisa_ba...')
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT `sisa_ba...', Array, false)
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Model.php(723): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\pegadaian\app\Models\PembayaranModel.php(26): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\pegadaian\app\Controllers\Pembayaran.php(31): App\Models\PembayaranModel->get_sisa_bayar('4')
+#7 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pembayaran->createBayar('4')
+#8 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembayaran))
+#9 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2022-01-10 14:08:56 --> Not unique table/alias: 'pembayaran'
+CRITICAL - 2022-01-10 14:08:56 --> Not unique table/alias: 'pembayaran'
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `sisa_ba...', 0)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `sisa_ba...')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `sisa_ba...')
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT `sisa_ba...', Array, false)
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Model.php(723): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\pegadaian\app\Models\PembayaranModel.php(26): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\pegadaian\app\Controllers\Pembayaran.php(31): App\Models\PembayaranModel->get_sisa_bayar('4')
+#7 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pembayaran->createBayar('4')
+#8 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembayaran))
+#9 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2022-01-10 14:12:43 --> Undefined offset: 0
+#0 C:\xampp\htdocs\pegadaian\app\Views\Pegadaian\formbayar.php(40): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 40, Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('pegadaian/formb...', Array, true)
+#4 C:\xampp\htdocs\pegadaian\app\Controllers\Pembayaran.php(40): view('pegadaian/formb...', Array)
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pembayaran->createBayar('5')
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembayaran))
+#7 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-01-10 14:13:49 --> Undefined offset: 0
+#0 C:\xampp\htdocs\pegadaian\app\Controllers\Pembayaran.php(31): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 31, Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pembayaran->createBayar('5')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembayaran))
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2022-01-10 14:25:55 --> Column 'kode_pinjaman' cannot be null
+CRITICAL - 2022-01-10 14:25:55 --> Column 'kode_pinjaman' cannot be null
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Model.php(620): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\pegadaian\app\Controllers\Pembayaran.php(55): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pembayaran->saveBayar()
+#10 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembayaran))
+#11 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+ERROR - 2022-01-10 14:26:11 --> Column 'kode_pinjaman' cannot be null
+CRITICAL - 2022-01-10 14:26:11 --> Column 'kode_pinjaman' cannot be null
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Model.php(620): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\pegadaian\app\Controllers\Pembayaran.php(55): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pembayaran->saveBayar()
+#10 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembayaran))
+#11 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+ERROR - 2022-01-10 14:26:59 --> Column 'kode_pinjaman' cannot be null
+CRITICAL - 2022-01-10 14:26:59 --> Column 'kode_pinjaman' cannot be null
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Model.php(620): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\pegadaian\app\Controllers\Pembayaran.php(55): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pembayaran->saveBayar()
+#10 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembayaran))
+#11 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+ERROR - 2022-01-10 14:28:04 --> Column 'kode_pinjaman' cannot be null
+CRITICAL - 2022-01-10 14:28:04 --> Column 'kode_pinjaman' cannot be null
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Model.php(620): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\pegadaian\app\Controllers\Pembayaran.php(55): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pembayaran->saveBayar()
+#10 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembayaran))
+#11 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+ERROR - 2022-01-10 14:33:07 --> Unknown column 'id_kas' in 'order clause'
+CRITICAL - 2022-01-10 14:33:07 --> Unknown column 'id_kas' in 'order clause'
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `sisa_ba...', 0)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `sisa_ba...')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `sisa_ba...')
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT `sisa_ba...', Array, false)
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Model.php(723): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\pegadaian\app\Models\PembayaranModel.php(22): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\pegadaian\app\Controllers\Pembayaran.php(31): App\Models\PembayaranModel->get_sisa_bayar('5')
+#7 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pembayaran->createBayar('5')
+#8 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pembayaran))
+#9 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2022-01-10 14:52:45 --> Undefined property: CodeIgniter\HTTP\IncomingRequest::$getVar
+#0 C:\xampp\htdocs\pegadaian\app\Controllers\Cabang.php(63): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 63, Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Cabang->save()
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cabang))
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2022-01-10 15:01:44 --> Table 'pegadaian.users' doesn't exist
+CRITICAL - 2022-01-10 15:01:44 --> Table 'pegadaian.users' doesn't exist
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\pegadaian\app\Models\CabangModel.php(20): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\pegadaian\app\Controllers\Cabang.php(73): App\Models\CabangModel->simpan(Array)
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Cabang->save()
+#7 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cabang))
+#8 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-01-10 15:18:01 --> Undefined variable: kode_pinjaman
+#0 C:\xampp\htdocs\pegadaian\app\Views\Pegadaian\formgadai.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 32, Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('pegadaian/formg...', Array, true)
+#4 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(46): view('pegadaian/formg...', Array)
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pegadaian->create()
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#7 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-01-10 01:27:55 --> syntax error, unexpected ';'
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Pega...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Pega...')
+#3 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(20): spl_autoload_call('App\\Models\\Pega...')
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Pegadaian->__construct()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+ERROR - 2022-01-10 15:28:03 --> Unknown column 'PBDG01' in 'where clause'
+CRITICAL - 2022-01-10 15:28:03 --> Unknown column 'PBDG01' in 'where clause'
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT kode_tok...', 0)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT kode_tok...')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT kode_tok...')
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT kode_tok...')
+#4 C:\xampp\htdocs\pegadaian\app\Models\PegadaianModel.php(24): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(38): App\Models\PegadaianModel->create_kode_pinjaman('PBDG01')
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pegadaian->create()
+#7 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#8 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-01-10 01:34:46 --> The behavior of unparenthesized expressions containing both '.' and '+'/'-' will change in PHP 8: '+'/'-' will take a higher precedence
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(264): CodeIgniter\Debug\Exceptions->errorHandler(8192, 'The behavior of...', 'C:\\xampp\\htdocs...', 32, Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(264): include_once()
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Pega...')
+#4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Pega...')
+#5 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(20): spl_autoload_call('App\\Models\\Pega...')
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(801): App\Controllers\Pegadaian->__construct()
+#7 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#8 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-01-10 15:37:25 --> Undefined offset: 0
+#0 C:\xampp\htdocs\pegadaian\app\Models\PegadaianModel.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(46): App\Models\PegadaianModel->create_kode_pinjaman(NULL)
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pegadaian->create()
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-01-10 15:40:27 --> Undefined offset: 0
+#0 C:\xampp\htdocs\pegadaian\app\Models\PegadaianModel.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(42): App\Models\PegadaianModel->create_kode_pinjaman(NULL)
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pegadaian->create()
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-01-10 15:40:43 --> Undefined offset: 0
+#0 C:\xampp\htdocs\pegadaian\app\Models\PegadaianModel.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(42): App\Models\PegadaianModel->create_kode_pinjaman(NULL)
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pegadaian->create()
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-01-10 15:41:15 --> Undefined offset: 0
+#0 C:\xampp\htdocs\pegadaian\app\Models\PegadaianModel.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(42): App\Models\PegadaianModel->create_kode_pinjaman(NULL)
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pegadaian->create()
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-01-10 15:41:33 --> Undefined offset: 0
+#0 C:\xampp\htdocs\pegadaian\app\Models\PegadaianModel.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(42): App\Models\PegadaianModel->create_kode_pinjaman(NULL)
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Pegadaian->create()
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-01-10 23:53:46 --> syntax error, unexpected ','
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(789): class_exists('\\App\\Controller...', true)
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(397): CodeIgniter\CodeIgniter->startController()
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}

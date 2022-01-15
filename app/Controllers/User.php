@@ -3,13 +3,17 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Models\CabangModel;
 
 class User extends BaseController
 {
     protected $UserModel;
+    protected $CabangModel;
+
     public function __construct()
     {
         $this->UserModel = new UserModel();
+        $this->CabangModel = new CabangModel();
     }
 
     public function index()
@@ -25,6 +29,7 @@ class User extends BaseController
     {
         $data = [
             'title' => 'Form Data User',
+            'cabang' => $this->CabangModel->findAll()
         ];
         return view('user/formuser', $data);
     }
@@ -65,6 +70,7 @@ class User extends BaseController
             'nama_user' => $this->request->getVar('nama_user'),
             'username' => $this->request->getVar('username'),
             'password' => password_hash($this->request->getVar('password'), PASSWORD_BCRYPT),
+            'cabang' => $this->request->getVar('cabang'),
             'level' => $this->request->getVar('level')
         ]);
 
@@ -76,6 +82,7 @@ class User extends BaseController
     {
         $data = [
             'user'  => $this->UserModel->find($id_user),
+            'cabang' => $this->CabangModel->findAll(),
             'title' => 'Form Data User'
         ];
 
@@ -118,6 +125,7 @@ class User extends BaseController
             'nama_user' => $this->request->getVar('nama_user'),
             'username' => $this->request->getVar('username'),
             'password' => password_hash($this->request->getVar('password'), PASSWORD_BCRYPT),
+            'user' => $this->request->getVar('user'),
             'level' => $this->request->getVar('level')
         ]);
 

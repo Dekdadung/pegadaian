@@ -6,6 +6,7 @@ use App\Models\PegadaianModel;
 use App\Models\NasabahModel;
 use App\Models\CabangModel;
 use App\Models\SaldoModel;
+use App\Models\PembayaranModel;
 
 class Pegadaian extends BaseController
 {
@@ -13,6 +14,9 @@ class Pegadaian extends BaseController
     protected $NasabahModel;
     protected $CabangModel;
     protected $SaldoModel;
+    protected $cabang;
+    protected $telp;
+    protected $PembayaranModel;
 
     public function __construct()
     {
@@ -20,26 +24,47 @@ class Pegadaian extends BaseController
         $this->NasabahModel = new NasabahModel();
         $this->CabangModel = new CabangModel();
         $this->SaldoModel = new SaldoModel();
+        $this->PembayaranModel = new PembayaranModel();
         helper('currency');
     }
 
     public function index()
     {
+        $data_gadai = $this->PegadaianModel->getDataGadai();
         $data = [
             'title' => 'Data Gadai',
-            'gadai' => $this->PegadaianModel->getDataGadai()
+            'gadai' => $data_gadai
         ];
         return view('pegadaian/datagadai', $data);
     }
 
     public function create()
     {
+        $kode_cabang = @$_GET['kode_cabang'];
+        $kode_pinjaman = 'Pilih Cabang terlebih dahulu';
+        if (!empty($kode_cabang)) {
+            $this->cabang = $kode_cabang;
+            $kode_pinjaman = $this->PegadaianModel->create_kode_pinjaman($this->cabang);
+        }
+        $this->cabang = $kode_cabang;
+
+        $id_nasabah = @$_GET['id_nasabah'];
+        $telp_nasabah = 'Pilih Nasabah';
+        if (!empty($id_nasabah)) {
+            $this->telp = $id_nasabah;
+            $telp_nasabah = $this->PegadaianModel->getTelp($this->telp);
+        }
+        $this->telp = $id_nasabah;
+
         $data = [
             'gadai' => $this->PegadaianModel->findAll(),
             'nasabah' => $this->NasabahModel->findAll(),
             'cabang' => $this->CabangModel->findAll(),
             'saldo' => $this->SaldoModel->findAll(),
-            'title' => 'Form Data Gadai',
+            'kode_cabang' => $kode_cabang,
+            'telpNasabah' => $telp_nasabah,
+            // 'title' => 'Form Data Gadai',
+            'kode_pinjaman' => $kode_pinjaman,
             'validation' => \Config\Services::validation()
         ];
         return view('pegadaian/formgadai', $data);
@@ -51,93 +76,91 @@ class Pegadaian extends BaseController
             'id_nasabah' => [
                 'rules' => 'required',
                 'errors'    => [
-                    'required'  => '{field} Harus Diisi'
-                ]
-            ],
-            'no_telp' => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => '{field} Harus Diisi'
-                ]
-            ],
-            'jenis_barang' => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => '{field} Harus Diisi'
-                ]
-            ],
-            'seri' => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => '{field} Harus Diisi'
-                ]
-            ],
-            'kelengkapan' => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => '{field} Harus Diisi'
-                ]
-            ],
-            'jumlah' => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => '{field} Harus Diisi'
-                ]
-            ],
-            'kondisi' => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => '{field} Harus Diisi'
-                ]
-            ],
-            'tgl_gadai' => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => '{field} Harus Diisi'
-                ]
-            ],
-            'tgl_jatuh_tempo' => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => '{field} Harus Diisi'
-                ]
-            ],
-            'tgl_lelang' => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => '{field} Harus Diisi'
-                ]
-            ],
-            'jumlah_pinjaman' => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => '{field} Harus Diisi'
-                ]
-            ],
-            'bunga' => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => '{field} Harus Diisi'
+                    'required'  => 'Data Harus Diisi'
                 ]
             ],
             'kode_cabang' => [
                 'rules' => 'required',
                 'errors'    => [
-                    'required'  => '{field} Harus Diisi'
+                    'required'  => 'Data Harus Diisi'
                 ]
             ],
-            'status_bayar' => [
+            'no_telp' => [
+                'rules' => 'required|numeric|max_length[15]|min_length[10]',
+                'errors'    => [
+                    'required'  => 'Data Harus Diisi',
+                    'numeric'  => 'Data Hanya Berisi Angka',
+                    'max_length'  => 'Data Isi maximal 15 angka',
+                    'min_length'  => 'Data Isi minimal 10 angka',
+                ]
+            ],
+            'jenis_barang' => [
                 'rules' => 'required',
                 'errors'    => [
-                    'required'  => '{field} Harus Diisi'
+                    'required'  => 'Data Harus Diisi'
+                ]
+            ],
+            'seri' => [
+                'rules' => 'required',
+                'errors'    => [
+                    'required'  => 'Data Harus Diisi'
+                ]
+            ],
+            'kelengkapan' => [
+                'rules' => 'required',
+                'errors'    => [
+                    'required'  => 'Data Harus Diisi'
+                ]
+            ],
+            'jumlah' => [
+                'rules' => 'required|numeric',
+                'errors'    => [
+                    'required'  => 'Data Harus Diisi',
+                    'numeric'  => 'Data Hanya Berisi Angka'
+                ]
+            ],
+            'kondisi' => [
+                'rules' => 'required',
+                'errors'    => [
+                    'required'  => 'Data Harus Diisi'
+                ]
+            ],
+            'tgl_gadai' => [
+                'rules' => 'required',
+                'errors'    => [
+                    'required'  => 'Data Harus Diisi'
+                ]
+            ],
+            'tgl_jatuh_tempo' => [
+                'rules' => 'required',
+                'errors'    => [
+                    'required'  => 'Data Harus Diisi'
+                ]
+            ],
+            'tgl_lelang' => [
+                'rules' => 'required',
+                'errors'    => [
+                    'required'  => 'Data Harus Diisi'
+                ]
+            ],
+            'jumlah_pinjaman' => [
+                'rules' => 'required|alpha_numeric_punct|min_length[6]|max_length[30]',
+                'errors'    => [
+                    'required'  => 'Data Harus Diisi',
+                    'alpha_numeric_punct'  => 'Data Hanya Berisi Angka',
+                    'min_length'  => 'Pinjaman minimal Rp.100.000',
+                    'max_length'  => 'Pinjaman maksimal Rp.9.999.999.999'
                 ]
             ],
         ])) {
             session()->setFlashdata('errors', $this->validator->listErrors());
             return redirect()->back()->withInput();
         }
-        $jumlah_pinjaman = $this->request->getVar('jumlah_pinjaman');
-        $this->PegadaianModel->save([
+        $jumlah_pinjaman = preg_replace("/[^a-zA-Z0-9\s]/", "", $this->request->getVar('jumlah_pinjaman'));
+        $bungaP = $this->request->getVar('bungaP') / 100;
+        $bunga = intval($jumlah_pinjaman) * $bungaP;
+        $data = [
+            'kode_pinjaman' => $this->request->getVar('kode_pinjaman'),
             'id_nasabah' => $this->request->getVar('id_nasabah'),
             'no_telp' => $this->request->getVar('no_telp'),
             'jenis_barang' => $this->request->getVar('jenis_barang'),
@@ -148,24 +171,25 @@ class Pegadaian extends BaseController
             'tgl_gadai' => $this->request->getVar('tgl_gadai'),
             'tgl_jatuh_tempo' => $this->request->getVar('tgl_jatuh_tempo'),
             'tgl_lelang' => $this->request->getVar('tgl_lelang'),
-            'jumlah_pinjaman' => $jumlah_pinjaman,
-            'bunga' => $this->request->getVar('bunga'),
-            'kode_cabang' => $this->request->getVar('kode_cabang'),
-            'status_bayar' => $this->request->getVar('status_bayar')
-        ]);
+            'jumlah_pinjaman' =>  $jumlah_pinjaman,
+            'bunga' => intval($bunga),
+            'kode_cabang' => $this->request->getVar('kode_cabang')
+        ];
+        $this->PegadaianModel->simpan($data);
 
-        $get_sisa_kas =  $this->SaldoModel->getSisa();
-        if (!empty($this->SaldoModel->getSisa())) {
+        $kode_cabang = $this->request->getVar('kode_cabang');
+        $get_sisa_kas =  $this->SaldoModel->getSisa($kode_cabang);
+        if (!empty($this->SaldoModel->getSisa($kode_cabang))) {
             $sisa_kas = $get_sisa_kas[0]['sisa_kas'];
         } else {
             $sisa_kas = 0;
         }
-        $total_kas = $sisa_kas - $jumlah_pinjaman;
+        $total_kas = $sisa_kas - intval($jumlah_pinjaman);
         $this->SaldoModel->save([
             'jumlah_kas' => $jumlah_pinjaman,
             'sisa_kas' => $total_kas,
             'keterangan' => 'Transaksi Pegadaian Baru',
-            'kode_cabang' => '000',
+            'kode_cabang' => $this->request->getVar('kode_cabang'),
             'jenis' => 'keluar'
         ]);
         session()->setFlashdata('Pesan', 'Data Berhasil Ditambahkan');
@@ -191,85 +215,74 @@ class Pegadaian extends BaseController
             'id_nasabah' => [
                 'rules' => 'required',
                 'errors'    => [
-                    'required'  => '{field} Harus Diisi'
+                    'required'  => 'Data Harus Diisi'
                 ]
             ],
             'no_telp' => [
-                'rules' => 'required',
+                'rules' => 'required|numeric|max_length[15]|min_length[10]',
                 'errors'    => [
-                    'required'  => '{field} Harus Diisi'
+                    'required'  => 'Data Harus Diisi',
+                    'numeric'  => 'Data Hanya Berisi Angka',
+                    'max_length'  => 'Data Isi maximal 15 angka',
+                    'min_length'  => 'Data Isi minimal 10 angka',
                 ]
             ],
             'jenis_barang' => [
                 'rules' => 'required',
                 'errors'    => [
-                    'required'  => '{field} Harus Diisi'
+                    'required'  => 'Data Harus Diisi'
                 ]
             ],
             'seri' => [
                 'rules' => 'required',
                 'errors'    => [
-                    'required'  => '{field} Harus Diisi'
+                    'required'  => 'Data Harus Diisi'
                 ]
             ],
             'kelengkapan' => [
                 'rules' => 'required',
                 'errors'    => [
-                    'required'  => '{field} Harus Diisi'
+                    'required'  => 'Data Harus Diisi'
                 ]
             ],
             'jumlah' => [
-                'rules' => 'required',
+                'rules' => 'required|numeric',
                 'errors'    => [
-                    'required'  => '{field} Harus Diisi'
+                    'required'  => 'Data Harus Diisi',
+                    'numeric'  => 'Data Hanya Berisi Angka'
                 ]
             ],
             'kondisi' => [
                 'rules' => 'required',
                 'errors'    => [
-                    'required'  => '{field} Harus Diisi'
+                    'required'  => 'Data Harus Diisi'
                 ]
             ],
             'tgl_gadai' => [
                 'rules' => 'required',
                 'errors'    => [
-                    'required'  => '{field} Harus Diisi'
+                    'required'  => 'Data Harus Diisi'
                 ]
             ],
             'tgl_jatuh_tempo' => [
                 'rules' => 'required',
                 'errors'    => [
-                    'required'  => '{field} Harus Diisi'
+                    'required'  => 'Data Harus Diisi'
                 ]
             ],
             'tgl_lelang' => [
                 'rules' => 'required',
                 'errors'    => [
-                    'required'  => '{field} Harus Diisi'
+                    'required'  => 'Data Harus Diisi'
                 ]
             ],
             'jumlah_pinjaman' => [
-                'rules' => 'required',
+                'rules' => 'required|alpha_numeric_punct|min_length[6]|max_length[30]',
                 'errors'    => [
-                    'required'  => '{field} Harus Diisi'
-                ]
-            ],
-            'bunga' => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => '{field} Harus Diisi'
-                ]
-            ],
-            'kode_cabang' => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => '{field} Harus Diisi'
-                ]
-            ],
-            'status_bayar' => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => '{field} Harus Diisi'
+                    'required'  => 'Data Harus Diisi',
+                    'alpha_numeric_punct'  => 'Data Hanya Berisi Angka',
+                    'min_length'  => 'Pinjaman minimal Rp.100.000',
+                    'max_length'  => 'Pinjaman maksimal Rp.9.999.999.999'
                 ]
             ],
         ])) {
@@ -277,6 +290,9 @@ class Pegadaian extends BaseController
             return redirect()->back()->withInput();
         }
 
+        $jumlah_pinjaman = $this->request->getVar('jumlah_pinjaman');
+        $bungaP = $this->request->getVar('bungaP') / 100;
+        $bunga = $jumlah_pinjaman * $bungaP;
         $this->PegadaianModel->update($kode_pinjaman, [
             'id_nasabah' => $this->request->getVar('id_nasabah'),
             'no_telp' => $this->request->getVar('no_telp'),
@@ -288,12 +304,29 @@ class Pegadaian extends BaseController
             'tgl_gadai' => $this->request->getVar('tgl_gadai'),
             'tgl_jatuh_tempo' => $this->request->getVar('tgl_jatuh_tempo'),
             'tgl_lelang' => $this->request->getVar('tgl_lelang'),
-            'jumlah_pinjaman' => $this->request->getVar('jumlah_pinjaman'),
-            'bunga' => $this->request->getVar('bunga'),
+            'jumlah_pinjaman' => $jumlah_pinjaman,
+            'bunga' => $bunga,
             'kode_cabang' => $this->request->getVar('kode_cabang'),
             'status_bayar' => $this->request->getVar('status_bayar')
         ]);
 
+        $kode_cabang = $this->request->getVar('kode_cabang');
+        $get_sisa_kas =  $this->SaldoModel->getSisa($kode_cabang);
+        if (!empty($this->SaldoModel->getSisa($kode_cabang))) {
+            $sisa_kas = $get_sisa_kas[0]['sisa_kas'];
+        } else {
+            $sisa_kas = 0;
+        }
+        $total_kas = $sisa_kas - $jumlah_pinjaman;
+        $this->SaldoModel->update($kode_cabang, [
+            'jumlah_kas' => $jumlah_pinjaman,
+            'sisa_kas' => $total_kas,
+            'keterangan' => 'Transaksi Pegadaian Baru',
+            'kode_cabang' => $this->request->getVar('kode_cabang'),
+            'jenis' => 'keluar',
+        ]);
+        var_dump($total_kas);
+        die;
         session()->setFlashdata('Pesan', 'Data Berhasil Diubah');
         return redirect()->to('/datagadai');
     }

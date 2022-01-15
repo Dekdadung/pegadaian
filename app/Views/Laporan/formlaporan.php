@@ -67,7 +67,6 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputtext4">Kelengkapan</label>
-                    <!-- <input type="text" class="form-control" id="inputtext4"> -->
                     <textarea class="form-control" name="" id=""></textarea>
                 </div>
                 <div class="form-group col-md-6">

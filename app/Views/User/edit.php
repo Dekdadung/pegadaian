@@ -40,6 +40,22 @@
                             id="inputtext4">
                     </div>
                 </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputtext4">Cabang</label>
+                        <div class="form-label-group">
+                            <select class="form-control" name="cabang">
+                                <option hidden selected=""><?= $user['cabang']; ?></option>
+                                <?php foreach ($cabang as $row) : ?>
+                                <option value="<?= $row['kode_cabang']; ?>">
+                                    <?= $row['nama_cabang']; ?>
+                                </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="card-footer">
                 <button class="btn btn-primary" type="submit">Submit</button>
