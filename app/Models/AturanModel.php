@@ -14,7 +14,7 @@ class AturanModel extends Model
     public function simpan($data)
     {
         $db      = \Config\Database::connect();
-        $builder = $db->table('cabang');
+        $builder = $db->table('peraturan');
         return $builder->insert($data);
     }
 }

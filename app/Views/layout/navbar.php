@@ -25,6 +25,7 @@ $session = session();
                                 Nasabah</a></li>
                         <li><a href="<?= site_url('datauser') ?>" class="dropdown-item">Data
                                 User</a></li>
+                        <li><a href="<?= site_url('dataaturan') ?>" class="dropdown-item">Peraturan</a></li>
                     </ul>
                 </li>
                 <li class="nav-item"><a href="<?= site_url('laporan') ?>" class="nav-link">Laporan</a>
@@ -35,16 +36,15 @@ $session = session();
                 <li class="nav-item"><a href="<?= site_url('dashboard') ?>" class="nav-link">Dashboard</a>
                 </li>
                 <li class="nav-item"><a href="<?= site_url('datagadai') ?>" class="nav-link">Pegadaian</a>
-                <li class="nav-item"><a href="<?= site_url('datacabang') ?>" class="nav-link">Cabang</a>
-                <li class="nav-item dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle"
+                <li class="nav-item"><a href="<?= site_url('datanasabah') ?>" class="nav-link">Data
+                        Nasabah</a>
+                    <!-- <li class="nav-item dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle"
                         aria-expanded="false">Pengaturan</a>
                     <ul class="dropdown-menu">
                         <li><a href="<?= site_url('datanasabah') ?>" class="dropdown-item">Data
                                 Nasabah</a></li>
-                        <li><a href="<?= site_url('datauser') ?>" class="dropdown-item">Data
-                                User</a></li>
                     </ul>
-                </li>
+                </li> -->
                 <li class="nav-item"><a href="<?= site_url('laporan') ?>" class="nav-link">Laporan</a>
                 </li>
             </ul>

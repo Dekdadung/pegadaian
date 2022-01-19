@@ -10,25 +10,17 @@
     </div>
     <div class="card">
         <div class="card-body">
-            <form action="/aturan/update/<?= $aturan['id_aturan']; ?>" method="post">
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputtext4">Kode Cabang</label>
-                        <input type="text" name="kode_cabang" class="form-control" id="inputtext4">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputtext4">Bunga</label>
-                        <input type="text" name="bunga" class="form-control" id="inputtext4">
-                    </div>
-                </div>
+            <form action="/aturan/create" method="post">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Denda</label>
-                        <input type="text" name="denda" class="form-control" id="inputtext4">
+                        <input type="text" name="denda" class="form-control" id="inputtext4"
+                            placeholder="Masukkan Persen denda tanpa tanda %">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputtext4">Kode Toko</label>
-                        <input type="text" name="kode_toko" class="form-control" id="inputtext4">
+                        <label for="inputtext4">Bunga</label>
+                        <input type="text" name="bunga" class="form-control" id="inputtext4"
+                            placeholder="Masukkan Persen Bunga tanpa tanda %">
                     </div>
                 </div>
                 <div class="card-footer">

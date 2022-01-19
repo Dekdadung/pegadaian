@@ -14,28 +14,44 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Kode Cabang</label>
-                        <input type="text" name="kode_cabang" value="<?= $cabang['kode_cabang']; ?>"
-                            class="form-control" id="inputtext4">
+                        <input type="text" name="kode_cabang"
+                            class="form-control <?= ($validation->hasError('kode_cabang')) ? 'is-invalid' : ''; ?>"
+                            id="inputtext4" value="<?= $cabang['kode_cabang']; ?>">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('kode_cabang'); ?>
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Nama Cabang</label>
-                        <input type="text" name="nama_cabang" value="<?= $cabang['nama_cabang']; ?>"
-                            class="form-control" id="inputtext4">
+                        <input type="text" name="nama_cabang"
+                            class="form-control <?= ($validation->hasError('nama_cabang')) ? 'is-invalid' : ''; ?>"
+                            id="inputtext4" value="<?= $cabang['nama_cabang']; ?>">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('nama_cabang'); ?>
+                        </div>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Alamat</label>
-                        <textarea class="form-control" name="alamat"><?= $cabang['alamat']; ?></textarea>
+                        <textarea class="form-control <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>"
+                            name="alamat"></textarea>
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('alamat'); ?>
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Kode Toko</label>
-                        <input type="text" name="kode_toko" value="<?= $cabang['kode_toko']; ?>" class="form-control"
-                            id="inputtext4">
+                        <input type="text" name="kode_toko"
+                            class="form-control <?= ($validation->hasError('kode_toko')) ? 'is-invalid' : ''; ?>"
+                            id="inputtext4" value="<?= $cabang['kode_toko']; ?>">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('kode_toko'); ?>
+                        </div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
         </div>

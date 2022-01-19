@@ -11,12 +11,28 @@ class PegadaianModel extends Model
     protected $allowedFields = ['id_nasabah', 'no_telp', 'jenis_barang', 'seri', 'kelengkapan', 'jumlah', 'kondisi', 'tgl_gadai', 'tgl_jatuh_tempo', 'tgl_lelang', 'jumlah_pinjaman', 'bunga', 'kode_cabang', 'status_bayar'];
     protected $returnType = 'array';
 
-    public function getDataGadai()
+    public function getDataGadai($kode_cabang = null)
     {
-        return $this->db->table('pinjamangadai')
-            ->join('nasabah', 'nasabah.id_nasabah = pinjamangadai.id_nasabah')
-            ->join('cabang', 'cabang.kode_cabang = pinjamangadai.kode_cabang')
-            ->get()->getResultObject();
+        $this->db->table('pinjamangadai');
+        $this->join('nasabah', 'nasabah.id_nasabah = pinjamangadai.id_nasabah');
+        $this->join('cabang', 'cabang.kode_cabang = pinjamangadai.kode_cabang');
+        // $query = $this->query("SELECT * FROM pinjamangadai WHERE tgl_jatuh_tempo = date(NOW())");
+        // $dd = $query->getResultArray();
+        // dd($dd);
+        // die;
+        if (!empty($kode_cabang) && $kode_cabang != 'FG00') {
+            $this->where('pinjamangadai.kode_cabang', $kode_cabang);
+        }
+        return $this->get()->getResultObject();
+    }
+
+    public function sortDate()
+    {
+        $this->select('*');
+        $this->from('documents');
+        $this->where('DATE(Now())');
+        $query = $this->get();
+        return $query->result();
     }
 
     public function create_kode_pinjaman($cabang_kode)

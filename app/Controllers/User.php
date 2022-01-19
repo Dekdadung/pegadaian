@@ -29,7 +29,8 @@ class User extends BaseController
     {
         $data = [
             'title' => 'Form Data User',
-            'cabang' => $this->CabangModel->findAll()
+            'cabang' => $this->CabangModel->findAll(),
+            'validation' => \Config\Services::validation()
         ];
         return view('user/formuser', $data);
     }
@@ -83,7 +84,8 @@ class User extends BaseController
         $data = [
             'user'  => $this->UserModel->find($id_user),
             'cabang' => $this->CabangModel->findAll(),
-            'title' => 'Form Data User'
+            'title' => 'Form Data User',
+            'validation' => \Config\Services::validation()
         ];
 
         return view('user/edit', $data);

@@ -1,3 +1,7 @@
+<?php
+$session = session();
+?>
+
 <?= $this->extend('layout/default') ?>
 <?= $this->section('content') ?>
 
@@ -10,6 +14,7 @@
         <div class="section-header-button">
 
         </div>
+        <?php if ($session->get('level') == 'superadmin') :  ?>
         <div class="section-header-breadcrumb">
             <form action="" method="get">
                 <div class="form-control">
@@ -26,7 +31,10 @@
                 </div>
             </form>
         </div>
+        <?php else : ?>
+        <?php endif ?>
     </div>
+
     <div class="card">
         <div class="card-body">
             <form action="/pegadaian/save" method="post" id="myForm">
@@ -89,9 +97,17 @@
                             <?= $validation->getError('jumlah_pinjaman'); ?>
                         </div>
                     </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputtext4">Bunga %</label>
-                        <input type="number" class="form-control" min="1" max="100" id="myPercent" name="bungaP">
+                    <div class="form-group col-md-6">
+                        <label for="inputtext4">Bunga</label>
+                        <div class="form-label-group">
+                            <select class="form-control" name="bungaP">
+                                <?php foreach ($aturan as $row) : ?>
+                                <option value="<?= $row['bunga']; ?>">
+                                    <?= $row['bunga']; ?>%
+                                </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
                     </div>
                     <div class="form-group col-md-4" hidden>
                         <label for="inputtext4">Bunga</label>

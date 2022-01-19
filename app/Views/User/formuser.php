@@ -15,7 +15,13 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Nama User</label>
-                        <input type="text" name="nama_user" class="form-control" id="inputtext4">
+                        <input type="text" name="nama_user"
+                            class="form-control <?= ($validation->hasError('nama_user')) ? 'is-invalid' : ''; ?>"
+                            id="inputtext4">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('nama_user'); ?>
+                        </div>
+
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Level</label>
@@ -30,11 +36,23 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Username</label>
-                        <input type="text" name="username" class="form-control" id="inputtext4">
+                        <input type="text" name="username"
+                            class="form-control <?= ($validation->hasError('username')) ? 'is-invalid' : ''; ?>"
+                            id="inputtext4">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('username'); ?>
+                        </div>
+
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Password</label>
-                        <input type="text" name="password" class="form-control" id="inputtext4">
+                        <input type="text" name="password"
+                            class="form-control <?= ($validation->hasError('password')) ? 'is-invalid' : ''; ?>"
+                            id="inputtext4">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('password'); ?>
+                        </div>
+
                     </div>
                 </div>
 

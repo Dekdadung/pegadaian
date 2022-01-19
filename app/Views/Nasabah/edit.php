@@ -1,3 +1,7 @@
+<?php
+$session = session();
+?>
+
 <?= $this->extend('layout/default') ?>
 <?= $this->section('content') ?>
 
@@ -43,10 +47,10 @@
                         </div>
                     </div>
                     <div class="form-group col-md-6">
+                        <?php if ($session->get('level') == 'superadmin') :  ?>
                         <label for="inputtext4">Kode Cabang</label>
                         <select class="form-control <?= ($validation->hasError('kode_cabang')) ? 'is-invalid' : ''; ?>"
                             name=" kode_cabang">
-                            <option hidden selected=""><?= $nasabah['kode_cabang']; ?></option>
                             <?php foreach ($cabang as $row) : ?>
                             <option value="<?= $row['kode_cabang']; ?>">
                                 <?= $row['nama_cabang']; ?>
@@ -56,9 +60,30 @@
                         <div class="invalid-feedback">
                             <?= $validation->getError('kode_cabang'); ?>
                         </div>
+                        <?php else : ?>
+                        <label for="inputtext4">Kode Cabang</label>
+                        <input type="text" name="kode_cabang" hidden
+                            class="form-control <?= ($validation->hasError('kode_cabang')) ? 'is-invalid' : ''; ?>"
+                            id="inputtext4" value="<?= $kode_cabang ?>">
+                        <input type="text" name="kode_cabang" disabled
+                            class="form-control <?= ($validation->hasError('kode_cabang')) ? 'is-invalid' : ''; ?>"
+                            id="inputtext4" value="<?= $kode_cabang ?>">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('kode_cabang'); ?>
+                        </div>
+                        <?php endif ?>
                     </div>
                 </div>
                 <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputtext4">NIK Nasabah</label>
+                        <input type="text" name="nik"
+                            class="form-control <?= ($validation->hasError('nik')) ? 'is-invalid' : ''; ?>" id="
+                            inputtext4" value="<?= $nasabah['nik']; ?>">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('nik'); ?>
+                        </div>
+                    </div>
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Status</label>
                         <div class="form-label-group">

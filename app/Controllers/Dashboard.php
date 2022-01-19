@@ -6,6 +6,7 @@ use App\Models\PegadaianModel;
 use App\Models\SaldoModel;
 use App\Models\PembayaranModel;
 use App\Models\CabangModel;
+use App\Models\PendapatanModel;
 
 class Dashboard extends BaseController
 {
@@ -13,6 +14,7 @@ class Dashboard extends BaseController
     protected $SaldoModel;
     protected $PembayaranModel;
     protected $CabangModel;
+    protected $PendapatanModel;
 
     public function __construct()
     {
@@ -20,14 +22,16 @@ class Dashboard extends BaseController
         $this->SaldoModel = new SaldoModel();
         $this->PembayaranModel = new PembayaranModel();
         $this->CabangModel = new CabangModel();
+        $this->PendapatanModel = new PendapatanModel();
         helper('currency');
     }
 
     public function index()
     {
-        $kode_cabang = @$_GET['kode_cabang'];
+        $cek_cabang_user = session('kode_cabang');
+        $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
         $saldo = (!empty($this->SaldoModel->getSisa($kode_cabang)[0]['sisa_kas']) ? $this->SaldoModel->getSisa($kode_cabang)[0]['sisa_kas'] : '0');
-        $data_gadai = $this->PegadaianModel->getDataGadai();
+        $data_gadai = $this->PegadaianModel->getDataGadai($kode_cabang);
         $data = [
             'title' => 'Dashboard',
             'home' => $data_gadai,
@@ -36,7 +40,7 @@ class Dashboard extends BaseController
             'kode_cabang_sekarang' => $kode_cabang,
             // 'sisa_saldo' => $this->SaldoModel->getTotalSaldo()[0]['jumlah_kas'],
             'totalpinjam' => $this->PegadaianModel->getTotalPinjaman()[0]['jumlah_pinjaman'],
-            'totaldapat' => $this->PembayaranModel->getTotalPendapatan()[0]['jumlah_bayar']
+            'totaldapat' => $this->PendapatanModel->getTotalPendapatan()[0]['jumlah_untung']
         ];
         return view('dashboard/homepage', $data);
     }

@@ -55,8 +55,8 @@ $(document).ready(function(){
         // console.log(data_row);
         // alert('assa');
     });
-
-    $("#mytable").dataTable();
+    // $("#mytable").dataTable();
+    
     // document.getElementById('myForm').onsubmit = function() {
     //     var valInDecimals = document.getElementById('myPercent').value / 100;
     // } 

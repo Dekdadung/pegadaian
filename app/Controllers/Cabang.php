@@ -25,6 +25,7 @@ class Cabang extends BaseController
     {
         $data = [
             'title' => 'Form Data cabang',
+            'validation' => \Config\Services::validation()
         ];
         return view('cabang/formcabang', $data);
     }
@@ -81,7 +82,8 @@ class Cabang extends BaseController
     {
         $data = [
             'cabang'  => $this->CabangModel->find($kode_cabang),
-            'title' => 'Form Data cabang'
+            'title' => 'Form Data cabang',
+            'validation' => \Config\Services::validation()
         ];
 
         return view('cabang/edit', $data);

@@ -1,5 +1,6 @@
-<?= $this->extend('layout/default'); ?>
-<?= $this->section('content'); ?>
+<?= $this->extend('layout/default') ?>
+<?= $this->section('content') ?>
+
 <section class="section">
     <div class="section-header">
         <div class="section-header-back">
@@ -8,22 +9,25 @@
         <h1>Ubah Data User</h1>
     </div>
     <div class="card">
-        <form action="/user/update/<?= $user['id_user']; ?>" method="post">
-            <div class="card-body">
+        <div class="card-body">
+            <form action="/user/update/<?= $user['id_user']; ?>" method="post">
                 <?= csrf_field(); ?>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Nama User</label>
-                        <input type="text" name="nama_user" value="<?= $user['nama_user']; ?>" class="form-control"
-                            id="inputtext4">
+                        <input type="text" name="nama_user"
+                            class="form-control <?= ($validation->hasError('nama_user')) ? 'is-invalid' : ''; ?>"
+                            id="inputtext4" value="<?= $user['nama_user']; ?>">
+                        <div class=" invalid-feedback">
+                            <?= $validation->getError('nama_user'); ?>
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Level</label>
                         <div class="form-label-group">
                             <select class="form-control" name="level">
-                                <option hidden selected=""><?= $user['level']; ?></option>
-                                <option value="admin">Admin</option>
-                                <option value="superadmin">SuperAdmin</option>
+                                <option value="admin">admin</option>
+                                <option value="superadmin">superadmin</option>
                             </select>
                         </div>
                     </div>
@@ -31,22 +35,37 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Username</label>
-                        <input type="text" name="username" value="<?= $user['username']; ?>" class="form-control"
-                            id="inputtext4">
+                        <input type="text" name="username"
+                            class="form-control <?= ($validation->hasError('username')) ? 'is-invalid' : ''; ?>"
+                            id="inputtext4" value="<?= $user['username']; ?>">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('username'); ?>
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Password</label>
-                        <input type="text" name="password" value="<?= $user['password']; ?>" class="form-control"
+                        <input type="text" name="password"
+                            class="form-control <?= ($validation->hasError('password')) ? 'is-invalid' : ''; ?>"
                             id="inputtext4">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('password'); ?>
+                        </div>
                     </div>
                 </div>
-
                 <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputtext4">NIK Nasabah</label>
+                        <input type="text" name="nik"
+                            class="form-control <?= ($validation->hasError('nik')) ? 'is-invalid' : ''; ?>" id="
+                            inputtext4">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('nik'); ?>
+                        </div>
+                    </div>
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Cabang</label>
                         <div class="form-label-group">
                             <select class="form-control" name="cabang">
-                                <option hidden selected=""><?= $user['cabang']; ?></option>
                                 <?php foreach ($cabang as $row) : ?>
                                 <option value="<?= $row['kode_cabang']; ?>">
                                     <?= $row['nama_cabang']; ?>
@@ -56,11 +75,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card-footer">
-                <button class="btn btn-primary" type="submit">Submit</button>
-            </div>
-        </form>
+                <div class="card-footer">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
 </section>
 <?= $this->endSection() ?>

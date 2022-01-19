@@ -7,6 +7,8 @@ use App\Models\NasabahModel;
 use App\Models\CabangModel;
 use App\Models\SaldoModel;
 use App\Models\PembayaranModel;
+use App\Models\PendapatanModel;
+use App\Models\AturanModel;
 
 class Pegadaian extends BaseController
 {
@@ -17,6 +19,8 @@ class Pegadaian extends BaseController
     protected $cabang;
     protected $telp;
     protected $PembayaranModel;
+    protected $PendapatanModel;
+    protected $AturananModel;
 
     public function __construct()
     {
@@ -25,12 +29,16 @@ class Pegadaian extends BaseController
         $this->CabangModel = new CabangModel();
         $this->SaldoModel = new SaldoModel();
         $this->PembayaranModel = new PembayaranModel();
+        $this->PendapatanModel = new PendapatanModel();
+        $this->AturanModel = new AturanModel();
         helper('currency');
     }
 
     public function index()
     {
-        $data_gadai = $this->PegadaianModel->getDataGadai();
+        $cek_cabang_user = session('kode_cabang');
+        $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
+        $data_gadai = $this->PegadaianModel->getDataGadai($kode_cabang);
         $data = [
             'title' => 'Data Gadai',
             'gadai' => $data_gadai
@@ -40,7 +48,9 @@ class Pegadaian extends BaseController
 
     public function create()
     {
-        $kode_cabang = @$_GET['kode_cabang'];
+        $cek_cabang_user = session('kode_cabang');
+        $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
+        // $kode_cabang = @$_GET['kode_cabang'];
         $kode_pinjaman = 'Pilih Cabang terlebih dahulu';
         if (!empty($kode_cabang)) {
             $this->cabang = $kode_cabang;
@@ -48,21 +58,22 @@ class Pegadaian extends BaseController
         }
         $this->cabang = $kode_cabang;
 
-        $id_nasabah = @$_GET['id_nasabah'];
-        $telp_nasabah = 'Pilih Nasabah';
-        if (!empty($id_nasabah)) {
-            $this->telp = $id_nasabah;
-            $telp_nasabah = $this->PegadaianModel->getTelp($this->telp);
-        }
-        $this->telp = $id_nasabah;
+        // $id_nasabah = @$_GET['id_nasabah'];
+        // $telp_nasabah = 'Pilih Nasabah';
+        // if (!empty($id_nasabah)) {
+        //     $this->telp = $id_nasabah;
+        //     $telp_nasabah = $this->PegadaianModel->getTelp($this->telp);
+        // }
+        // $this->telp = $id_nasabah;
 
         $data = [
             'gadai' => $this->PegadaianModel->findAll(),
             'nasabah' => $this->NasabahModel->findAll(),
             'cabang' => $this->CabangModel->findAll(),
             'saldo' => $this->SaldoModel->findAll(),
+            'aturan' => $this->AturanModel->findAll(),
             'kode_cabang' => $kode_cabang,
-            'telpNasabah' => $telp_nasabah,
+            // 'telpNasabah' => $telp_nasabah,
             // 'title' => 'Form Data Gadai',
             'kode_pinjaman' => $kode_pinjaman,
             'validation' => \Config\Services::validation()
@@ -192,6 +203,96 @@ class Pegadaian extends BaseController
             'kode_cabang' => $this->request->getVar('kode_cabang'),
             'jenis' => 'keluar'
         ]);
+
+        $this->PendapatanModel->save([
+            'jumlah_untung' => $bunga,
+            'kd_pinjaman' => $this->request->getVar('kode_pinjaman'),
+            'jenis' => 'Bunga'
+        ]);
+        session()->setFlashdata('Pesan', 'Data Berhasil Ditambahkan');
+        return redirect()->to('/datagadai');
+    }
+
+    public function create2($kode_pinjaman)
+    {
+        $cek_cabang_user = session('kode_cabang');
+        $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
+        // $kode_cabang = @$_GET['kode_cabang'];
+        // $kode_pinjaman = 'Pilih Cabang terlebih dahulu';
+        // if (!empty($kode_cabang)) {
+        //     $this->cabang = $kode_cabang;
+        //     $kode_pinjaman = $this->PegadaianModel->create_kode_pinjaman($this->cabang);
+        // }
+        // $this->cabang = $kode_cabang;
+
+        // $id_nasabah = @$_GET['id_nasabah'];
+        // $telp_nasabah = 'Pilih Nasabah';
+        // if (!empty($id_nasabah)) {
+        //     $this->telp = $id_nasabah;
+        //     $telp_nasabah = $this->PegadaianModel->getTelp($this->telp);
+        // }
+        // $this->telp = $id_nasabah;
+
+
+        $data = [
+            'gadai' => $this->PegadaianModel->find($kode_pinjaman),
+            'nasabah' => $this->NasabahModel->findAll(),
+            'cabang' => $this->CabangModel->findAll(),
+            'saldo' => $this->SaldoModel->findAll(),
+            'kode_cabang' => $kode_cabang,
+            // 'telpNasabah' => $telp_nasabah,
+            // 'title' => 'Form Data Gadai',
+            // 'kode_pinjaman' => $kode_pinjaman,
+            'validation' => \Config\Services::validation()
+        ];
+        return view('pegadaian/formdenda', $data);
+    }
+
+    public function save2()
+    {
+        if (!$this->validate([
+            'kd_pinjaman' => [
+                'rules' => 'required',
+                'errors'    => [
+                    'required'  => 'Data Harus Diisi'
+                ]
+            ],
+            'tgl_jatuh_tempo' => [
+                'rules' => 'required',
+                'errors'    => [
+                    'required'  => 'Data Harus Diisi'
+                ]
+            ],
+            'tgl_lelang' => [
+                'rules' => 'required',
+                'errors'    => [
+                    'required'  => 'Data Harus Diisi'
+                ]
+            ],
+            'jumlah_pinjaman' => [
+                'rules' => 'required|alpha_numeric_punct|min_length[6]|max_length[30]',
+                'errors'    => [
+                    'required'  => 'Data Harus Diisi',
+                    'alpha_numeric_punct'  => 'Data Hanya Berisi Angka',
+                    'min_length'  => 'Pinjaman minimal Rp.100.000',
+                    'max_length'  => 'Pinjaman maksimal Rp.9.999.999.999'
+                ]
+            ],
+        ])) {
+            session()->setFlashdata('errors', $this->validator->listErrors());
+            return redirect()->back()->withInput();
+        }
+
+        $jumlah_pinjaman = preg_replace("/[^a-zA-Z0-9\s]/", "", $this->request->getVar('jumlah_pinjaman'));
+        $dendaP = $this->request->getVar('dendaP') / 100;
+        $denda = intval($jumlah_pinjaman) * $dendaP;
+        $this->PendapatanModel->save([
+            'jumlah_untung' => $denda,
+            'kd_pinjaman' => $this->request->getVar('kode_pinjaman'),
+            'jenis' => 'Denda'
+        ]);
+
+
         session()->setFlashdata('Pesan', 'Data Berhasil Ditambahkan');
         return redirect()->to('/datagadai');
     }

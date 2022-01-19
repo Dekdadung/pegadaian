@@ -1,9 +1,0 @@
-__ci_last_regenerate|i:1642051806;_ci_previous_url|s:48:"http://localhost:8080/formgadai?kode_cabang=FG02";errors|s:226:"<!-- DEBUG-VIEW START 1 SYSTEMPATH\Validation\Views\list.php -->
-	<div class="errors" role="alert">
-		<ul>
-					<li>bunga Harus Diisi</li>
-				</ul>
-	</div>
-
-<!-- DEBUG-VIEW ENDED 1 SYSTEMPATH\Validation\Views\list.php -->
-";__ci_vars|a:3:{s:6:"errors";s:3:"old";s:13:"_ci_old_input";s:3:"old";s:21:"_ci_validation_errors";s:3:"old";}_ci_old_input|a:2:{s:3:"get";a:0:{}s:4:"post";a:15:{s:11:"kode_cabang";s:4:"FG02";s:13:"kode_pinjaman";s:9:"CB2-22201";s:9:"tgl_gadai";s:10:"2022-01-13";s:10:"id_nasabah";s:1:"7";s:15:"tgl_jatuh_tempo";s:10:"2022-01-13";s:7:"no_telp";s:11:"08120546418";s:10:"tgl_lelang";s:10:"2022-01-13";s:15:"jumlah_pinjaman";s:7:"2000000";s:6:"bungaP";s:2:"10";s:5:"bunga";s:0:"";s:12:"jenis_barang";s:9:"Perhiasan";s:4:"seri";s:6:"GOLDEN";s:6:"jumlah";s:1:"1";s:11:"kelengkapan";s:11:"Surat Suara";s:7:"kondisi";s:5:"Bekas";}}_ci_validation_errors|s:43:"a:1:{s:5:"bunga";s:17:"bunga Harus Diisi";}";

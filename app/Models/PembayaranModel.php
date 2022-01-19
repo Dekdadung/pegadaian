@@ -11,7 +11,7 @@ class PembayaranModel extends Model
     protected $allowedFields = ['kode_pinjaman', 'tgl_bayar', 'jumlah_bayar', 'keterangan'];
     protected $returnType = 'array';
 
-    public function getTotalPendapatan()
+    public function getTotalPembayaran()
     {
         $builder = $this->selectSum('jumlah_bayar');
         $data = $builder->get()->getResultArray();

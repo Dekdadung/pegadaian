@@ -17,19 +17,29 @@ class Nasabah extends BaseController
 
     public function index()
     {
+        $cek_cabang_user = session('kode_cabang');
+        $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
+        $data_nasabah = $this->NasabahModel->getDataNasabah($kode_cabang);
         $data = [
             'title' => 'Data nasabah',
-            'nasabah' => $this->NasabahModel->getDataNasabah()
+            'nasabah' => $data_nasabah
         ];
         return view('nasabah/datanasabah', $data);
     }
 
     public function create()
     {
+        $cek_cabang_user = session('kode_cabang');
+        $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
+        if (!empty($kode_cabang)) {
+            $this->cabang = $kode_cabang;
+        }
+        $this->cabang = $kode_cabang;
         $data = [
             'nasabah' => $this->NasabahModel->findAll(),
             'cabang' => $this->CabangModel->findAll(),
             'title' => 'Form Data nasabah',
+            'kode_cabang' => $kode_cabang,
             'validation' => \Config\Services::validation()
         ];
         return view('nasabah/formnasabah', $data);
@@ -68,18 +78,26 @@ class Nasabah extends BaseController
                     'required'  => '{field} Harus Diisi'
                 ]
             ],
+            'nik' => [
+                'rules' => 'required',
+                'errors'    => [
+                    'required'  => '{field} Harus Diisi'
+                ]
+            ],
         ])) {
             session()->setFlashdata('errors', $this->validator->listErrors());
             return redirect()->back()->withInput();
         }
 
-        $this->NasabahModel->save([
+        $data = [
             'nama' => $this->request->getVar('nama'),
             'alamat_nasabah' => $this->request->getVar('alamat_nasabah'),
             'no_telp' => $this->request->getVar('no_telp'),
             'kode_cabang' => $this->request->getVar('kode_cabang'),
-            'status' => $this->request->getVar('status')
-        ]);
+            'status' => $this->request->getVar('status'),
+            'nik' => $this->request->getVar('nik')
+        ];
+        $this->NasabahModel->simpan($data);
 
         session()->setFlashdata('Pesan', 'Data Berhasil Ditambahkan');
         return redirect()->to('/datanasabah');
@@ -87,10 +105,17 @@ class Nasabah extends BaseController
 
     public function edit($id_nasabah)
     {
+        $cek_cabang_user = session('kode_cabang');
+        $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
+        if (!empty($kode_cabang)) {
+            $this->cabang = $kode_cabang;
+        }
+        $this->cabang = $kode_cabang;
         $data = [
             'nasabah'  => $this->NasabahModel->find($id_nasabah),
             'cabang' => $this->CabangModel->findAll(),
             'title' => 'Form Data nasabah',
+            'kode_cabang' => $kode_cabang,
             'validation' => \Config\Services::validation()
         ];
 
@@ -130,6 +155,12 @@ class Nasabah extends BaseController
                     'required'  => '{field} Harus Diisi'
                 ]
             ],
+            'nik' => [
+                'rules' => 'required',
+                'errors'    => [
+                    'required'  => '{field} Harus Diisi'
+                ]
+            ],
         ])) {
             session()->setFlashdata('errors', $this->validator->listErrors());
             return redirect()->back()->withInput();
@@ -140,7 +171,8 @@ class Nasabah extends BaseController
             'alamat_nasabah' => $this->request->getVar('alamat_nasabah'),
             'no_telp' => $this->request->getVar('no_telp'),
             'kode_cabang' => $this->request->getVar('kode_cabang'),
-            'status' => $this->request->getVar('status')
+            'status' => $this->request->getVar('status'),
+            'nik' => $this->request->getVar('nik')
         ]);
 
         session()->setFlashdata('Pesan', 'Data Berhasil Diubah');

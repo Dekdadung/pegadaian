@@ -36,11 +36,11 @@
                     ?>
                     <tr>
                         <td><?= $no++; ?></td>
-                        <td><?= $row['nama']; ?></td>
-                        <td><?= $row['alamat_nasabah']; ?></td>
-                        <td><?= $row['no_telp']; ?></td>
-                        <td><?= $row['kode_cabang']; ?></td>
-                        <td><?= $row['status']; ?></td>
+                        <td><?= $row->nama; ?></td>
+                        <td><?= $row->alamat_nasabah; ?></td>
+                        <td><?= $row->no_telp; ?></td>
+                        <td><?= $row->kode_cabang; ?></td>
+                        <td><?= $row->status; ?></td>
                         <td>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
@@ -48,8 +48,8 @@
                                     Action
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="/nasabah/edit/<?= $row['id_nasabah']; ?>">Edit</a>
-                                    <a class="dropdown-item" href="/nasabah/delete/<?= $row['id_nasabah']; ?>"
+                                    <a class="dropdown-item" href="/nasabah/edit/<?= $row->id_nasabah; ?>">Edit</a>
+                                    <a class="dropdown-item" href="/nasabah/delete/<?= $row->id_nasabah; ?>"
                                         onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</a>
                                 </div>
                             </div>

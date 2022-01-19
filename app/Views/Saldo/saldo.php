@@ -41,7 +41,7 @@
                             <div class="text-center">
                                 <h5 class="display-4 fw-bold">Saldo Anda Sejumlah <?php echo rupiah($saldo); ?></h5>
                             </div>
-                            <h5 class="fw-bold">Terakhir Diisi Tanggal : <?php echo $tgl; ?></h5>
+                            <h5 class="fw-bold">Transaksi Terakhir : <?php echo $tgl; ?></h5>
                         </div>
                         <div class="col-md-10 mx-auto col-lg-5">
                             <form action="saldo/save" method="post" class="p-4 p-md-5 border rounded-3 bg-light">
