@@ -68,6 +68,7 @@ $session = session();
                                 <h4>Akan Jatuh Tempo</h4>
                             </div>
                             <div class="card-body">
+                                <h6><?php echo $jTempo; ?></h6>
                             </div>
                         </div>
                     </div>
@@ -138,6 +139,7 @@ $session = session();
                                 <h4>Akan Jatuh Tempo</h4>
                             </div>
                             <div class="card-body">
+                                <h6><?php echo $jTempo; ?></h6>
                             </div>
                         </div>
                     </div>
@@ -148,7 +150,7 @@ $session = session();
     </div>
 
     <div class="card-body table-responsive">
-        <table class="table table-striped table-md">
+        <table class="table table-striped table-sm">
             <tbody>
                 <tr class="text-center">
                     <th>No</th>

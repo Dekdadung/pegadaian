@@ -58,8 +58,8 @@ $session = session();
                         <div class="form-label-group">
                             <select class="form-control" name="id_nasabah">
                                 <?php foreach ($nasabah as $row) : ?>
-                                <option value="<?= $row['id_nasabah']; ?>">
-                                    <?= $row['nama']; ?>
+                                <option value="<?= $row->id_nasabah; ?>">
+                                    <?= $row->nama; ?>
                                 </option>
                                 <?php endforeach; ?>
                             </select>

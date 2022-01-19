@@ -10,7 +10,7 @@
     </div>
     <div class="card">
         <div class="card-body">
-            <form action="/aturan/create" method="post">
+            <form action="/aturan/save" method="post">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Denda</label>

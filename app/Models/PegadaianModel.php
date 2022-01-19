@@ -16,23 +16,27 @@ class PegadaianModel extends Model
         $this->db->table('pinjamangadai');
         $this->join('nasabah', 'nasabah.id_nasabah = pinjamangadai.id_nasabah');
         $this->join('cabang', 'cabang.kode_cabang = pinjamangadai.kode_cabang');
-        // $query = $this->query("SELECT * FROM pinjamangadai WHERE tgl_jatuh_tempo = date(NOW())");
-        // $dd = $query->getResultArray();
-        // dd($dd);
-        // die;
         if (!empty($kode_cabang) && $kode_cabang != 'FG00') {
             $this->where('pinjamangadai.kode_cabang', $kode_cabang);
         }
         return $this->get()->getResultObject();
     }
 
-    public function sortDate()
+    public function sortDate($kode_cabang = null)
     {
-        $this->select('*');
-        $this->from('documents');
-        $this->where('DATE(Now())');
-        $query = $this->get();
-        return $query->result();
+        // $this->select('*');
+        // $this->from('documents');
+        // $this->where('DATE(Now())');
+        // $query = $this->get();
+        // return $query->result();
+        // dd($data);
+        // die;
+
+        $query = $this->query("SELECT * FROM pinjamangadai WHERE tgl_jatuh_tempo = date(NOW()) && kode_cabang = '$kode_cabang'");
+        $data = $query->getResultArray();
+        // dd($data);
+        // die;
+        return count($data);
     }
 
     public function create_kode_pinjaman($cabang_kode)

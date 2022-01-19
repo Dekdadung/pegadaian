@@ -39,9 +39,11 @@ class Pegadaian extends BaseController
         $cek_cabang_user = session('kode_cabang');
         $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
         $data_gadai = $this->PegadaianModel->getDataGadai($kode_cabang);
+        // $jatuh_tempo = $this->PegadaianModel->sortDate($kode_cabang);
         $data = [
             'title' => 'Data Gadai',
             'gadai' => $data_gadai
+            // 'jTempo' => $jatuh_tempo
         ];
         return view('pegadaian/datagadai', $data);
     }
@@ -50,6 +52,7 @@ class Pegadaian extends BaseController
     {
         $cek_cabang_user = session('kode_cabang');
         $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
+        $data_nasabah = $this->NasabahModel->getDataNasabah($kode_cabang);
         // $kode_cabang = @$_GET['kode_cabang'];
         $kode_pinjaman = 'Pilih Cabang terlebih dahulu';
         if (!empty($kode_cabang)) {
@@ -58,17 +61,9 @@ class Pegadaian extends BaseController
         }
         $this->cabang = $kode_cabang;
 
-        // $id_nasabah = @$_GET['id_nasabah'];
-        // $telp_nasabah = 'Pilih Nasabah';
-        // if (!empty($id_nasabah)) {
-        //     $this->telp = $id_nasabah;
-        //     $telp_nasabah = $this->PegadaianModel->getTelp($this->telp);
-        // }
-        // $this->telp = $id_nasabah;
-
         $data = [
             'gadai' => $this->PegadaianModel->findAll(),
-            'nasabah' => $this->NasabahModel->findAll(),
+            'nasabah' => $data_nasabah,
             'cabang' => $this->CabangModel->findAll(),
             'saldo' => $this->SaldoModel->findAll(),
             'aturan' => $this->AturanModel->findAll(),
@@ -184,7 +179,8 @@ class Pegadaian extends BaseController
             'tgl_lelang' => $this->request->getVar('tgl_lelang'),
             'jumlah_pinjaman' =>  $jumlah_pinjaman,
             'bunga' => intval($bunga),
-            'kode_cabang' => $this->request->getVar('kode_cabang')
+            'kode_cabang' => $this->request->getVar('kode_cabang'),
+            'status_bayar' => 'Belum Lunas'
         ];
         $this->PegadaianModel->simpan($data);
 
@@ -303,6 +299,7 @@ class Pegadaian extends BaseController
             'gadai'  => $this->PegadaianModel->find($kode_pinjaman),
             'cabang' => $this->CabangModel->findAll(),
             'nasabah' => $this->NasabahModel->findAll(),
+            'aturan' => $this->AturanModel->findAll(),
             'title' => 'Form Data Gadai',
             'validation' => \Config\Services::validation()
         ];
@@ -391,9 +388,9 @@ class Pegadaian extends BaseController
             return redirect()->back()->withInput();
         }
 
-        $jumlah_pinjaman = $this->request->getVar('jumlah_pinjaman');
+        $jumlah_pinjaman = preg_replace("/[^a-zA-Z0-9\s]/", "", $this->request->getVar('jumlah_pinjaman'));
         $bungaP = $this->request->getVar('bungaP') / 100;
-        $bunga = $jumlah_pinjaman * $bungaP;
+        $bunga = intval($jumlah_pinjaman) * $bungaP;
         $this->PegadaianModel->update($kode_pinjaman, [
             'id_nasabah' => $this->request->getVar('id_nasabah'),
             'no_telp' => $this->request->getVar('no_telp'),
@@ -407,8 +404,7 @@ class Pegadaian extends BaseController
             'tgl_lelang' => $this->request->getVar('tgl_lelang'),
             'jumlah_pinjaman' => $jumlah_pinjaman,
             'bunga' => $bunga,
-            'kode_cabang' => $this->request->getVar('kode_cabang'),
-            'status_bayar' => $this->request->getVar('status_bayar')
+            'status_bayar' => 'Belum Lunas'
         ]);
 
         $kode_cabang = $this->request->getVar('kode_cabang');

@@ -69,9 +69,17 @@
                         <input type="text" class="form-control" id="rupiah" name="jumlah_pinjaman"
                             value="<?= $gadai['jumlah_pinjaman']; ?>">
                     </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputtext4">Bunga %</label>
-                        <input type="number" class="form-control" min="1" max="100" id="myPercent" name="bungaP">
+                    <div class="form-group col-md-6">
+                        <label for="inputtext4">Bunga</label>
+                        <div class="form-label-group">
+                            <select class="form-control" name="bungaP">
+                                <?php foreach ($aturan as $row) : ?>
+                                <option value="<?= $row['bunga']; ?>">
+                                    <?= $row['bunga']; ?>%
+                                </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
                     </div>
                     <div class="form-group col-md-4" hidden>
                         <label for="inputtext4">Bunga</label>
@@ -98,7 +106,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Kelengkapan</label>
-                        <textarea class="form-control" id="" name="kelengkapan"><?= $gadai['jumlah']; ?></textarea>
+                        <textarea class="form-control" id="" name="kelengkapan"><?= $gadai['kelengkapan']; ?></textarea>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Kondisi</label>
@@ -107,31 +115,6 @@
                                 <option hidden selected=""><?= $gadai['kondisi']; ?></option>
                                 <option value="Baru">Baru</option>
                                 <option value="Bekas">Bekas</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputtext4">Kode Cabang</label>
-                        <div class="form-label-group">
-                            <select class="form-control" name="kode_cabang">
-                                <option hidden selected=""><?= $gadai['kode_cabang']; ?></option>
-                                <?php foreach ($cabang as $row) : ?>
-                                <option value="<?= $row['kode_cabang']; ?>">
-                                    <?= $row['nama_cabang']; ?>
-                                </option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputtext4">Satus Bayar</label>
-                        <div class="form-label-group">
-                            <select class="form-control" name="status_bayar">
-                                <option hidden selected=""><?= $gadai['status_bayar']; ?></option>
-                                <option value="Lunas">Lunas</option>
-                                <option value="Belum Lunas">Belum Lunas</option>
                             </select>
                         </div>
                     </div>

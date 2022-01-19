@@ -16,13 +16,15 @@ class SaldoModel extends Model
 
     public function getSisa($kode_cabang = null)
     {
-        $builder = $this->select('sisa_kas, tgl_masuk');
+        $builder = $this->select('sisa_kas, tgl_masuk, kode_cabang');
         $builder = $this->orderBy('id_kas', 'DESC');
         $builder = $this->limit(1);
         if (!empty($kode_cabang) && $kode_cabang != 'FG00') {
             $builder = $this->where('kode_cabang', $kode_cabang);
         }
         $data = $builder->get()->getResultArray();
+        // dd($data);
+        // die;
         return $data;
     }
 
