@@ -11,13 +11,17 @@ class PegadaianModel extends Model
     protected $allowedFields = ['id_nasabah', 'no_telp', 'jenis_barang', 'seri', 'kelengkapan', 'jumlah', 'kondisi', 'tgl_gadai', 'tgl_jatuh_tempo', 'tgl_lelang', 'jumlah_pinjaman', 'bunga', 'kode_cabang', 'status_bayar'];
     protected $returnType = 'array';
 
-    public function getDataGadai($kode_cabang = null)
+    public function getDataGadai($kode_cabang = null, $dataSekarang = null)
     {
         $this->db->table('pinjamangadai');
         $this->join('nasabah', 'nasabah.id_nasabah = pinjamangadai.id_nasabah');
         $this->join('cabang', 'cabang.kode_cabang = pinjamangadai.kode_cabang');
         if (!empty($kode_cabang) && $kode_cabang != 'FG00') {
             $this->where('pinjamangadai.kode_cabang', $kode_cabang);
+        }
+
+        if (!empty($dataSekarang) && $dataSekarang == 'hariIni') {
+            $this->where('pinjamangadai.tgl_gadai', date('Y-m-d'));
         }
         return $this->get()->getResultObject();
     }
@@ -31,8 +35,12 @@ class PegadaianModel extends Model
         // return $query->result();
         // dd($data);
         // die;
+        if (!empty($kode_cabang) && $kode_cabang != 'FG00') {
+            $query = $this->query("SELECT * FROM pinjamangadai WHERE tgl_jatuh_tempo = date(NOW()) && kode_cabang = '$kode_cabang'");
+        } else {
+            $query = $this->query("SELECT * FROM pinjamangadai WHERE tgl_jatuh_tempo = date(NOW())");
+        }
 
-        $query = $this->query("SELECT * FROM pinjamangadai WHERE tgl_jatuh_tempo = date(NOW()) && kode_cabang = '$kode_cabang'");
         $data = $query->getResultArray();
         // dd($data);
         // die;

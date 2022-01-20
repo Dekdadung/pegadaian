@@ -50,7 +50,7 @@
                                     <label for="floatingInput">Saldo</label>
                                     <input type="text" name="jumlah_kas"
                                         class="form-control <?= ($validation->hasError('jumlah_kas')) ? 'is-invalid' : ''; ?>"
-                                        id="">
+                                        id="rupiah">
                                     <div class="invalid-feedback">
                                         <?= $validation->getError('jumlah_kas'); ?>
                                     </div>
@@ -60,7 +60,15 @@
                                     <label for="floatingPassword">Keterangan</label>
                                     <textarea class="form-control" name="keterangan"></textarea>
                                 </div>
-                                <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
+                                <?php
+                                $dsbl = (!empty($kode_cabang_sekarang) && $kode_cabang_sekarang != 'FG00') ? '' : 'disabled';
+                                ?>
+                                <button class="w-100 btn btn-lg btn-primary" type="submit" <?= $dsbl ?>>Submit</button>
+                                <?php
+                                if ($dsbl == 'disabled') {
+                                    echo '<span class="text-danger">Pilih Cabang Dulu!!</span>';
+                                }
+                                ?>
                             </form>
                         </div>
                     </div>

@@ -21,7 +21,7 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Tanggal Lelang</label>
-                        <input type="date" class="form-control " id="inputtext4" name="tgl_tempo"
+                        <input type="date" class="form-control " id="inputtext4" name="tgl_lelang"
                             value="<?= $gadai['tgl_lelang']; ?>">
                     </div>
                 </div>

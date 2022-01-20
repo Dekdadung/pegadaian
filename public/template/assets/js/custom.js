@@ -10,39 +10,72 @@
 //     rupiah.value = formatRupiah(this.value, 'Rp. ');
 // });
 
-var path = location.pathname.split('/')
-var url = location.origin + '/' +path[1]
+// var path = location.pathname.split('/')
+// var url = location.origin + '/' +path[1]
 
-$('div.navbar-collapse.collapse ul.navbar-nav li a').each(function(){
-    if($(this).attr('href').indexOf(url) !== -1) {
-        $(this).parent().addClass('active').parent().parent('li').addClass('active')
-    }
-})
+// $('div.navbar-collapse.collapse ul.navbar-nav li a').each(function(){
+//     if($(this).attr('href').indexOf(url) !== -1) {
+//         $(this).parent().addClass('active').parent().parent('li').addClass('active')
+//     }
+// })
 
-var rupiah = document.getElementById('rupiah');
-    rupiah.addEventListener('keyup', function(e)
-    {
-        rupiah.value = formatRupiah(this.value);
-    });
+// var rupiah = document.getElementById('rupiah');
+//     rupiah.addEventListener('keyup', function(e)
+//     {
+//         rupiah.value = formatRupiah(this.value);
+//     });
 
-function formatRupiah(angka, prefix){
-			var number_string = angka.replace(/[^,\d]/g, '').toString(),
-			split   		= number_string.split(','),
-			sisa     		= split[0].length % 3,
-			rupiah     		= split[0].substr(0, sisa),
-			ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
+// function formatRupiah(angka, prefix){
+// 			var number_string = angka.replace(/[^,\d]/g, '').toString(),
+// 			split   		= number_string.split(','),
+// 			sisa     		= split[0].length % 3,
+// 			rupiah     		= split[0].substr(0, sisa),
+// 			ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
  
-			// tambahkan titik jika yang di input sudah menjadi angka ribuan
-			if(ribuan){
-				separator = sisa ? '.' : '';
-				rupiah += separator + ribuan.join('.');
-			}
+// 			// tambahkan titik jika yang di input sudah menjadi angka ribuan
+// 			if(ribuan){
+// 				separator = sisa ? '.' : '';
+// 				rupiah += separator + ribuan.join('.');
+// 			}
  
-			rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-			return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
-		}
+// 			rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+// 			return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+// 		}
 
 $(document).ready(function(){
+
+    var path = location.pathname.split('/')
+    var url = location.origin + '/' +path[1]
+    
+    $('div.navbar-collapse.collapse ul.navbar-nav li a').each(function(){
+        if($(this).attr('href').indexOf(url) !== -1) {
+            $(this).parent().addClass('active').parent().parent('li').addClass('active')
+        }
+    })
+    
+    var rupiah = document.getElementById('rupiah');
+        rupiah.addEventListener('keyup', function(e)
+        {
+            rupiah.value = formatRupiah(this.value);
+        });
+    
+    function formatRupiah(angka, prefix){
+                var number_string = angka.replace(/[^,\d]/g, '').toString(),
+                split   		= number_string.split(','),
+                sisa     		= split[0].length % 3,
+                rupiah     		= split[0].substr(0, sisa),
+                ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
+     
+                // tambahkan titik jika yang di input sudah menjadi angka ribuan
+                if(ribuan){
+                    separator = sisa ? '.' : '';
+                    rupiah += separator + ribuan.join('.');
+                }
+     
+                rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+                return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+            }    
+
     $('.btn-detail').on('click',function(e){
         e.preventDefault();
         var idpinjam = $(this).data('kdpinjaman');

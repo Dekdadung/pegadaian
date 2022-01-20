@@ -19,47 +19,41 @@
             </div>
         </div>
         <?php endif; ?>
-        <table class="table table-striped table-md">
-            <tbody>
+        <table class="table table-striped table-md" id="myTable">
+            <thead>
                 <tr>
                     <th>No</th>
                     <th>Kode Cabang</th>
                     <th>Nama Cabang</th>
                     <th>Alamat</th>
                     <th>Kode Toko</th>
-                    <th>Action</th>
+                    <!-- <th>Action</th> -->
                 </tr>
+            </thead>
+            <tbody>
                 <div class="text-center">
-                    <?php
-                    $no = 1;
-                    foreach ($cabang as $row) :
-                    ?>
-                    <tr>
-                        <td><?= $no++; ?></td>
-                        <td><?= $row['kode_cabang']; ?></td>
-                        <td><?= $row['nama_cabang']; ?></td>
-                        <td><?= $row['alamat']; ?></td>
-                        <td><?= $row['kode_toko']; ?></td>
-                        <td>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    Action
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="/cabang/edit/<?= $row['kode_cabang']; ?>">Edit</a>
-                                    <a class="dropdown-item" href="/cabang/delete/<?= $row['kode_cabang']; ?>"
-                                        onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <?php
-                    endforeach;
-                    ?>
+
                 </div>
             </tbody>
         </table>
     </div>
 </section>
+<script>
+function myTable() {
+    var table = $('#myTable').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "order": [],
+        "ajax": {
+            "url": "<?= site_url('cabang/myTable') ?>",
+            "type": "POST"
+        },
+
+    })
+}
+
+$(document).ready(function() {
+    myTable();
+});
+</script>
 <?= $this->endSection(); ?>

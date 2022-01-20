@@ -38,17 +38,16 @@ class Saldo extends BaseController
     {
         if (!$this->validate([
             'jumlah_kas' => [
-                'rules' => 'required|numeric',
+                'rules' => 'required',
                 'errors'    => [
                     'required'  => 'Data Harus Diisi',
-                    'numeric' => 'Hanya boleh berisi angka'
                 ]
             ],
         ])) {
             return redirect()->back()->withInput();
         }
         $kode_cabang = $this->request->getVar('kode_cabang');
-        $jumlah_kas = $this->request->getVar('jumlah_kas');
+        $jumlah_kas = preg_replace("/[^a-zA-Z0-9\s]/", "", $this->request->getVar('jumlah_kas'));
         $get_sisa_kas =  $this->SaldoModel->getSisa($kode_cabang);
         if (!empty($this->SaldoModel->getSisa($kode_cabang))) {
             $sisa_kas = $get_sisa_kas[0]['sisa_kas'];

@@ -246,38 +246,7 @@ class Pegadaian extends BaseController
 
     public function save2()
     {
-        if (!$this->validate([
-            'kd_pinjaman' => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => 'Data Harus Diisi'
-                ]
-            ],
-            'tgl_jatuh_tempo' => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => 'Data Harus Diisi'
-                ]
-            ],
-            'tgl_lelang' => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => 'Data Harus Diisi'
-                ]
-            ],
-            'jumlah_pinjaman' => [
-                'rules' => 'required|alpha_numeric_punct|min_length[6]|max_length[30]',
-                'errors'    => [
-                    'required'  => 'Data Harus Diisi',
-                    'alpha_numeric_punct'  => 'Data Hanya Berisi Angka',
-                    'min_length'  => 'Pinjaman minimal Rp.100.000',
-                    'max_length'  => 'Pinjaman maksimal Rp.9.999.999.999'
-                ]
-            ],
-        ])) {
-            session()->setFlashdata('errors', $this->validator->listErrors());
-            return redirect()->back()->withInput();
-        }
+
 
         $jumlah_pinjaman = preg_replace("/[^a-zA-Z0-9\s]/", "", $this->request->getVar('jumlah_pinjaman'));
         $dendaP = $this->request->getVar('dendaP') / 100;
@@ -286,6 +255,10 @@ class Pegadaian extends BaseController
             'jumlah_untung' => $denda,
             'kd_pinjaman' => $this->request->getVar('kode_pinjaman'),
             'jenis' => 'Denda'
+        ]);
+
+        $this->PegadaianModel->update($this->request->getVar('kode_pinjaman'), [
+            'tgl_lelang' => $this->request->getVar('tgl_lelang')
         ]);
 
 
