@@ -3,7 +3,6 @@ $session = session();
 ?>
 
 <?= $this->extend('layout/default'); ?>
-<title>Dashboard</title>
 <?= $this->section('content'); ?>
 <section class="section">
     <?php if ($session->get('level') == 'superadmin') :  ?>
@@ -102,7 +101,8 @@ $session = session();
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="">Kirim Notifikasi</a>
                                     <a class="dropdown-item btn-detail" href=""
-                                        data-kdpinjaman="<?= $row->kode_pinjaman ?>">Detail</a>
+                                        data-kdpinjaman="<?= $row->kode_pinjaman ?>" data-bs-toggle="modal"
+                                        data-bs-target="#modalDetail">Detail</a>
                                     <a class="dropdown-item" href="/pegadaian/edit/<?= $row->kode_pinjaman ?>">Edit</a>
                                     <a class="dropdown-item" href="/pegadaian/delete/<?= $row->kode_pinjaman ?>"
                                         onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</a>
@@ -163,9 +163,5 @@ $session = session();
         </div>
     </div>
 </div>
-<script>
-$(document).ready(function() {
-    $('#mytable').DataTable();
-});
-</script>
+
 <?= $this->endSection(); ?>

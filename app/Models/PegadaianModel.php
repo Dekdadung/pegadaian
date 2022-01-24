@@ -85,4 +85,19 @@ class PegadaianModel extends Model
         $data = $builder->get()->getResultArray();
         return $data;
     }
+
+    // public function getTotalPinjaman($kode_cabang = null)
+    // {
+    //     if (!empty($kode_cabang) && $kode_cabang != 'FG00') {
+    //         $query = $this->query("SELECT sum('jumlah_pinjaman') FROM pinjamangadai WHERE tgl_gadai = date(NOW()) && kode_cabang = '$kode_cabang'");
+    //     } else {
+    //         $query = $this->query("SELECT sum('jumlah_pinjaman') FROM pinjamangadai WHERE tgl_gadai = date(NOW())");
+    //     }
+
+    //     $data = $query->getResultArray();
+    //     // $builder = $this->selectSum('jumlah_pinjaman');
+    //     // $data = $builder->get()->getResultArray();
+    //     // return $data;
+    //     return $data;
+    // }
 }
