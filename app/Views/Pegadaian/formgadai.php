@@ -10,7 +10,7 @@ $session = session();
         <div class="section-header-back">
             <a href="<?= site_url('datagadai') ?>" class="btn"><i class="fas fa-arrow-left"></i></a>
         </div>
-        <h1>Pegadaian</h1>
+        <h1>Tambah Data Gadai</h1>
         <div class="section-header-button">
 
         </div>
@@ -116,8 +116,16 @@ $session = session();
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputCity">Jenis Barang</label>
-                        <input type="text" class="form-control" id="inputCity" name="jenis_barang">
+                        <label for="inputtext4">Jenis Barang</label>
+                        <div class="form-label-group">
+                            <select class="form-control" name="jenis_barang">
+                                <?php foreach ($barang as $row) : ?>
+                                <option value="<?= $row['nama_barang']; ?>">
+                                    <?= $row['nama_barang']; ?>
+                                </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputState">No. IMEI/Seri</label>

@@ -41,109 +41,97 @@ $session = session();
         <?php if ($session->get('level') == 'superadmin') :  ?>
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <a href="<?= site_url('nasabah'); ?>">
-                    <div class="card card-statistic-1">
-                        <div class="card-icon bg-primary">
-                            <i class="fas fa-money-bill-wave"></i>
+                <div class="card card-statistic-1">
+                    <div class="card-icon bg-primary">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="card-wrap">
+                        <div class="card-header">
+                            <h4>Sisa Saldo</h4>
                         </div>
-                        <div class="card-wrap">
-                            <div class="card-header">
-                                <h4>Sisa Saldo</h4>
-                            </div>
-                            <div class="card-body">
-                                <h6><?php echo rupiah($saldo); ?></h6>
-                            </div>
+                        <div class="card-body">
+                            <h6><?php echo rupiah($saldo); ?></h6>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <a href="<?= site_url('pesan'); ?>">
-                    <div class="card card-statistic-1">
-                        <div class="card-icon bg-danger">
-                            <i class="far fa-calendar-alt"></i>
+                <div class="card card-statistic-1">
+                    <div class="card-icon bg-danger">
+                        <i class="far fa-calendar-alt"></i>
+                    </div>
+                    <div class="card-wrap">
+                        <div class="card-header">
+                            <h4>Akan Jatuh Tempo</h4>
                         </div>
-                        <div class="card-wrap">
-                            <div class="card-header">
-                                <h4>Akan Jatuh Tempo</h4>
-                            </div>
-                            <div class="card-body">
-                                <h6><?php echo $jTempo; ?></h6>
-                            </div>
+                        <div class="card-body">
+                            <h6><?php echo $jTempo; ?></h6>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <a href="<?= site_url('jsampah'); ?>">
-                    <div class="card card-statistic-1">
-                        <div class="card-icon bg-success">
-                            <i class="fas fa-file-invoice"></i>
+                <div class="card card-statistic-1">
+                    <div class="card-icon bg-success">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <div class="card-wrap">
+                        <div class="card-header">
+                            <h4>Peminjaman Hari Ini</h4>
                         </div>
-                        <div class="card-wrap">
-                            <div class="card-header">
-                                <h4>Peminjaman Bulan Ini</h4>
-                            </div>
-                            <div class="card-body">
-                                <h6><?php echo rupiah($totalpinjam); ?></h6>
-                            </div>
+                        <div class="card-body">
+                            <h6><?php echo rupiah($totalpinjam); ?></h6>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <a href="<?= site_url('pengepul'); ?>">
-                    <div class="card card-statistic-1">
-                        <div class="card-icon bg-danger">
-                            <i class="fas fa-book"></i>
+                <div class="card card-statistic-1">
+                    <div class="card-icon bg-danger">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="card-wrap">
+                        <div class="card-header">
+                            <h4>Pendapatan Hari Ini</h4>
                         </div>
-                        <div class="card-wrap">
-                            <div class="card-header">
-                                <h4>Pendapatan Bulan Ini</h4>
-                            </div>
-                            <div class="card-body">
-                                <h6><?php echo rupiah($totaldapat); ?></h6>
-                            </div>
+                        <div class="card-body">
+                            <h6><?php echo rupiah($totaldapat); ?></h6>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
         <?php else : ?>
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <a href="<?= site_url('nasabah'); ?>">
-                    <div class="card card-statistic-1">
-                        <div class="card-icon bg-primary">
-                            <i class="fas fa-money-bill-wave"></i>
+                <div class="card card-statistic-1">
+                    <div class="card-icon bg-primary">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="card-wrap">
+                        <div class="card-header">
+                            <h4>Sisa Saldo</h4>
                         </div>
-                        <div class="card-wrap">
-                            <div class="card-header">
-                                <h4>Sisa Saldo</h4>
-                            </div>
-                            <div class="card-body">
-                                <h6><?php echo rupiah($saldo); ?></h6>
-                            </div>
+                        <div class="card-body">
+                            <h6><?php echo rupiah($saldo); ?></h6>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                <a href="<?= site_url('pesan'); ?>">
-                    <div class="card card-statistic-1">
-                        <div class="card-icon bg-danger">
-                            <i class="far fa-calendar-alt"></i>
+                <div class="card card-statistic-1">
+                    <div class="card-icon bg-danger">
+                        <i class="far fa-calendar-alt"></i>
+                    </div>
+                    <div class="card-wrap">
+                        <div class="card-header">
+                            <h4>Akan Jatuh Tempo</h4>
                         </div>
-                        <div class="card-wrap">
-                            <div class="card-header">
-                                <h4>Akan Jatuh Tempo</h4>
-                            </div>
-                            <div class="card-body">
-                                <h6><?php echo $jTempo; ?></h6>
-                            </div>
+                        <div class="card-body">
+                            <h6><?php echo $jTempo; ?></h6>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
         <?php endif ?>

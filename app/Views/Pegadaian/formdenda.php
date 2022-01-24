@@ -9,7 +9,7 @@
         <h1>Form Denda Nasabah</h1>
     </div>
     <div class="card">
-        <form action="/pegadaian/save2" method="post">
+        <form action="/pegadaian/saveDenda" method="post">
             <div class="card-body">
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -26,12 +26,12 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-6" hidden>
                         <label for="inputtext4">Jumlah Pinjaman</label>
                         <input type="text" class="form-control" id="inputtext4" name="jumlah_pinjaman"
                             value="<?= $gadai['jumlah_pinjaman']; ?>">
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-6" hidden>
                         <label for="inputtext4">Denda %</label>
                         <input type="text" class="form-control" id="inputtext4" name="dendaP" value=5>
                     </div>

@@ -92,7 +92,7 @@ $session = session();
                         <td><?= rupiah($row->bunga) ?></td>
                         <td><?= $row->kode_cabang ?></td>
                         <td>
-                            <textarea name="" class="datarow-<?= $row->kode_pinjaman ?>"
+                            <textarea hidden name="" class="datarow-<?= $row->kode_pinjaman ?>"
                                 id=""><?= json_encode($row); ?></textarea>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
@@ -107,11 +107,13 @@ $session = session();
                                     <a class="dropdown-item" href="/pegadaian/delete/<?= $row->kode_pinjaman ?>"
                                         onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</a>
                                     <a class="dropdown-item"
-                                        href="/pembayaran/createBayar/<?= $row->kode_pinjaman ?>">Pembayaran</a>
+                                        href="/pegadaian/createBayar/<?= $row->kode_pinjaman ?>">Pembayaran</a>
                                     <a class="dropdown-item"
                                         href="/perpanjangan/createPerpanjang/<?= $row->kode_pinjaman ?>">Perpanjangan</a>
                                     <a class="dropdown-item"
-                                        href="/pegadaian/create2/<?= $row->kode_pinjaman ?>">Denda</a>
+                                        href="/pegadaian/createDenda/<?= $row->kode_pinjaman ?>">Denda</a>
+                                    <a class="dropdown-item"
+                                        href="/pegadaian/createLelang/<?= $row->kode_pinjaman ?>">Lelang</a>
                                 </div>
                             </div>
                         </td>

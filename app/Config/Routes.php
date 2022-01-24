@@ -51,6 +51,11 @@ $routes->get('formcabang', 'Cabang::create', ['filter' => 'auth']);
 $routes->get('dataaturan', 'Aturan::index', ['filter' => 'auth']);
 $routes->get('formaturan', 'Aturan::create', ['filter' => 'auth']);
 
+$routes->get('databarang', 'Barang::index', ['filter' => 'auth']);
+$routes->get('formbarang', 'Barang::create', ['filter' => 'auth']);
+
+$routes->get('datalelang', 'Pegadaian::lelang', ['filter' => 'auth']);
+
 $routes->get('saldo', 'Saldo::index', ['filter' => 'auth']);
 
 $routes->get('homepage', 'Dashboard::index', ['filter' => 'auth']);

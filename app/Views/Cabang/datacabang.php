@@ -46,8 +46,25 @@ function myTable() {
         "order": [],
         "ajax": {
             "url": "<?= site_url('cabang/myTable') ?>",
-            "type": "POST"
+            "type": "POST",
+            "dataSrc": "errorLogList"
         },
+        "columns": [{
+                data: "errorCode"
+            },
+            {
+                data: "rowNumber"
+            },
+            {
+                data: "columnNumber"
+            },
+            {
+                data: "description"
+            },
+            {
+                data: "errorType"
+            },
+        ]
 
     })
 }

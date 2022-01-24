@@ -8,7 +8,7 @@ class PendapatanModel extends Model
 {
     protected $table = 'pendapatan';
     protected $primaryKey = 'id_pendapatan';
-    protected $allowedFields = ['jumlah_untung', 'kd_pinjaman'];
+    protected $allowedFields = ['jumlah_untung', 'kd_pinjaman', 'jenis'];
     protected $returnType = 'array';
 
     public function getTotalPendapatan()

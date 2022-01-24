@@ -15,8 +15,10 @@ class Laporan extends BaseController
     public function index()
     {
         // $pengepul = $this->jsampahModel->findAll();
-
-        return view('laporan/datalaporan');
+        $data = [
+            'title' => 'Laporan',
+        ];
+        return view('laporan/datalaporan', $data);
     }
 
     public function create()
