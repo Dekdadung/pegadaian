@@ -245,7 +245,7 @@ class Pegadaian extends BaseController
             'saldo' => $this->SaldoModel->findAll(),
             'kode_cabang' => $kode_cabang,
             // 'telpNasabah' => $telp_nasabah,
-            // 'title' => 'Form Data Gadai',
+            'title' => 'Form Denda',
             // 'kode_pinjaman' => $kode_pinjaman,
             'validation' => \Config\Services::validation()
         ];
@@ -284,7 +284,7 @@ class Pegadaian extends BaseController
             'saldo' => $this->SaldoModel->findAll(),
             'kode_cabang' => $kode_cabang,
             // 'telpNasabah' => $telp_nasabah,
-            // 'title' => 'Form Data Gadai',
+            'title' => 'Form Pembayaran',
             // 'kode_pinjaman' => $kode_pinjaman,
             'validation' => \Config\Services::validation()
         ];
@@ -385,7 +385,8 @@ class Pegadaian extends BaseController
             'nama_barang' => $this->request->getVar('nama_barang'),
             'kode_pinjaman' => $this->request->getVar('kode_pinjaman'),
             'hasil_lelang' => $hasil_lelang,
-            'tgl_lelang' => $this->request->getVar('tgl_lelang')
+            'tgl_lelang' => $this->request->getVar('tgl_lelang'),
+            'kodeCabang' => $this->request->getVar('kode_cabang')
         ];
 
         $this->LelangModel->simpan($data);

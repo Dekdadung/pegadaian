@@ -1,3 +1,6 @@
+<?php
+$session = session();
+?>
 <?= $this->extend('layout/default'); ?>
 <title>Dashboard</title>
 <?= $this->section('content'); ?>
@@ -6,12 +9,15 @@
         <h1>Laporan</h1>
         <div class="section-header-button">
             <div class="dropdown show">
-                <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Export Data
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="<?php echo base_url('excel/export') ?>">EXCEL<i class="fa fa-file-excel"></i></a>
-                    <a class="dropdown-item" href="<?php echo base_url('export/generate') ?>">PDF<i class="fa fa-file-pdf"></i></a>
+                    <a class="dropdown-item" href="<?php echo base_url('excel/export') ?>">EXCEL<i
+                            class="fa fa-file-excel"></i></a>
+                    <a class="dropdown-item" href="<?php echo base_url('export/generate') ?>">PDF<i
+                            class="fa fa-file-pdf"></i></a>
                     <a class="dropdown-item" onclick="window.print()">PRINT DATA<i class="fa fa-print"></i></a>
                 </div>
             </div>
@@ -37,24 +43,25 @@
                     <th>Jatuh Tempo</th>
                     <th>Tgl. Lelang</th>
                     <th>Jumlah Pinjaman</th>
+                    <th>Bunga</th>
                     <th>Kode Cabang</th>
                 </tr>
-                <div class="text-center">
+                <div>
                     <?php
                     $no = 1;
-
                     foreach ($gadai as $row) :
                     ?>
-                        <tr>
-                            <td><?= $no++; ?></td>
-                            <td><?= $row->kode_pinjaman; ?></td>
-                            <td><?= $row->nama; ?></td>
-                            <td><?= $row->tgl_gadai; ?></td>
-                            <td><?= $row->tgl_jatuh_tempo; ?></td>
-                            <td><?= $row->tgl_lelang; ?></td>
-                            <td><?= rupiah($row->jumlah_pinjaman); ?></td>
-                            <td><?= $row->kode_cabang; ?></td>
-                        </tr>
+                    <tr class="text-center">
+                        <td><?= $no++; ?></td>
+                        <td><?= $row->kode_pinjaman; ?></td>
+                        <td><?= $row->nama ?></td>
+                        <td><?= $row->tgl_gadai ?></td>
+                        <td><?= $row->tgl_jatuh_tempo ?></td>
+                        <td><?= $row->tgl_lelang ?></td>
+                        <td><?= rupiah($row->jumlah_pinjaman); ?></td>
+                        <td><?= rupiah($row->bunga) ?></td>
+                        <td><?= $row->kode_cabang ?></td>
+                    </tr>
                     <?php
                     endforeach;
                     ?>

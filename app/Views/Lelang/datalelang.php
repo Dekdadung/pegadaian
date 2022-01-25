@@ -23,6 +23,7 @@
                     <th>Kode Pinjaman</th>
                     <th>Hasil Lelang</th>
                     <th>Tanggal Lelang</th>
+                    <th>Kode Cabang</th>
                     <th>Action</th>
                 </tr>
                 <div class="text-center">
@@ -35,6 +36,7 @@
                         <td><?= $row->kode_pinjaman; ?></td>
                         <td><?= rupiah($row->hasil_lelang); ?></td>
                         <td><?= $row->tgl_lelang; ?></td>
+                        <td><?= $row->kodeCabang; ?></td>
                         <td>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"

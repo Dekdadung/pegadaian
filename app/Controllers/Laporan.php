@@ -31,12 +31,14 @@ class Laporan extends BaseController
 
     public function index()
     {
+        $cek_cabang_user = session('kode_cabang');
+        $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
+        $data_gadai = $this->PegadaianModel->getDataGadai($kode_cabang);
         $data = [
             'title' => 'Data Gadai',
-            'gadai' => $this->PegadaianModel->getDataGadai()
+            'gadai' => $data_gadai
         ];
         return view('laporan/datalaporan', $data);
-        $data['gadai'] = $this->PegadaianModel->view();
     }
 
     public function pdf()

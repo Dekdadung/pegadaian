@@ -20,7 +20,10 @@ class Excel extends Controller
     public function export()
     {
         $datagadai = new PegadaianModel();
-        $gadai = $datagadai->findAll();
+        $cek_cabang_user = session('kode_cabang');
+        $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
+
+        $gadai = $datagadai->getDataGadai($kode_cabang);
 
         $spreadsheet = new Spreadsheet();
 
@@ -44,13 +47,13 @@ class Excel extends Controller
         //data gadai ke cell
         foreach ($gadai as $data) {
             $spreadsheet->setActiveSheetIndex(0)
-                ->setCellValue('A' . $column, $data['kode_pinjaman'])
-                ->setCellValue('B' . $column, $data['id_nasabah'])
-                ->setCellValue('C' . $column, $data['tgl_gadai'])
-                ->setCellValue('D' . $column, $data['tgl_jatuh_tempo'])
-                ->setCellValue('E' . $column, $data['tgl_lelang'])
-                ->setCellValue('F' . $column, $data['jumlah_pinjaman'])
-                ->setCellValue('G' . $column, $data['kode_cabang']);
+                ->setCellValue('A' . $column, $data->kode_pinjaman)
+                ->setCellValue('B' . $column, $data->id_nasabah)
+                ->setCellValue('C' . $column, $data->tgl_gadai)
+                ->setCellValue('D' . $column, $data->tgl_jatuh_tempo)
+                ->setCellValue('E' . $column, $data->tgl_lelang)
+                ->setCellValue('F' . $column, $data->jumlah_pinjaman)
+                ->setCellValue('G' . $column, $data->kode_cabang);
 
             $column++;
         }

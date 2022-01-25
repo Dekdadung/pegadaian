@@ -40,13 +40,13 @@ $routes->get('datanasabah', 'Nasabah::index', ['filter' => 'auth']);
 $routes->get('formnasabah', 'Nasabah::create', ['filter' => 'auth']);
 
 $routes->get('datauser', 'User::index', ['filter' => 'auth']);
-$routes->get('formuser', 'User::create', ['filter' => 'auth']);
+$routes->get('formuser', 'User::create');
 
 $routes->get('datalaporan', 'Laporan::index', ['filter' => 'auth']);
 $routes->get('formlaporan', 'Laporan::create', ['filter' => 'auth']);
 
 $routes->get('datacabang', 'Cabang::index', ['filter' => 'auth']);
-$routes->get('formcabang', 'Cabang::create', ['filter' => 'auth']);
+$routes->get('formcabang', 'Cabang::create');
 
 $routes->get('dataaturan', 'Aturan::index', ['filter' => 'auth']);
 $routes->get('formaturan', 'Aturan::create', ['filter' => 'auth']);

@@ -10,28 +10,17 @@
     </div>
     <div class="card">
         <div class="card-body">
-            <form action="/aturan/update/<?= $aturan['id_aturan']; ?>" method="post">
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputtext4">Kode Cabang</label>
-                        <input type="text" name="kode_cabang" value="<?= $aturan['kode_cabang']; ?>"
-                            class="form-control" id="inputtext4">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputtext4">Bunga</label>
-                        <input type="text" name="bunga" value="<?= $aturan['bunga']; ?>" class="form-control"
-                            id="inputtext4">
-                    </div>
-                </div>
+            <form action="/aturan/update/<?= $aturan['id_peraturan']; ?>" method="post">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Denda</label>
-                        <textarea class="form-control" name="denda"><?= $aturan['denda']; ?></textarea>
+                        <input type="text" name="denda" class="form-control" id="inputtext4"
+                            placeholder="Masukkan Persen denda tanpa tanda %" value="<?= $aturan['denda']; ?>">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputtext4">Kode Toko</label>
-                        <input type="text" name="kode_toko" value="<?= $aturan['kode_toko']; ?>" class="form-control"
-                            id="inputtext4">
+                        <label for="inputtext4">Bunga</label>
+                        <input type="text" name="bunga" class="form-control" id="inputtext4"
+                            placeholder="Masukkan Persen Bunga tanpa tanda %" value="<?= $aturan['bunga']; ?>">
                     </div>
                 </div>
                 <div class="card-footer">

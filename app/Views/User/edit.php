@@ -54,15 +54,6 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputtext4">NIK Nasabah</label>
-                        <input type="text" name="nik"
-                            class="form-control <?= ($validation->hasError('nik')) ? 'is-invalid' : ''; ?>" id="
-                            inputtext4">
-                        <div class="invalid-feedback">
-                            <?= $validation->getError('nik'); ?>
-                        </div>
-                    </div>
-                    <div class="form-group col-md-6">
                         <label for="inputtext4">Cabang</label>
                         <div class="form-label-group">
                             <select class="form-control" name="cabang">

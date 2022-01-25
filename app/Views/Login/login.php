@@ -28,6 +28,16 @@
                             <div class="card-header">
                                 <h4>Login</h4>
                             </div>
+                            <?php if (session()->getFlashdata('pesan')) : ?>
+                            <div class="alert alert-danger alert-has-icon">
+                                <div class="alert-icon"><i class="far fa-lightbulb"></i></div>
+                                <div class="alert-body">
+                                    <div class="alert-title">Gagal !</div>
+                                    <?= session()->getFlashdata('pesan'); ?>
+                                </div>
+                            </div>
+                            <?php endif; ?>
+
 
                             <div class="card-body">
                                 <form method="POST" action="/login/login" class="needs-validation" novalidate="">
