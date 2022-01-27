@@ -19,6 +19,15 @@ class Export extends Controller
 
     public function index()
     {
+        $cek_cabang_user = session('kode_cabang');
+        $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
+        $data_gadai = $this->PegadaianModel->getDataGadai($kode_cabang);
+        // $jatuh_tempo = $this->PegadaianModel->sortDate($kode_cabang);
+        $data = [
+            'gadai' => $data_gadai
+            // 'jTempo' => $jatuh_tempo
+        ];
+
         // $cek_cabang_user = session('kode_cabang');
         // $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
         // $data_gadai = $this->PegadaianModel->getDataGadai($kode_cabang);
@@ -28,7 +37,7 @@ class Export extends Controller
         //     'gadai' => $data_gadai
         //     // 'jTempo' => $jatuh_tempo
         // ];
-        return view('layout/pdf');
+        return view('layout/pdf', $data);
     }
 
     public function generate()
@@ -43,7 +52,7 @@ class Export extends Controller
         ];
         // dd($data_gadai);
         // die;
-        ini_set("memory_limit", "44M");
+        // ini_set("memory_limit", "-1");
 
         $filename = date('y-m-d-H-i-s') . '-qadr-labs-report';
 
@@ -62,5 +71,8 @@ class Export extends Controller
 
         // output the generated pdf
         $dompdf->stream($filename);
+
+
+        // return view('layout/pdf', $data);
     }
 }

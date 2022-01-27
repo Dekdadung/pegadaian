@@ -18,7 +18,9 @@ $session = session();
                             class="fa fa-file-excel"></i></a>
                     <a class="dropdown-item" href="<?php echo base_url('export/generate') ?>">PDF<i
                             class="fa fa-file-pdf"></i></a>
-                    <a class="dropdown-item" onclick="window.print()">PRINT DATA<i class="fa fa-print"></i></a>
+                    <a class="dropdown-item" href="#" onclick="window.print()">PRINT DATA<i class="fa fa-print"></i></a>
+                    <a class="dropdown-item" href="<?php echo base_url('/uploadForm') ?>">UPLOAD DATA<i
+                            class="fa fa-upload"></i></a>
                 </div>
             </div>
         </div>
@@ -33,8 +35,8 @@ $session = session();
         </form>
     </div>
     <div class="card-body table-responsive">
-        <table class="table table-striped table-md">
-            <tbody>
+        <table class="table table-striped table-md" id="tabelLaporan">
+            <thead>
                 <tr class="text-center">
                     <th>No</th>
                     <th>Kode Pinjaman</th>
@@ -46,12 +48,14 @@ $session = session();
                     <th>Bunga</th>
                     <th>Kode Cabang</th>
                 </tr>
+            </thead>
+            <tbody>
                 <div>
                     <?php
                     $no = 1;
                     foreach ($gadai as $row) :
                     ?>
-                    <tr class="text-center">
+                    <tr class="text-center <?= 'bg-' . $row->jatuh_tempo_now; ?>">
                         <td><?= $no++; ?></td>
                         <td><?= $row->kode_pinjaman; ?></td>
                         <td><?= $row->nama ?></td>
@@ -69,4 +73,11 @@ $session = session();
             </tbody>
         </table>
     </div>
-</section><?= $this->endSection(); ?>
+</section>
+<script>
+$(document).ready(function() {
+    $('#tabelLaporan').DataTable();
+});
+</script>
+
+<?= $this->endSection(); ?>

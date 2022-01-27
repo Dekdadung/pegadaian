@@ -4,7 +4,7 @@
 <section class="section">
     <div class="section-header">
         <div class="section-header-back">
-            <a href="<?= site_url('dataaturan') ?>" class="btn"><i class="fas fa-arrow-left"></i></a>
+            <a href="<?= site_url('databarang') ?>" class="btn"><i class="fas fa-arrow-left"></i></a>
         </div>
         <h1>Tambah Jenis Barang</h1>
     </div>

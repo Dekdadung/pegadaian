@@ -5,10 +5,10 @@
     <div class="section-header">
         <h1>Data Aturan Cabang</h1>
         <div class="section-header-button">
-            <a href="<?= site_url('formaturan') ?>" class="btn btn-primary">Tambah</a>
+            <a href="<?= site_url('formaturan') ?>" class="btn btn-primary" data-toggle="modal"
+                data-target="#exampleModal">Tambah</a>
         </div>
     </div>
-
     <div class="card-body table-responsive">
         <?php if (session()->getFlashdata('Pesan')) : ?>
         <div class="alert alert-success alert-has-icon">
@@ -43,7 +43,10 @@
                                     Action
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="/aturan/edit/<?= $row['id_peraturan']; ?>">Edit</a>
+                                    <!-- <a class="dropdown-item" href="/aturan/edit/">Edit</a> -->
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editModal"
+                                        id="btn-edit-aturan" data-id-peraturan="<?= $row['id_peraturan']; ?>"
+                                        data-bunga="<?= $row['bunga']; ?>" data-denda="<?= $row['denda']; ?>">Edit</a>
                                     <a class="dropdown-item" href="/aturan/delete/<?= $row['id_peraturan']; ?>"
                                         onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</a>
                                 </div>
@@ -58,4 +61,68 @@
         </table>
     </div>
 </section>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Data Aturan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/aturan/save" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputtext4">Bunga</label>
+                            <input type="text" name="bunga" class="form-control" id="inputtext4"
+                                placeholder="Masukkan Persen Bunga tanpa tanda %">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputtext4">Denda</label>
+                            <input type="text" name="denda" class="form-control" id="inputtext4"
+                                placeholder="Masukkan Persen denda tanpa tanda %">
+                        </div>
+                    </div>
+                    <button class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ubah Data Aturan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" id="formAturan" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputtext4">Bunga</label>
+                            <input type="text" name="bunga" class="form-control" id="bunga"
+                                placeholder="Masukkan Persen Bunga tanpa tanda %">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputtext4">Denda</label>
+                            <input type="text" name="denda" class="form-control" id="denda"
+                                placeholder="Masukkan Persen denda tanpa tanda %">
+                        </div>
+                    </div>
+                    <button class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <?= $this->endSection(); ?>

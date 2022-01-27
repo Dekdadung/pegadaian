@@ -28,9 +28,9 @@ $session = session();
     </div>
     <?php endif; ?>
     <div class="card-body table-responsive">
-        <table class="table table-striped table-md" id="mytable">
-            <tbody>
-                <?php if ($session->get('level') == 'superadmin') :  ?>
+        <table class="table table-striped table-md" id="tabelGadai">
+            <?php if ($session->get('level') == 'superadmin') :  ?>
+            <thead>
                 <tr class="text-center">
                     <th>No</th>
                     <th>Kode Pinjaman</th>
@@ -42,12 +42,14 @@ $session = session();
                     <th>Bunga</th>
                     <th>Kode Cabang</th>
                 </tr>
+            </thead>
+            <tbody>
                 <div>
                     <?php
                         $no = 1;
                         foreach ($gadai as $row) :
                         ?>
-                    <tr class="text-center">
+                    <tr class="text-center <?= 'bg-' . $row->jatuh_tempo_now; ?>">
                         <td><?= $no++; ?></td>
                         <td><?= $row->kode_pinjaman; ?></td>
                         <td><?= $row->nama ?></td>
@@ -62,7 +64,9 @@ $session = session();
                         endforeach;
                         ?>
                 </div>
-                <?php else : ?>
+            </tbody>
+            <?php else : ?>
+            <thead>
                 <tr class="text-center">
                     <th>No</th>
                     <th>Kode Pinjaman</th>
@@ -75,12 +79,14 @@ $session = session();
                     <th>Kode Cabang</th>
                     <th>Action</th>
                 </tr>
+            </thead>
+            <tbody>
                 <div>
                     <?php
                         $no = 1;
                         foreach ($gadai as $row) :
                         ?>
-                    <tr class="text-center">
+                    <tr class="text-center <?= 'bg-' . $row->jatuh_tempo_now; ?>">
                         <td><?= $no++; ?></td>
                         <td><?= $row->kode_pinjaman; ?></td>
                         <td><?= $row->nama ?></td>
@@ -121,9 +127,8 @@ $session = session();
                     <?php
                         endforeach;
                         ?>
+                    <?php endif ?>
                 </div>
-                <?php endif ?>
-
             </tbody>
         </table>
     </div>
@@ -163,5 +168,10 @@ $session = session();
         </div>
     </div>
 </div>
+<script>
+$(document).ready(function() {
+    $('#tabelGadai').DataTable();
+});
+</script>
 
 <?= $this->endSection(); ?>

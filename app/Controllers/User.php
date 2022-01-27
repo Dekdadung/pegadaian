@@ -20,7 +20,9 @@ class User extends BaseController
     {
         $data = [
             'title' => 'Data User',
-            'user' => $this->UserModel->findAll()
+            'user' => $this->UserModel->findAll(),
+            'cabang' => $this->CabangModel->findAll(),
+            'validation' => \Config\Services::validation()
         ];
         return view('user/datauser', $data);
     }

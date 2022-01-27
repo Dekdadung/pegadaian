@@ -29,6 +29,7 @@ $session = session();
                         <li><a href="<?= site_url('databarang') ?>" class="dropdown-item">Jenis Barang</a></li>
                     </ul>
                 </li>
+                <li class="nav-item"><a href="<?= site_url('datalelang') ?>" class="nav-link">Lelang</a>
                 <li class="nav-item"><a href="<?= site_url('laporan') ?>" class="nav-link">Laporan</a>
                 </li>
             </ul>

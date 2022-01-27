@@ -16,7 +16,9 @@ $session = session();
                     <select class="form-floating mb-3" name="kode_cabang" required onchange="this.form.submit()">
                         <option value="">Pilih Cabang!</option>
                         <?php foreach ($cabang as $row) : ?>
-                        <option value="<?= $row['kode_cabang']; ?>"> <?= $row['nama_cabang']; ?>
+                        <option value="<?= $row['kode_cabang']; ?>"
+                            <?= ($kode_cabang_sekarang == $row['kode_cabang']) ? 'selected' : ''; ?>>
+                            <?= $row['nama_cabang']; ?>
                         </option>
                         <?php endforeach; ?>
                     </select>
@@ -40,7 +42,7 @@ $session = session();
     <div class="section-body">
         <?php if ($session->get('level') == 'superadmin') :  ?>
         <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="cardmain col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
                     <div class="card-icon bg-primary">
                         <i class="fas fa-money-bill-wave"></i>
@@ -55,7 +57,7 @@ $session = session();
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="cardmain col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
                     <div class="card-icon bg-danger">
                         <i class="far fa-calendar-alt"></i>
@@ -70,7 +72,7 @@ $session = session();
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="cardmain col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
                     <div class="card-icon bg-success">
                         <i class="fas fa-file-invoice"></i>
@@ -85,7 +87,7 @@ $session = session();
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="cardmain col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
                     <div class="card-icon bg-danger">
                         <i class="fas fa-book"></i>
@@ -103,7 +105,7 @@ $session = session();
         </div>
         <?php else : ?>
         <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="cardmain col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
                     <div class="card-icon bg-primary">
                         <i class="fas fa-money-bill-wave"></i>
@@ -118,7 +120,7 @@ $session = session();
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="cardmain col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
                     <div class="card-icon bg-danger">
                         <i class="far fa-calendar-alt"></i>
@@ -156,7 +158,7 @@ $session = session();
                     $no = 1;
                     foreach ($home as $row) :
                     ?>
-                    <tr class="text-center">
+                    <tr class="text-center <?= 'bg-' . $row->jatuh_tempo_now; ?>">
                         <td><?= $no++; ?></td>
                         <td><?= $row->kode_pinjaman; ?></td>
                         <td><?= $row->nama; ?></td>

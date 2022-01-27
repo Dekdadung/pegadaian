@@ -24,7 +24,6 @@
                     <th>Hasil Lelang</th>
                     <th>Tanggal Lelang</th>
                     <th>Kode Cabang</th>
-                    <th>Action</th>
                 </tr>
                 <div class="text-center">
                     <?php
@@ -37,18 +36,6 @@
                         <td><?= rupiah($row->hasil_lelang); ?></td>
                         <td><?= $row->tgl_lelang; ?></td>
                         <td><?= $row->kodeCabang; ?></td>
-                        <td>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    Action
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="/lelang/delete/<?= $row->id_lelang; ?>"
-                                        onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</a>
-                                </div>
-                            </div>
-                        </td>
                     </tr>
                     <?php
                     endforeach;

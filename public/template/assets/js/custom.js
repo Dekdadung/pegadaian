@@ -54,10 +54,12 @@ $(document).ready(function(){
     })
     
     var rupiah = document.getElementById('rupiah');
+    if($('#rupiah').length > 0){
         rupiah.addEventListener('keyup', function(e)
         {
             rupiah.value = formatRupiah(this.value);
         });
+    }
     
     function formatRupiah(angka, prefix){
                 var number_string = angka.replace(/[^,\d]/g, '').toString(),
@@ -88,10 +90,73 @@ $(document).ready(function(){
         // console.log(data_row);
         // alert('assa');
     });
+
+    $('.jumlah_pinjaman_input').change(function(){
+        var checkedNew = $(this).val().replace(/\./g, "");
+        var sisa_saldo_akhir = $('.sisa_saldo_akhir').val();
+        if(parseInt(checkedNew) > parseInt(sisa_saldo_akhir)){
+            alert('saldo kurang!');
+            $(this).val('');
+            $(this).focus();
+        }
+    });
     // $("#mytable").dataTable();
     
     // document.getElementById('myForm').onsubmit = function() {
     //     var valInDecimals = document.getElementById('myPercent').value / 100;
     // } 
-    
+
+    $(document).on('click', '#btn-edit', function(){
+            $('.modal-body #id-barang').val($(this).data('id-barang'));
+            $('.modal-body #nama-barang').val($(this).data('nama-barang'));
+            $('#actionform').attr('action','/barang/update/'+$(this).data('id-barang'));
+        // console.log(data_row);
+        // alert('assa');
+    });
+
+    $(document).on('click', '#btn-edit-cabang', function(){
+        $('.modal-body #kode-cabang').val($(this).data('kode-cabang'));
+        $('.modal-body #nama-cabang').val($(this).data('nama-cabang'));
+        $('.modal-body #kode-toko').val($(this).data('kode-toko'));
+        $('.modal-body #alamat').val($(this).data('alamat'));
+        $('#formcabang').attr('action','/cabang/update/'+$(this).data('kode-cabang'));
+    // console.log(data_row);
+    // alert('assa');
+});
+
+$(document).on('click', '#btn-edit-nasabah', function(){
+    $('.modal-body #id-nasabah').val($(this).data('id-nasabah'));
+    $('.modal-body #kode-cabang').val($(this).data('kode-cabang'));
+    $('.modal-body #nama').val($(this).data('nama'));
+    $('.modal-body #telpon').val($(this).data('telpon'));
+    $('.modal-body #alamat').val($(this).data('alamat'));
+    $('.modal-body #nik').val($(this).data('nik'));
+    $('#formNasabah').attr('action','/nasabah/update/'+$(this).data('id-nasabah'));
+// console.log(data_row);
+// alert('assa');
+});
+
+$(document).on('click', '#btn-edit-user', function(){
+    $('.modal-body #id-user').val($(this).data('id-user'));
+    $('.modal-body #cabang').val($(this).data('cabang'));
+    $('.modal-body #nama-user').val($(this).data('nama-user'));
+    $('.modal-body #username').val($(this).data('username'));
+    $('.modal-body #password').val($(this).data('password'));
+    $('.modal-body #level').val($(this).data('level'));
+    $('#formUser').attr('action','/user/update/'+$(this).data('id-user'));
+// console.log(data_row);
+// alert('assa');
+});
+
+
+$(document).on('click', '#btn-edit-aturan', function(){
+    $('.modal-body #id-peraturan').val($(this).data('id-peraturan'));
+    $('.modal-body #bunga').val($(this).data('bunga'));
+    $('.modal-body #denda').val($(this).data('denda'));
+    $('#formAturan').attr('action','/aturan/update/'+$(this).data('id-peraturan'));
+// console.log(data_row);
+// alert('assa');
+});
+
+
 })

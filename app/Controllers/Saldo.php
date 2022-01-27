@@ -20,8 +20,11 @@ class Saldo extends BaseController
     {
         $kode_cabang = @$_GET['kode_cabang'];
         $saldo = (!empty($this->SaldoModel->getSisa($kode_cabang)[0]['sisa_kas']) ? $this->SaldoModel->getSisa($kode_cabang)[0]['sisa_kas'] : '0');
+        $saldo = ($kode_cabang == 'FG00') ? 0 : $saldo;
         $tgl = (!empty($this->SaldoModel->getSisa($kode_cabang)[0]['tgl_masuk']) ? $this->SaldoModel->getSisa($kode_cabang)[0]['tgl_masuk'] : '-');
+        $tgl = ($kode_cabang == 'FG00') ? '-' : $tgl;
         $cbNow = (!empty($this->SaldoModel->getSisa($kode_cabang)[0]['kode_cabang']) ? $this->SaldoModel->getSisa($kode_cabang)[0]['kode_cabang'] : '-');
+        $cbNow = ($kode_cabang == 'FG00') ? '-' : $cbNow;
         $data = [
             'title' => 'Data Keuangan',
             'validation' => \Config\Services::validation(),

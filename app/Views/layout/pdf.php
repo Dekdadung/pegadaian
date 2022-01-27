@@ -11,6 +11,21 @@ $session = session();
     <title>EXPORT DATA</title>
 
     <style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    html {
+        display: table;
+        margin: auto;
+    }
+
+    body {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
     table th {
         background: #0c1c60 !important;
         color: #fff !important;
@@ -47,6 +62,7 @@ $session = session();
             <div class="text-center">
                 <?php
                 $no = 1;
+                // var_dump($gadai);
                 foreach ($gadai as $row) :
                 ?>
                 <tr>

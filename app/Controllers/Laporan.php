@@ -34,11 +34,42 @@ class Laporan extends BaseController
         $cek_cabang_user = session('kode_cabang');
         $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
         $data_gadai = $this->PegadaianModel->getDataGadai($kode_cabang);
+
+        foreach ($data_gadai as $key) {
+            $cek_ = '';
+            // SELECT * FROM `pinjamangadai` WHERE tgl_jatuh_tempo >= date(NOW()) && tgl_jatuh_tempo <= date(NOW()) + 1
+            // $cek_ = $key->tgl_jatuh_tempo == date('Y-m-d') ? 'mark' : 'none';
+
+            $hari_esok = date('Y-m-d', strtotime("+1 day"));
+            if ($key->tgl_jatuh_tempo == date('Y-m-d')) {
+                $cek_ = 'danger text-white';
+            } elseif ($key->tgl_jatuh_tempo == $hari_esok) {
+                $cek_ = 'warning text-white';
+            } else {
+                $cek_ = 'default';
+            }
+            $key->jatuh_tempo_now = $cek_;
+        }
+
         $data = [
             'title' => 'Data Gadai',
             'gadai' => $data_gadai
         ];
         return view('laporan/datalaporan', $data);
+    }
+
+    public function nota()
+    {
+        return view('laporan/nota');
+    }
+
+    public function uploadForm()
+    {
+        $data = [
+            'title' => 'Upload Data',
+            // 'jTempo' => $jatuh_tempo
+        ];
+        return view('laporan/upload', $data);
     }
 
     public function pdf()

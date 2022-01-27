@@ -45,6 +45,21 @@ class Pegadaian extends BaseController
         $cek_cabang_user = session('kode_cabang');
         $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
         $data_gadai = $this->PegadaianModel->getDataGadai($kode_cabang);
+        foreach ($data_gadai as $key) {
+            $cek_ = '';
+            // SELECT * FROM `pinjamangadai` WHERE tgl_jatuh_tempo >= date(NOW()) && tgl_jatuh_tempo <= date(NOW()) + 1
+            // $cek_ = $key->tgl_jatuh_tempo == date('Y-m-d') ? 'mark' : 'none';
+
+            $hari_esok = date('Y-m-d', strtotime("+1 day"));
+            if ($key->tgl_jatuh_tempo == date('Y-m-d')) {
+                $cek_ = 'danger text-white';
+            } elseif ($key->tgl_jatuh_tempo == $hari_esok) {
+                $cek_ = 'warning text-white';
+            } else {
+                $cek_ = 'default';
+            }
+            $key->jatuh_tempo_now = $cek_;
+        }
         // $jatuh_tempo = $this->PegadaianModel->sortDate($kode_cabang);
         $data = [
             'title' => 'Data Gadai',
@@ -66,7 +81,7 @@ class Pegadaian extends BaseController
             $kode_pinjaman = $this->PegadaianModel->create_kode_pinjaman($this->cabang);
         }
         $this->cabang = $kode_cabang;
-
+        $saldo = (!empty($this->SaldoModel->getSisa($kode_cabang)[0]['sisa_kas']) ? $this->SaldoModel->getSisa($kode_cabang)[0]['sisa_kas'] : '0');
         $data = [
             'gadai' => $this->PegadaianModel->findAll(),
             'nasabah' => $data_nasabah,
@@ -75,6 +90,7 @@ class Pegadaian extends BaseController
             'aturan' => $this->AturanModel->findAll(),
             'barang' => $this->BarangModel->findAll(),
             'kode_cabang' => $kode_cabang,
+            'saldo_akhir' => $saldo,
             // 'telpNasabah' => $telp_nasabah,
             'title' => 'Form Data Gadai',
             'kode_pinjaman' => $kode_pinjaman,
@@ -97,15 +113,6 @@ class Pegadaian extends BaseController
                 'rules' => 'required',
                 'errors'    => [
                     'required'  => 'Data Harus Diisi'
-                ]
-            ],
-            'no_telp' => [
-                'rules' => 'required|numeric|max_length[15]|min_length[10]',
-                'errors'    => [
-                    'required'  => 'Data Harus Diisi',
-                    'numeric'  => 'Data Hanya Berisi Angka',
-                    'max_length'  => 'Data Isi maximal 15 angka',
-                    'min_length'  => 'Data Isi minimal 10 angka',
                 ]
             ],
             'jenis_barang' => [
@@ -176,7 +183,6 @@ class Pegadaian extends BaseController
         $data = [
             'kode_pinjaman' => $this->request->getVar('kode_pinjaman'),
             'id_nasabah' => $this->request->getVar('id_nasabah'),
-            'no_telp' => $this->request->getVar('no_telp'),
             'jenis_barang' => $this->request->getVar('jenis_barang'),
             'seri' => $this->request->getVar('seri'),
             'kelengkapan' => $this->request->getVar('kelengkapan'),
@@ -211,10 +217,11 @@ class Pegadaian extends BaseController
         $this->PendapatanModel->save([
             'jumlah_untung' => $bunga,
             'kd_pinjaman' => $this->request->getVar('kode_pinjaman'),
+            'tgl_masuk' => date('Y-m-d'),
             'jenis' => 'Bunga'
         ]);
         session()->setFlashdata('Pesan', 'Data Berhasil Ditambahkan');
-        return redirect()->to('/datagadai');
+        return view('laporan/nota');
     }
 
     public function createDenda($kode_pinjaman)
@@ -260,6 +267,7 @@ class Pegadaian extends BaseController
         $this->PendapatanModel->save([
             'jumlah_untung' => $denda,
             'kd_pinjaman' => $this->request->getVar('kode_pinjaman'),
+            'tgl_masuk' => date('Y-m-d'),
             'jenis' => 'denda'
         ]);
 
@@ -295,6 +303,7 @@ class Pegadaian extends BaseController
     public function saveBayar()
     {
         $jumlah_bayar = preg_replace("/[^a-zA-Z0-9\s]/", "", $this->request->getVar('jumlah_bayar'));
+
         $this->PembayaranModel->save([
             'kode_pinjaman' => $this->request->getVar('kode_pinjaman'),
             'jumlah_bayar' => $jumlah_bayar,
@@ -318,6 +327,9 @@ class Pegadaian extends BaseController
             'jenis' => 'pembayaran'
         ]);
 
+        $this->PegadaianModel->update($this->request->getVar('kode_pinjaman'), [
+            'status_bayar' => 'Lunas'
+        ]);
 
         session()->setFlashdata('Pesan', 'Data Berhasil Ditambahkan');
         return redirect()->to('/datagadai');
@@ -379,8 +391,15 @@ class Pegadaian extends BaseController
             session()->setFlashdata('errors', $this->validator->listErrors());
             return redirect()->back()->withInput();
         }
-
+        $jumlah_pinjaman = preg_replace("/[^a-zA-Z0-9\s]/", "", $this->request->getVar('jumlah_pinjaman'));
         $hasil_lelang = preg_replace("/[^a-zA-Z0-9\s]/", "", $this->request->getVar('hasil_lelang'));
+        $keuntungan = $hasil_lelang - $jumlah_pinjaman;
+        if ($keuntungan <= 0) {
+            $keuntungan = 0;
+        } else {
+            $keuntungan = $hasil_lelang - $jumlah_pinjaman;
+        }
+
         $data = [
             'nama_barang' => $this->request->getVar('nama_barang'),
             'kode_pinjaman' => $this->request->getVar('kode_pinjaman'),
@@ -391,6 +410,13 @@ class Pegadaian extends BaseController
 
         $this->LelangModel->simpan($data);
 
+        $this->PendapatanModel->save([
+            'jumlah_untung' => $keuntungan,
+            'kd_pinjaman' => $this->request->getVar('kode_pinjaman'),
+            'tgl_masuk' => date('Y-m-d'),
+            'jenis' => 'Lelang'
+        ]);
+
         $kode_cabang = $this->request->getVar('kode_cabang');
         $get_sisa_kas =  $this->SaldoModel->getSisa($kode_cabang);
         if (!empty($this->SaldoModel->getSisa($kode_cabang))) {
@@ -398,9 +424,9 @@ class Pegadaian extends BaseController
         } else {
             $sisa_kas = 0;
         }
-        $total_kas = $sisa_kas + $hasil_lelang;
+        $total_kas = $sisa_kas + $jumlah_pinjaman;
         $this->SaldoModel->save([
-            'jumlah_kas' => $hasil_lelang,
+            'jumlah_kas' => $jumlah_pinjaman,
             'sisa_kas' => $total_kas,
             'keterangan' => 'Lelang',
             'kode_cabang' => $this->request->getVar('kode_cabang'),
@@ -434,15 +460,6 @@ class Pegadaian extends BaseController
                 'rules' => 'required',
                 'errors'    => [
                     'required'  => 'Data Harus Diisi'
-                ]
-            ],
-            'no_telp' => [
-                'rules' => 'required|numeric|max_length[15]|min_length[10]',
-                'errors'    => [
-                    'required'  => 'Data Harus Diisi',
-                    'numeric'  => 'Data Hanya Berisi Angka',
-                    'max_length'  => 'Data Isi maximal 15 angka',
-                    'min_length'  => 'Data Isi minimal 10 angka',
                 ]
             ],
             'jenis_barang' => [
@@ -513,7 +530,6 @@ class Pegadaian extends BaseController
         $bunga = intval($jumlah_pinjaman) * $bungaP;
         $this->PegadaianModel->update($kode_pinjaman, [
             'id_nasabah' => $this->request->getVar('id_nasabah'),
-            'no_telp' => $this->request->getVar('no_telp'),
             'jenis_barang' => $this->request->getVar('jenis_barang'),
             'seri' => $this->request->getVar('seri'),
             'kelengkapan' => $this->request->getVar('kelengkapan'),

@@ -5,7 +5,8 @@
     <div class="section-header">
         <h1>Data Cabang</h1>
         <div class="section-header-button">
-            <a href="<?= site_url('formcabang') ?>" class="btn btn-primary">Tambah</a>
+            <a href="<?= site_url('formcabang') ?>" class="btn btn-primary" data-toggle="modal"
+                data-target="#exampleModal">Tambah</a>
         </div>
     </div>
 
@@ -19,7 +20,7 @@
             </div>
         </div>
         <?php endif; ?>
-        <table class="table table-striped table-md" id="myTable">
+        <table class="table table-striped table-md" id="tabelCabang">
             <thead>
                 <tr>
                     <th>No</th>
@@ -27,50 +28,168 @@
                     <th>Nama Cabang</th>
                     <th>Alamat</th>
                     <th>Kode Toko</th>
-                    <!-- <th>Action</th> -->
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 <div class="text-center">
-
+                    <?php
+                    $no = 1;
+                    foreach ($cabang as $row) :
+                    ?>
+                    <tr>
+                        <td><?= $no++; ?></td>
+                        <td><?= $row['kode_cabang']; ?></td>
+                        <td><?= $row['nama_cabang']; ?></td>
+                        <td><?= $row['alamat']; ?></td>
+                        <td><?= $row['kode_toko']; ?></td>
+                        <td>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    Action
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editModal"
+                                        id="btn-edit-cabang" data-kode-cabang="<?= $row['kode_cabang']; ?>"
+                                        data-nama-cabang="<?= $row['nama_cabang']; ?>"
+                                        data-alamat="<?= $row['alamat']; ?>"
+                                        data-kode-toko="<?= $row['kode_toko']; ?>">Edit</a>
+                                    <a class=" dropdown-item" href="/cabang/delete/<?= $row['kode_cabang']; ?>"
+                                        onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <?php
+                    endforeach;
+                    ?>
                 </div>
             </tbody>
         </table>
     </div>
 </section>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Data Cabang</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/cabang/save" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputtext4">Kode Cabang</label>
+                            <input type="text" name="kode_cabang"
+                                class="form-control <?= ($validation->hasError('kode_cabang')) ? 'is-invalid' : ''; ?>"
+                                id="inputtext4">
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('kode_cabang'); ?>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputtext4">Nama Cabang</label>
+                            <input type="text" name="nama_cabang"
+                                class="form-control <?= ($validation->hasError('nama_cabang')) ? 'is-invalid' : ''; ?>"
+                                id="inputtext4">
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('nama_cabang'); ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputtext4">Alamat</label>
+                            <textarea class="form-control <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>"
+                                name="alamat"></textarea>
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('alamat'); ?>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputtext4">Kode Toko</label>
+                            <input type="text" name="kode_toko"
+                                class="form-control <?= ($validation->hasError('kode_toko')) ? 'is-invalid' : ''; ?>"
+                                id="inputtext4">
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('kode_toko'); ?>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ubah Data Cabang</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post" id="formcabang">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputtext4">Kode Cabang</label>
+                            <input type="text" name="kode_cabang"
+                                class="form-control <?= ($validation->hasError('kode_cabang')) ? 'is-invalid' : ''; ?>"
+                                id="kode-cabang" value="">
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('kode_cabang'); ?>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputtext4">Nama Cabang</label>
+                            <input type="text" name="nama_cabang"
+                                class="form-control <?= ($validation->hasError('nama_cabang')) ? 'is-invalid' : ''; ?>"
+                                id="nama-cabang" value="">
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('nama_cabang'); ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputtext4">Alamat</label>
+                            <textarea class="form-control <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>"
+                                name="alamat" id="alamat"></textarea>
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('alamat'); ?>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputtext4">Kode Toko</label>
+                            <input type="text" name="kode_toko"
+                                class="form-control <?= ($validation->hasError('kode_toko')) ? 'is-invalid' : ''; ?>"
+                                id="kode-toko" value="">
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('kode_toko'); ?>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
-function myTable() {
-    var table = $('#myTable').DataTable({
-        "processing": true,
-        "serverSide": true,
-        "order": [],
-        "ajax": {
-            "url": "<?= site_url('cabang/myTable') ?>",
-            "type": "POST",
-            "dataSrc": "errorLogList"
-        },
-        "columns": [{
-                data: "errorCode"
-            },
-            {
-                data: "rowNumber"
-            },
-            {
-                data: "columnNumber"
-            },
-            {
-                data: "description"
-            },
-            {
-                data: "errorType"
-            },
-        ]
-
-    })
-}
-
 $(document).ready(function() {
-    myTable();
+    $('#tabelCabang').DataTable();
 });
 </script>
 <?= $this->endSection(); ?>

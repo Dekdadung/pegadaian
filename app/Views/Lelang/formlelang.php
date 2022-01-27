@@ -66,6 +66,10 @@
                         <?= $validation->getError('kode_cabang'); ?>
                     </div>
                 </div>
+                <input type="text" class="form-control" id="inputtext4" name="jumlah_pinjaman"
+                    value="<?= $gadai['jumlah_pinjaman']; ?>">
+                <input type="text" class="form-control" id="inputtext4" name="kode_pinjaman"
+                    value="<?= $gadai['kode_pinjaman']; ?>">
                 <div class="card-footer">
                     <button class="btn btn-primary">Submit</button>
                 </div>

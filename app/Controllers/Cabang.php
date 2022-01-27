@@ -18,7 +18,8 @@ class Cabang extends BaseController
     {
         $data = [
             'title' => 'Data cabang',
-            'cabang' => $this->CabangModel->findAll()
+            'cabang' => $this->CabangModel->findAll(),
+            'validation' => \Config\Services::validation()
         ];
         return view('cabang/datacabang', $data);
     }
@@ -139,34 +140,5 @@ class Cabang extends BaseController
         $this->CabangModel->delete($kode_cabang);
         session()->setFlashdata('Pesan', 'Data Berhasil Dihapus');
         return redirect()->to('/datacabang');
-    }
-
-    public function myTable()
-    {
-        $request = Services::request();
-        $datamodel = new IniModel($request);
-        if ($request->getMethod(true) == 'POST') {
-            $lists = $datamodel->get_datatables();
-            $data = [];
-            $no = $request->getPost("start");
-            foreach ($lists as $list) {
-                $no++;
-                $row = [];
-                $row =  $no;
-                $row =  $list->kode_cabang;
-                $row =  $list->nama_cabang;
-                $row =  $list->alamat;
-                $row =  $list->kode_toko;
-                // $row[] = '';
-                $data[] = $row;
-            }
-            $output = [
-                "draw" => $request->getPost('draw'),
-                "recordsTotal" => $datamodel->count_all(),
-                "recordsFiltered" => $datamodel->count_filtered(),
-                "data" => $data
-            ];
-            echo json_encode($output);
-        }
     }
 }

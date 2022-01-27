@@ -53,11 +53,6 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputtext4">No. Telpon</label>
-                        <input type="text" class="form-control" id="inputtext4" name="no_telp"
-                            value="<?= $gadai['no_telp']; ?>">
-                    </div>
-                    <div class="form-group col-md-6">
                         <label for="inputtext4">Tgl. Lelang</label>
                         <input type="date" class="form-control" id="inputtext4" name="tgl_lelang"
                             value="<?= $gadai['tgl_lelang']; ?>">

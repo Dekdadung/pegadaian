@@ -89,10 +89,16 @@ class Barang extends BaseController
         return redirect()->to('/databarang');
     }
 
-    public function delete($id_barang)
+    public function delete($id_barang = null)
     {
         $this->BarangModel->delete($id_barang);
-        session()->setFlashdata('Pesan', 'Data Berhasil Dihapus');
-        return redirect()->to('/databarang');
+        $data = [
+            'status'  => 'Berhasil Dihapus',
+            'status_text' => 'Data Berhasil Dihapus',
+            'status_icon' => 'success'
+        ];
+        return $this->response->setJSON($data);
+        // session()->setFlashdata('Pesan', 'Data Berhasil Dihapus');
+        // return redirect()->to('/databarang');
     }
 }

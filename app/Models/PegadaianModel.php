@@ -8,7 +8,7 @@ class PegadaianModel extends Model
 {
     protected $table = 'pinjamangadai';
     protected $primaryKey = 'kode_pinjaman';
-    protected $allowedFields = ['id_nasabah', 'no_telp', 'jenis_barang', 'seri', 'kelengkapan', 'jumlah', 'kondisi', 'tgl_gadai', 'tgl_jatuh_tempo', 'tgl_lelang', 'jumlah_pinjaman', 'bunga', 'kode_cabang', 'status_bayar'];
+    protected $allowedFields = ['id_nasabah', 'jenis_barang', 'seri', 'kelengkapan', 'jumlah', 'kondisi', 'tgl_gadai', 'tgl_jatuh_tempo', 'tgl_lelang', 'jumlah_pinjaman', 'bunga', 'kode_cabang', 'status_bayar'];
     protected $returnType = 'array';
 
     public function getDataGadai($kode_cabang = null, $dataSekarang = null)
@@ -21,7 +21,9 @@ class PegadaianModel extends Model
         }
 
         if (!empty($dataSekarang) && $dataSekarang == 'hariIni') {
+            // $array = ['pinjamangadai.tgl_gadai' => date('Y-m-d'), 'pinjamangadai.tgl_jatuh_tempo' => date('Y-m-d', strtotime("+1 day"))];
             $this->where('pinjamangadai.tgl_gadai', date('Y-m-d'));
+            // $this->where('pinjamangadai.tgl_jatuh_tempo', date('Y-m-d', strtotime("+1 day")));
         }
         return $this->get()->getResultObject();
     }
@@ -47,6 +49,20 @@ class PegadaianModel extends Model
         return count($data);
     }
 
+    public function selectJatuhTempo($kode_cabang = null)
+    {
+        if (!empty($kode_cabang) && $kode_cabang != 'FG00') {
+            $query = $this->query("SELECT * FROM pinjamangadai WHERE tgl_jatuh_tempo = date(NOW()) && kode_cabang = '$kode_cabang'");
+        } else {
+            $query = $this->query("SELECT * FROM pinjamangadai WHERE tgl_jatuh_tempo = date(NOW())");
+        }
+
+        $data = $query->getResultArray();
+        // dd($data);
+        // die;
+        return $data;
+    }
+
     public function create_kode_pinjaman($cabang_kode)
     {
         $dd = $this->query("SELECT kode_toko FROM cabang where kode_cabang = '$cabang_kode' ");
@@ -68,21 +84,11 @@ class PegadaianModel extends Model
         return $builder->insert($data);
     }
 
-    public function getTelp($id_nasabah)
+    public function getTotalPinjaman($kode_cabang)
     {
-        $builder = $this->select('no_telp');
-        $builder = $this->limit(1);
-        if (!empty($id_nasabah)) {
-            $builder = $this->where('id_nasabah', $id_nasabah);
-        }
-        $data = $builder->get()->getResultArray();
-        return $data;
-    }
-
-    public function getTotalPinjaman()
-    {
-        $builder = $this->selectSum('jumlah_pinjaman');
-        $data = $builder->get()->getResultArray();
+        // $builder = $this->selectSum('jumlah_pinjaman');
+        // $data = $builder->get()->getResultArray();
+        $data = $this->query("SELECT sum(jumlah_pinjaman) as jumlah_pinjaman FROM `pinjamangadai` WHERE tgl_gadai = date(NOW()) && kode_cabang = '" . $kode_cabang . "'")->getResultArray();
         return $data;
     }
 

@@ -32,7 +32,6 @@
                             value="<?= $gadai['jumlah_pinjaman']; ?>">
                         <input disabled type="text" class="form-control" id="inputtext4" name="jumlah_bayar"
                             value="<?= $gadai['jumlah_pinjaman']; ?>">
-
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Keterangan</label>
