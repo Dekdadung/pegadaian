@@ -18,8 +18,6 @@
     <link rel="stylesheet" href="<?= base_url() ?>/template/assets/@fortawesome/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>/template/assets/jquery/jquery.dataTables.min.css">
 
-    <script src="<?= base_url() ?>/template/assets/jquery/dist/jquery.min.js"></script>
-
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?= base_url() ?>/template/assets/css/style.css">
     <link rel="stylesheet" href="<?= base_url() ?>/template/assets/css/components.css">
@@ -40,17 +38,18 @@
 
     <!-- <script src="<?= base_url() ?>/template/assets/datatables.net-select/js/dataTables.select.min.js"></script>
     <script src="<?= base_url() ?>/template/assets/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <scri src="<?= base_url() ?>/template/assets/datatables/js/datatables.min.js"></scri  pt> -->
-
+     -->
+    <script src="<?= base_url() ?>/template/assets/jquery/dist/jquery.min.js"></script>
+    <script src="<?= base_url() ?>/template/assets/datatables/js/datatables.min.js"></script>
     <script src="<?= base_url() ?>/template/assets/popper.js/dist/umd/popper.min.js"></script>
     <script src="<?= base_url() ?>/template/assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="<?= base_url() ?>/template/assets/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="<?= base_url() ?>/template/assets/bootstrap/dist/js/bootstrap.js"></script>
     <script src="<?= base_url() ?>/template/assets/jquery.nicescroll/dist/jquery.nicescroll.min.js"></script>
     <script src="<?= base_url() ?>/template/assets/js/stisla.js"></script>
-    <!-- <script src="<?= base_url() ?>/template/assets/jquery-ui-dist/jquery-ui.min.js"></script> -->
+    <script src="<?= base_url() ?>/template/assets/jquery-ui-dist/jquery-ui.min.js"></script>
     <!-- <script src="<?= base_url() ?>/template/assets/jquery/jquery-3.5.1.slim.min.js"></script> -->
-    <script src="<?= base_url() ?>/template/assets/jquery/jquery.dataTables.min.js"></script>
+    <!-- <script src="<?= base_url() ?>/template/assets/jquery/jquery.dataTables.min.js"></script> -->
     <script src="<?= base_url() ?>/template/assets/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- JS Libraies -->
@@ -66,6 +65,7 @@
     <!-- <script src="<?= base_url() ?>/template/assets/js/page/modules-datatables.js"></script> -->
 
     <!-- Template JS File -->
+    <script src="<?= base_url() ?>/template/assets/js/my-datatable.js"></script>
     <script src="<?= base_url() ?>/template/assets/js/scripts.js"></script>
     <script src="<?= base_url() ?>/template/assets/js/custom.js"></script>
 </body>

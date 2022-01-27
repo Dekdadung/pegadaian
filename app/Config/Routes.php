@@ -34,6 +34,7 @@ $routes->setAutoRoute(true);
 $routes->get('a', 'Home::index');
 
 $routes->get('datagadai', 'Pegadaian::index', ['filter' => 'auth']);
+$routes->get('listgadai', 'Pegadaian::list', ['filter' => 'auth']);
 $routes->get('formgadai', 'Pegadaian::create', ['filter' => 'auth']);
 
 $routes->get('datanasabah', 'Nasabah::index', ['filter' => 'auth']);

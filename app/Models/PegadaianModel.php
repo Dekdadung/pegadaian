@@ -92,18 +92,40 @@ class PegadaianModel extends Model
         return $data;
     }
 
-    // public function getTotalPinjaman($kode_cabang = null)
-    // {
-    //     if (!empty($kode_cabang) && $kode_cabang != 'FG00') {
-    //         $query = $this->query("SELECT sum('jumlah_pinjaman') FROM pinjamangadai WHERE tgl_gadai = date(NOW()) && kode_cabang = '$kode_cabang'");
-    //     } else {
-    //         $query = $this->query("SELECT sum('jumlah_pinjaman') FROM pinjamangadai WHERE tgl_gadai = date(NOW())");
-    //     }
+    // for datatable list data
+    public function count_filter($query)
+    {
+        $this->select('count("kode_pinjaman") as qty');
+        $this->groupStart();
+        $this->orLike('kode_pinjaman', $query, 'BOTH');
+        $this->groupEnd();
+        return $this->get()->getRow()->qty;
+    }
+    public function listDataGadai($start, $length, $query, $keysearch)
+    {
+        $request = \Config\Services::request();
+        $kolom = ['kode_pinjaman', 'id_nasabah', 'tgl_gadai', 'tgl_jatuh_tempo', 'tgl_lelang', 'jumlah_pinjaman', 'bunga', 'kode_cabang'];
+        $this->groupStart();
+        $this->orLike($keysearch, $query, 'BOTH');
+        $this->groupEnd();
 
-    //     $data = $query->getResultArray();
-    //     // $builder = $this->selectSum('jumlah_pinjaman');
-    //     // $data = $builder->get()->getResultArray();
-    //     // return $data;
-    //     return $data;
-    // }
+        if ($request->getGet('iSortCol_0')) {
+            for ($i = 0; $i < intval($request->getGet('iSortingCols', TRUE)); $i++) {
+                if ($request->getGet('bSortable_' . intval($request->getGet('iSortCol_' . $i)), TRUE) == "true") {
+                    $this->orderBy($kolom[intval($request->getGet('iSortCol_' . $i, TRUE))], $request->getGet('sSortDir_' . $i, TRUE));
+                }
+            }
+        }
+        $this->join('nasabah', 'nasabah.id_nasabah = pinjamangadai.id_nasabah');
+        $this->join('perpanjangan', 'perpanjangan.kode_pinjamann = pinjamangadai.kode_pinjaman', 'left');
+        $this->orderBy('tgl_gadai', 'desc');
+        return $this->get($length, $start)->getResultObject();
+    }
+
+    public function get_month_olny()
+    {
+        $query = $this->query("SELECT date_format(tgl_gadai, '%M') AS bulan,date_format(tgl_gadai, '%Y') AS tahun,COUNT(kode_pinjaman) as total_data from pinjamangadai group by date_format(tgl_gadai, '%M') ORDER BY tgl_gadai ASC");
+        $data = $query->getResultObject();
+        return $data;
+    }
 }

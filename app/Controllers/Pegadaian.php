@@ -42,6 +42,7 @@ class Pegadaian extends BaseController
 
     public function index()
     {
+        $semua_data_bulanan =  $this->PegadaianModel->get_month_olny();
         $cek_cabang_user = session('kode_cabang');
         $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
         $data_gadai = $this->PegadaianModel->getDataGadai($kode_cabang);
@@ -63,7 +64,8 @@ class Pegadaian extends BaseController
         // $jatuh_tempo = $this->PegadaianModel->sortDate($kode_cabang);
         $data = [
             'title' => 'Data Gadai',
-            'gadai' => $data_gadai
+            'gadai' => $data_gadai,
+            'semua_data_bulanan' => $semua_data_bulanan
             // 'jTempo' => $jatuh_tempo
         ];
         return view('pegadaian/datagadai', $data);
@@ -569,5 +571,56 @@ class Pegadaian extends BaseController
         $this->PegadaianModel->delete($kode_pinjaman);
         session()->setFlashdata('Pesan', 'Data Berhasil Dihapus');
         return redirect()->to('/datagadai');
+    }
+
+    public function list()
+    {
+        helper('bulan');
+        // echo $this->request->getGet('halo');
+        $query = $this->request->getGet('sSearch');
+        $start = $this->request->getGet('iDisplayStart');
+        $length = $this->request->getGet('iDisplayLength');
+        $keySearch = 'kode_pinjaman';
+        // var_dump($query);
+        // die;
+        if (!empty($query)) {
+            $extract = explode("_", $query);
+            $query = $extract[0];
+            $keySearch = $extract[1];
+            if (count($extract) >= 3) {
+                $keySearch = $extract[1] . '_' . $extract[2];
+            }
+        }
+        // echo $this->PegadaianModel->count_filter('CB01');
+        // die;
+        $result['sEcho'] = intval($this->request->getGet('sEcho'));
+        $result['iTotalRecords'] = $this->PegadaianModel->countAllResults();
+        $result['iTotalDisplayRecords'] = $this->PegadaianModel->count_filter($query);
+        if ($length == -1) $length = $result['iTotalDisplayRecords'];
+        $data_gadai = $this->PegadaianModel->listDataGadai($start, $length, $query, $keySearch);
+        $i = $start + 1;
+
+        foreach ($data_gadai as $key) {
+            $key->no = $i;
+            $key->kodepinjaman = $key->kode_pinjaman;
+            $key->tgl_gadai = bulan($key->tgl_gadai);
+            $key->update_url = base_url() . '/pegadaian/edit/' . $key->kode_pinjaman;
+            $key->delete_url = base_url() . '/pegadaian/delete/' . $key->kode_pinjaman;
+            $key->pembayaran_url = base_url() . '/pegadaian/createBayar/' . $key->kode_pinjaman;
+            $key->perpanjangan_url = base_url() . '/pegadaian/createPerpanjang/' . $key->kode_pinjaman;
+            $key->denda_url = base_url() . '/pegadaian/createDenda/' . $key->kode_pinjaman;
+            $key->lelang_url = base_url() . '/pegadaian/createLelang/' . $key->kode_pinjaman;
+
+            $tgl_besok = date('Y-m-d', strtotime("+1 day"));
+            $key->sudah_jatuh_tempo = ($key->tgl_jatuh_tempo < date('Y-m-d')) ? true : false;
+            $key->jatuh_tempo_hari_ini = ($key->tgl_jatuh_tempo == date('Y-m-d')) ? true : false;
+            $key->jatuh_tempo_besok = ($key->tgl_jatuh_tempo == $tgl_besok) ? true : false;
+            $key->tgl_jatuh_tempo = bulan($key->tgl_jatuh_tempo);
+            $key->tgl_lelang = bulan($key->tgl_lelang);
+            $key->tgl_perpanjangan = (!empty($key->tgl_perpanjangan)) ? bulan($key->tgl_perpanjangan) : '-';
+            $i++;
+        }
+        $result['aaData'] = $data_gadai;
+        echo json_encode($result);
     }
 }

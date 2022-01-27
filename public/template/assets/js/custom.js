@@ -78,18 +78,16 @@ $(document).ready(function(){
                 return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
             }    
 
-    $('.btn-detail').on('click',function(e){
-        e.preventDefault();
-        var idpinjam = $(this).data('kdpinjaman');
-        var data_row = $('.datarow-'+idpinjam).val();
-        var convert_row = $.parseJSON(data_row);
-        $('#modalDetail').modal('show');
-        $.each(convert_row, function(key, val){
-            $('.row_'+key).text(val);
-        });
-        // console.log(data_row);
-        // alert('assa');
-    });
+            $(document).on('click','.btn-detail',function(e){
+                e.preventDefault();
+                var get_data = $(this).siblings('textarea').val();
+                    var convert_row = JSON.parse(get_data);
+                $('#modalDetail').modal('show');
+                $.each(convert_row, function(key, val){
+                    $('.row_'+key).text(val);
+                });
+            });
+            $("#tabelGadai").dataTable();
 
     $('.jumlah_pinjaman_input').change(function(){
         var checkedNew = $(this).val().replace(/\./g, "");

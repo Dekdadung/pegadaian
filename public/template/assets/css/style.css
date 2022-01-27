@@ -2335,6 +2335,10 @@ h6 .badge {
   display: flex;
 }
 
+.dropdown-menu a > i {
+  margin-right: 10px !important;
+}
+
 @media (max-width: 575.98px) {
   body.search-show .navbar .form-inline .search-element {
     display: block;
