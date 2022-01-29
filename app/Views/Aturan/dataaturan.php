@@ -11,13 +11,17 @@
     </div>
     <div class="card-body table-responsive">
         <?php if (session()->getFlashdata('Pesan')) : ?>
-        <div class="alert alert-success alert-has-icon">
-            <div class="alert-icon"><i class="far fa-lightbulb"></i></div>
-            <div class="alert-body">
-                <div class="alert-title">Sukses !</div>
-                <?= session()->getFlashdata('Pesan'); ?>
-            </div>
-        </div>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            swal({
+                title: "Berhasil !",
+                text: "<?= session()->getFlashdata('Pesan'); ?>",
+                timer: 1500,
+                icon: "success"
+            });
+        });
+        </script>
+
         <?php endif; ?>
         <table class="table table-striped table-md">
             <tbody>
@@ -47,8 +51,8 @@
                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editModal"
                                         id="btn-edit-aturan" data-id-peraturan="<?= $row['id_peraturan']; ?>"
                                         data-bunga="<?= $row['bunga']; ?>" data-denda="<?= $row['denda']; ?>">Edit</a>
-                                    <a class="dropdown-item" href="/aturan/delete/<?= $row['id_peraturan']; ?>"
-                                        onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</a>
+                                    <a class="dropdown-item Pdelete-btn"
+                                        data-id-peraturan="<?= $row['id_peraturan']; ?>" href="">Delete</a>
                                 </div>
                             </div>
                         </td>

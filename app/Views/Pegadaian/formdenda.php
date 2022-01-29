@@ -12,12 +12,19 @@
         <form action="/pegadaian/saveDenda" method="post">
             <div class="card-body">
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-12">
                         <label for="inputtext4">Kode Pinjaman</label>
                         <input type="text" class="form-control" id="inputtext4" name="kode_pinjaman"
                             value="<?= $gadai['kode_pinjaman']; ?>" disabled>
                         <input hidden type="text" class="form-control" id="inputtext4" name="kode_pinjaman"
                             value="<?= $gadai['kode_pinjaman']; ?>">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputtext4">Tanggal Jatuh Tempo</label>
+                        <input type="date" class="form-control " id="inputtext4" name="tgl_jatuh_tempo"
+                            value="<?= $gadai['tgl_jatuh_tempo']; ?>">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Tanggal Lelang</label>
@@ -25,15 +32,20 @@
                             value="<?= $gadai['tgl_lelang']; ?>">
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6" hidden>
+                <div class="form-row" hidden>
+                    <div class="form-group col-md-4">
                         <label for="inputtext4">Jumlah Pinjaman</label>
                         <input type="text" class="form-control" id="inputtext4" name="jumlah_pinjaman"
                             value="<?= $gadai['jumlah_pinjaman']; ?>">
                     </div>
-                    <div class="form-group col-md-6" hidden>
+                    <div class="form-group col-md-4">
                         <label for="inputtext4">Denda %</label>
                         <input type="text" class="form-control" id="inputtext4" name="dendaP" value=5>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputtext4">Bunga </label>
+                        <input type="text" class="form-control" id="inputtext4" name="bunga"
+                            value="<?= $gadai['bunga']; ?>">
                     </div>
                 </div>
             </div>

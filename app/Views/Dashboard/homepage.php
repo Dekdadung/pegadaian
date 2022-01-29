@@ -43,6 +43,23 @@ $session = session();
         <?php if ($session->get('level') == 'superadmin') :  ?>
         <div class="row">
             <div class="cardmain col-lg-3 col-md-6 col-sm-6 col-12">
+                <a href="<?= site_url('datagadai'); ?>">
+                    <div class="card card-statistic-1">
+                        <div class="card-icon bg-danger">
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                        <div class="card-wrap">
+                            <div class="card-header">
+                                <h4>Akan Jatuh Tempo</h4>
+                            </div>
+                            <div class="card-body">
+                                <h6><?php echo $jTempo; ?></h6>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardmain col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
                     <div class="card-icon bg-primary">
                         <i class="fas fa-money-bill-wave"></i>
@@ -59,27 +76,12 @@ $session = session();
             </div>
             <div class="cardmain col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
-                    <div class="card-icon bg-danger">
-                        <i class="far fa-calendar-alt"></i>
-                    </div>
-                    <div class="card-wrap">
-                        <div class="card-header">
-                            <h4>Akan Jatuh Tempo</h4>
-                        </div>
-                        <div class="card-body">
-                            <h6><?php echo $jTempo; ?></h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cardmain col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="card card-statistic-1">
                     <div class="card-icon bg-success">
                         <i class="fas fa-file-invoice"></i>
                     </div>
                     <div class="card-wrap">
                         <div class="card-header">
-                            <h4>Peminjaman Hari Ini</h4>
+                            <h4>Total Peminjaman Hari Ini</h4>
                         </div>
                         <div class="card-body">
                             <h6><?php echo rupiah($totalpinjam); ?></h6>
@@ -94,7 +96,7 @@ $session = session();
                     </div>
                     <div class="card-wrap">
                         <div class="card-header">
-                            <h4>Pendapatan Hari Ini</h4>
+                            <h4>Total Pendapatan Hari Ini</h4>
                         </div>
                         <div class="card-body">
                             <h6><?php echo rupiah($totaldapat); ?></h6>
@@ -105,6 +107,23 @@ $session = session();
         </div>
         <?php else : ?>
         <div class="row">
+            <div class="cardmain col-lg-3 col-md-6 col-sm-6 col-12">
+                <a href="<?= site_url('datagadai'); ?>">
+                    <div class="card card-statistic-1">
+                        <div class="card-icon bg-danger">
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                        <div class="card-wrap">
+                            <div class="card-header">
+                                <h4>Akan Jatuh Tempo</h4>
+                            </div>
+                            <div class="card-body">
+                                <h6><?php echo $jTempo; ?></h6>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
             <div class="cardmain col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card card-statistic-1">
                     <div class="card-icon bg-primary">
@@ -120,25 +139,13 @@ $session = session();
                     </div>
                 </div>
             </div>
-            <div class="cardmain col-lg-3 col-md-6 col-sm-6 col-12">
-                <div class="card card-statistic-1">
-                    <div class="card-icon bg-danger">
-                        <i class="far fa-calendar-alt"></i>
-                    </div>
-                    <div class="card-wrap">
-                        <div class="card-header">
-                            <h4>Akan Jatuh Tempo</h4>
-                        </div>
-                        <div class="card-body">
-                            <h6><?php echo $jTempo; ?></h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <?php endif ?>
     </div>
 
+    <div class="text-center">
+        <h2>Data Gadai Hari Ini</h2>
+    </div>
     <div class="card-body table-responsive">
         <table class="table table-striped table-sm">
             <tbody>

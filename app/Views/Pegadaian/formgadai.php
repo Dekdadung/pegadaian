@@ -30,7 +30,13 @@ $session = session();
                 </div>
             </form>
         </div>
+        <div class="section-header-breadcrumb mt-3">
+            <h6>Tanggal Hari Ini : <?= date('Y-m-d') ?></h6>
+        </div>
         <?php else : ?>
+        <div class="section-header-breadcrumb mt-3">
+            <h6>Saldo Sekarang : <?= rupiah($saldo_akhir) ?></h6>
+        </div>
         <?php endif ?>
     </div>
 
@@ -155,12 +161,11 @@ $session = session();
                         </div>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputtext4">Kondisi</label>
-                        <div class="form-label-group">
-                            <select class="form-control" name="kondisi">
-                                <option value="Baru">Baru</option>
-                                <option value="Bekas">Bekas</option>
-                            </select>
+                        <label for="inputtext4">kondisi</label>
+                        <textarea class="form-control <?= ($validation->hasError('kondisi')) ? 'is-invalid' : ''; ?>"
+                            id="" name="kondisi"></textarea>
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('kondisi'); ?>
                         </div>
                     </div>
                 </div>

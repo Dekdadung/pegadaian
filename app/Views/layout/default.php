@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="<?= base_url() ?>/template/assets/@fortawesome/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>/template/assets/jquery/jquery.dataTables.min.css">
 
+    <script src="<?= base_url() ?>/template/assets/jquery/dist/jquery.min.js"></script>
+
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?= base_url() ?>/template/assets/css/style.css">
     <link rel="stylesheet" href="<?= base_url() ?>/template/assets/css/components.css">
@@ -39,7 +41,6 @@
     <!-- <script src="<?= base_url() ?>/template/assets/datatables.net-select/js/dataTables.select.min.js"></script>
     <script src="<?= base_url() ?>/template/assets/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
      -->
-    <script src="<?= base_url() ?>/template/assets/jquery/dist/jquery.min.js"></script>
     <script src="<?= base_url() ?>/template/assets/datatables/js/datatables.min.js"></script>
     <script src="<?= base_url() ?>/template/assets/popper.js/dist/umd/popper.min.js"></script>
     <script src="<?= base_url() ?>/template/assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

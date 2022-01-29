@@ -80,15 +80,20 @@ class Excel extends Controller
 
         //MERGE HEADING
         $spreadsheet->getActiveSheet()->mergeCells("A1:G1");
+        $spreadsheet->getActiveSheet()->mergeCells("L1:M1");
 
         //SET FONT STYLE
         $spreadsheet->getActiveSheet()->setCellValue('A1', 'LAPORAN GADAI');
+        $spreadsheet->getActiveSheet()->setCellValue('L1', 'TOTAL SEMUA');
 
         //MERGE HEADING
         $spreadsheet->getActiveSheet()->getStyle('A1')->getFont()->setSize(20);
+        $spreadsheet->getActiveSheet()->getStyle('L1')->getFont()->setSize(20);
 
         //SET CELL ALIGNMENT
         $spreadsheet->getActiveSheet()->getStyle('A1')->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+        $spreadsheet->getActiveSheet()->getStyle('L1')->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+        $spreadsheet->getActiveSheet()->getStyle('A2:H2')->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
 
         //SET COLUMN WIDTH
         $spreadsheet->getActiveSheet()->getColumnDimension('A')->setWidth(15);
@@ -96,8 +101,11 @@ class Excel extends Controller
         $spreadsheet->getActiveSheet()->getColumnDimension('C')->setWidth(13);
         $spreadsheet->getActiveSheet()->getColumnDimension('D')->setWidth(13);
         $spreadsheet->getActiveSheet()->getColumnDimension('E')->setWidth(13);
-        $spreadsheet->getActiveSheet()->getColumnDimension('F')->setWidth(13);
+        $spreadsheet->getActiveSheet()->getColumnDimension('F')->setWidth(18);
         $spreadsheet->getActiveSheet()->getColumnDimension('G')->setWidth(14);
+        $spreadsheet->getActiveSheet()->getColumnDimension('H')->setWidth(16);
+        $spreadsheet->getActiveSheet()->getColumnDimension('L')->setWidth(20);
+        $spreadsheet->getActiveSheet()->getColumnDimension('M')->setWidth(20);
 
 
         //header/nama kolom
@@ -108,14 +116,14 @@ class Excel extends Controller
             ->setCellValue('D2', 'Jatuh Tempo')
             ->setCellValue('E2', "Tgl Lelang")
             ->setCellValue('F2', 'Jumlah Pinjaman')
-            ->setCellValue('F2', 'Bunga')
-            ->setCellValue('G2', 'Kode Cabang');
+            ->setCellValue('G2', 'Bunga')
+            ->setCellValue('H2', 'Kode Cabang');
 
-        $spreadsheet->getActiveSheet()->getStyle('A2:G2')->getFont()->setSize(12);
-        $spreadsheet->getActiveSheet()->getStyle('A2:G2')->getFont()->setBold(true);
+        $spreadsheet->getActiveSheet()->getStyle('A2:H2')->getFont()->setSize(12);
+        $spreadsheet->getActiveSheet()->getStyle('A2:H2')->getFont()->setBold(true);
 
         //SET FONT STYLE AND BACKGROUND
-        $spreadsheet->getActiveSheet()->getStyle('A2:G2')->applyFromArray($tableHead);
+        $spreadsheet->getActiveSheet()->getStyle('A2:H2')->applyFromArray($tableHead);
 
         $row = 3;
         //data gadai ke cell
@@ -126,21 +134,30 @@ class Excel extends Controller
                 ->setCellValue('C' . $row, $data->tgl_gadai)
                 ->setCellValue('D' . $row, $data->tgl_jatuh_tempo)
                 ->setCellValue('E' . $row, $data->tgl_lelang)
-                ->setCellValue('F' . $row, rupiah($data->jumlah_pinjaman))
-                ->setCellValue('F' . $row, rupiah($data->bunga))
-                ->setCellValue('G' . $row, $data->kode_cabang);
+                ->setCellValue('F' . $row, $data->jumlah_pinjaman)
+                ->setCellValue('G' . $row, $data->bunga)
+                ->setCellValue('H' . $row, $data->kode_cabang);
 
             //SET row STYLE
             if ($row % 2 == 0) {
                 //even row
-                $spreadsheet->getActiveSheet()->getStyle('A' . $row . ':G' . $row)->applyFromArray($evenRow);
+                $spreadsheet->getActiveSheet()->getStyle('A' . $row . ':H' . $row)->applyFromArray($evenRow);
+                $spreadsheet->getActiveSheet()->getStyle('A' . $row . ':H' . $row)->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
             } else {
                 //odd row
-                $spreadsheet->getActiveSheet()->getStyle('A' . $row . ':G' . $row)->applyFromArray($oddRow);
+                $spreadsheet->getActiveSheet()->getStyle('A' . $row . ':H' . $row)->applyFromArray($oddRow);
+                $spreadsheet->getActiveSheet()->getStyle('A' . $row . ':H' . $row)->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
             }
 
             $row++;
         }
+
+        //COLUMN SUM Kolom L Dan M
+        $spreadsheet->setActiveSheetIndex(0)
+            ->setCellValue('L2', "TOTAL PINJAMAN =")
+            ->setCellValue('M2', '=SUM(F3:F' . ($row - 1) . ')')
+            ->setCellValue('L3', 'TOTAL BUNGA =')
+            ->setCellValue('M3', '=SUM(G3:G' . ($row - 1) . ')');
 
         $writer = new Xlsx($spreadsheet);
         $filename = 'Data Pegadaian';

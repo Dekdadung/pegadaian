@@ -107,7 +107,11 @@ class Aturan extends BaseController
     public function delete($id_aturan)
     {
         $this->AturanModel->delete($id_aturan);
-        session()->setFlashdata('Pesan', 'Data Berhasil Dihapus');
-        return redirect()->to('/dataaturan');
+        $data = [
+            'status'  => 'Berhasil Dihapus',
+            'status_text' => 'Data Berhasil Dihapus',
+            'status_icon' => 'success'
+        ];
+        return $this->response->setJSON($data);
     }
 }

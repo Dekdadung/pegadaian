@@ -56,7 +56,8 @@ $routes->get('formaturan', 'Aturan::create', ['filter' => 'auth']);
 $routes->get('databarang', 'Barang::index', ['filter' => 'auth']);
 $routes->get('formbarang', 'Barang::create', ['filter' => 'auth']);
 
-$routes->get('datalelang', 'Pegadaian::lelang', ['filter' => 'auth']);
+$routes->get('terlelang', 'Pegadaian::TerLelang', ['filter' => 'auth']);
+$routes->get('datalelang', 'Pegadaian::AkanLelang', ['filter' => 'auth']);
 
 $routes->get('saldo', 'Saldo::index', ['filter' => 'auth']);
 

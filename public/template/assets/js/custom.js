@@ -93,7 +93,11 @@ $(document).ready(function(){
         var checkedNew = $(this).val().replace(/\./g, "");
         var sisa_saldo_akhir = $('.sisa_saldo_akhir').val();
         if(parseInt(checkedNew) > parseInt(sisa_saldo_akhir)){
-            alert('saldo kurang!');
+            swal({
+                title: "Saldo Kurang !",
+                text: "Mohon Inputkan Jumlah Sesuai Saldo !",
+                icon: "warning",
+              });
             $(this).val('');
             $(this).focus();
         }
@@ -154,6 +158,216 @@ $(document).on('click', '#btn-edit-aturan', function(){
     $('#formAturan').attr('action','/aturan/update/'+$(this).data('id-peraturan'));
 // console.log(data_row);
 // alert('assa');
+});
+
+$(document).ready(function() {
+    $('.delete-btn').click(function(e) {
+        e.preventDefault();
+        var id = $(this).data('idbarang');
+
+        swal({
+                title: "Yakin Ingin Hapus Data?",
+                text: "Data yang dihapus tidak bisa dikembalikan !",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        url: "/barang/delete/" + id,
+                        success: function(response) {
+                            swal({
+                                    title: response.status,
+                                    text: response.status_text,
+                                    icon: response.status_icon,
+                                    button: "OK",
+                                })
+                                .then((confirmed) => {
+                                    window.location.reload();
+                                });
+                        }
+                    });
+                }
+            });
+
+    });
+
+});
+
+$(document).ready(function() {
+    $('.Ndelete-btn').click(function(e) {
+        e.preventDefault();
+        var id = $(this).data('id-nasabah');
+
+        swal({
+                title: "Yakin Ingin Hapus Data?",
+                text: "Data yang dihapus tidak bisa dikembalikan !",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        url: "/nasabah/delete/" + id,
+                        success: function(response) {
+                            swal({
+                                    title: response.status,
+                                    text: response.status_text,
+                                    icon: response.status_icon,
+                                    button: "OK",
+                                })
+                                .then((confirmed) => {
+                                    window.location.reload();
+                                });
+                        }
+                    });
+                }
+            });
+
+    });
+
+});
+
+$(document).ready(function() {
+    $('.Udelete-btn').click(function(e) {
+        e.preventDefault();
+        var id = $(this).data('id-user');
+
+        swal({
+                title: "Yakin Ingin Hapus Data?",
+                text: "Data yang dihapus tidak bisa dikembalikan !",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        url: "/user/delete/" + id,
+                        success: function(response) {
+                            swal({
+                                    title: response.status,
+                                    text: response.status_text,
+                                    icon: response.status_icon,
+                                    button: "OK",
+                                })
+                                .then((confirmed) => {
+                                    window.location.reload();
+                                });
+                        }
+                    });
+                }
+            });
+
+    });
+
+});
+
+$(document).ready(function() {
+    $('.Pdelete-btn').click(function(e) {
+        e.preventDefault();
+        var id = $(this).data('id-peraturan');
+
+        swal({
+                title: "Yakin Ingin Hapus Data?",
+                text: "Data yang dihapus tidak bisa dikembalikan !",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        url: "/aturan/delete/" + id,
+                        success: function(response) {
+                            swal({
+                                    title: response.status,
+                                    text: response.status_text,
+                                    icon: response.status_icon,
+                                    button: "OK",
+                                })
+                                .then((confirmed) => {
+                                    window.location.reload();
+                                });
+                        }
+                    });
+                }
+            });
+
+    });
+
+});
+
+$(document).ready(function() {
+    $('.Cdelete-btn').click(function(e) {
+        e.preventDefault();
+        var id = $(this).data('kode-cabang');
+
+        swal({
+                title: "Yakin Ingin Hapus Data?",
+                text: "Data yang dihapus tidak bisa dikembalikan !",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        url: "/cabang/delete/" + id,
+                        success: function(response) {
+                            swal({
+                                    title: response.status,
+                                    text: response.status_text,
+                                    icon: response.status_icon,
+                                    button: "OK",
+                                })
+                                .then((confirmed) => {
+                                    window.location.reload();
+                                });
+                        }
+                    });
+                }
+            });
+
+    });
+
+});
+
+$(document).ready(function() {
+    $('.Gdelete-btn').click(function(e) {
+        e.preventDefault();
+        var id = $(this).data('kode-pinjaman');
+
+        swal({
+                title: "Yakin Ingin Hapus Data?",
+                text: "Data yang dihapus tidak bisa dikembalikan !",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        url: "/pegadaian/delete/" + id,
+                        success: function(response) {
+                            swal({
+                                    title: response.status,
+                                    text: response.status_text,
+                                    icon: response.status_icon,
+                                    button: "OK",
+                                })
+                                .then((confirmed) => {
+                                    window.location.reload();
+                                });
+                        }
+                    });
+                }
+            });
+
+    });
+
 });
 
 

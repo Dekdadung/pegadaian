@@ -138,7 +138,11 @@ class Cabang extends BaseController
     public function delete($kode_cabang)
     {
         $this->CabangModel->delete($kode_cabang);
-        session()->setFlashdata('Pesan', 'Data Berhasil Dihapus');
-        return redirect()->to('/datacabang');
+        $data = [
+            'status'  => 'Berhasil Dihapus',
+            'status_text' => 'Data Berhasil Dihapus',
+            'status_icon' => 'success'
+        ];
+        return $this->response->setJSON($data);
     }
 }

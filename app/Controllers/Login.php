@@ -14,10 +14,14 @@ class Login extends BaseController
 
     public function index()
     {
+        $data = [
+            'title' => 'Login Form'
+        ];
+
         if (session('id_user')) {
             return redirect()->to(site_url('dashboard'));
         }
-        return view('login/login');
+        return view('login/login', $data);
     }
 
     public function login()

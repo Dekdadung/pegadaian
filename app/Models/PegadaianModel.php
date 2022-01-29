@@ -28,6 +28,23 @@ class PegadaianModel extends Model
         return $this->get()->getResultObject();
     }
 
+    public function getDataLelang($kode_cabang = null, $dataSekarang = null)
+    {
+        $this->db->table('pinjamangadai');
+        $this->join('nasabah', 'nasabah.id_nasabah = pinjamangadai.id_nasabah');
+        $this->join('cabang', 'cabang.kode_cabang = pinjamangadai.kode_cabang');
+        if (!empty($kode_cabang) && $kode_cabang != 'FG00') {
+            $this->where('pinjamangadai.kode_cabang', $kode_cabang);
+        }
+
+        if (!empty($dataSekarang) && $dataSekarang == 'hariIni') {
+            // $array = ['pinjamangadai.tgl_gadai' => date('Y-m-d'), 'pinjamangadai.tgl_jatuh_tempo' => date('Y-m-d', strtotime("+1 day"))];
+            $this->where('pinjamangadai.tgl_lelang', date('Y-m-d'));
+            // $this->where('pinjamangadai.tgl_jatuh_tempo', date('Y-m-d', strtotime("+1 day")));
+        }
+        return $this->get()->getResultObject();
+    }
+
     public function sortDate($kode_cabang = null)
     {
         // $this->select('*');

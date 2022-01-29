@@ -19,13 +19,16 @@ $session = session();
     <?php endif ?>
 
     <?php if (session()->getFlashdata('Pesan')) : ?>
-    <div class="alert alert-success alert-has-icon">
-        <div class="alert-icon"><i class="far fa-lightbulb"></i></div>
-        <div class="alert-body">
-            <div class="alert-title">Sukses !</div>
-            <?= session()->getFlashdata('Pesan'); ?>
-        </div>
-    </div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        swal({
+            title: "Berhasil !",
+            text: "<?= session()->getFlashdata('Pesan'); ?>",
+            timer: 1500,
+            icon: "success"
+        });
+    });
+    </script>
     <?php endif; ?>
     <div class="">
         <style>
@@ -125,7 +128,7 @@ $session = session();
                 </div>
             </div>
         </div>
-        <table class="table table-striped table-md datatable" id="">
+        <table class="table table-md datatable" id="">
             <thead>
                 <tr class="text-center">
                     <th>No</th>
@@ -162,9 +165,10 @@ $session = session();
                         <h5 class="card-title"></h5>
                         <p class="card-text"><b>Kode Pinjaman : <span class="row_kode_pinjaman"></span></b></p>
                         <p class="card-text"><b>Id Nasabah : <span class="row_id_nasabah"></span></b></p>
+                        <p class="card-text"><b>Nama Nasabah : <span class="row_nama"></span></b></p>
                         <p class="card-text"><b>No. Telpon : <span class="row_no_telp"></span></b></p>
                         <p class="card-text"><b>Tgl. Gadai: <span class="row_tgl_gadai"></span></b></p>
-                        <p class="card-text"><b>Tgl. Jatuh Tempo: <span class="row_jatuh_tempo"></span></b></p>
+                        <p class="card-text"><b>Tgl. Jatuh Tempo: <span class="row_tgl_jatuh_tempo"></span></b></p>
                         <p class="card-text"><b>Tgl. Lelang: <span class="row_tgl_lelang"></span></b></p>
                         <p class="card-text"><b>Jumlah Pinjaman : <span class="row_jumlah_pinjaman"></span></b></p>
                         <p class="card-text"><b>Bunga : <span class="row_bunga"></span></b></p>

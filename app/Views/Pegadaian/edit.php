@@ -22,17 +22,6 @@
                         </div>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputtext4">Tanggal Gadai</label>
-                        <input type="date"
-                            class="form-control <?= ($validation->hasError('tgl_gadai')) ? 'is-invalid' : ''; ?>"
-                            id="inputtext4" name="tgl_gadai" value="<?= $gadai['tgl_gadai']; ?>">
-                        <div class="invalid-feedback">
-                            <?= $validation->getError('tgl_gadai'); ?>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
                         <label for="inputtext4">Nama Nasabah</label>
                         <div class="form-label-group">
                             <select class="form-control" name="id_nasabah">
@@ -45,26 +34,37 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group col-md-6">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
                         <label for="inputtext4">Tgl. Jatuh Tempo</label>
                         <input type="date" class="form-control" id="inputtext4" name="tgl_jatuh_tempo"
                             value="<?= $gadai['tgl_jatuh_tempo']; ?>">
                     </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
+                        <label for="inputtext4">Tanggal Gadai</label>
+                        <input type="date"
+                            class="form-control <?= ($validation->hasError('tgl_gadai')) ? 'is-invalid' : ''; ?>"
+                            id="inputtext4" name="tgl_gadai" value="<?= $gadai['tgl_gadai']; ?>">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('tgl_gadai'); ?>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
                         <label for="inputtext4">Tgl. Lelang</label>
                         <input type="date" class="form-control" id="inputtext4" name="tgl_lelang"
                             value="<?= $gadai['tgl_lelang']; ?>">
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-12">
                         <label for="inputtext4">Jumlah Pinjaman</label>
                         <input type="text" class="form-control" id="rupiah" name="jumlah_pinjaman"
-                            value="<?= $gadai['jumlah_pinjaman']; ?>">
+                            value="<?= $gadai['jumlah_pinjaman']; ?>" hidden>
+                        <input type="text" class="form-control" id="rupiah" name="jumlah_pinjaman"
+                            value="<?= rupiah($gadai['jumlah_pinjaman']); ?>" disabled>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-6" hidden>
                         <label for="inputtext4">Bunga</label>
                         <div class="form-label-group">
                             <select class="form-control" name="bungaP">

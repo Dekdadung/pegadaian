@@ -246,9 +246,12 @@ class Nasabah extends BaseController
 
     public function delete($id_nasabah)
     {
-        $data = ['nasabah' => $this->NasabahModel->find($id_nasabah)];
         $this->NasabahModel->delete($id_nasabah);
-        session()->setFlashdata('Pesan', 'Data Berhasil Dihapus');
-        return redirect()->to('/datanasabah');
+        $data = [
+            'status'  => 'Berhasil Dihapus',
+            'status_text' => 'Data Berhasil Dihapus',
+            'status_icon' => 'success'
+        ];
+        return $this->response->setJSON($data);
     }
 }

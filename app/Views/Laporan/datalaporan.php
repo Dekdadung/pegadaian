@@ -16,9 +16,6 @@ $session = session();
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item" href="<?php echo base_url('excel/export') ?>">EXCEL<i
                             class="fa fa-file-excel"></i></a>
-                    <a class="dropdown-item" href="<?php echo base_url('export/generate') ?>">PDF<i
-                            class="fa fa-file-pdf"></i></a>
-                    <a class="dropdown-item" href="#" onclick="window.print()">PRINT DATA<i class="fa fa-print"></i></a>
                     <a class="dropdown-item" href="<?php echo base_url('/uploadForm') ?>">UPLOAD DATA<i
                             class="fa fa-upload"></i></a>
                 </div>

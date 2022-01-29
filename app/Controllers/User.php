@@ -139,9 +139,12 @@ class User extends BaseController
 
     public function delete($id_user)
     {
-        $data = ['user' => $this->UserModel->find($id_user)];
         $this->UserModel->delete($id_user);
-        session()->setFlashdata('Pesan', 'Data Berhasil Dihapus');
-        return redirect()->to('/datauser');
+        $data = [
+            'status'  => 'Berhasil Dihapus',
+            'status_text' => 'Data Berhasil Dihapus',
+            'status_icon' => 'success'
+        ];
+        return $this->response->setJSON($data);
     }
 }

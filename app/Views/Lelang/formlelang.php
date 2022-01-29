@@ -48,6 +48,23 @@
                         </div>
                     </div>
                     <div class="form-group col-md-6">
+                        <label for="inputState">No. IMEI/Seri</label>
+                        <input hidden type="text" class="form-control" id="inputSeri" name="seri"
+                            value="<?= $gadai['seri']; ?>">
+                        <input disabled type="text" class="form-control" id="inputSeri" name="seri"
+                            value="<?= $gadai['seri']; ?>">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputtext4">Harga Saat Ini</label>
+                        <input hidden type="text" class="form-control" id="inputtext4" name="jumlah_pinjaman"
+                            value="<?= $gadai['jumlah_pinjaman']; ?>">
+                        <input disabled type="text" class="form-control" id="inputtext4" name="jumlah_pinjaman"
+                            value="<?= rupiah($gadai['jumlah_pinjaman']); ?>">
+                    </div>
+
+                    <div class="form-group col-md-6">
                         <label for="inputtext4">Harga Terjual</label>
                         <input type="text"
                             class="form-control <?= ($validation->hasError('hasil_lelang')) ? 'is-invalid' : ''; ?>"
@@ -66,10 +83,6 @@
                         <?= $validation->getError('kode_cabang'); ?>
                     </div>
                 </div>
-                <input type="text" class="form-control" id="inputtext4" name="jumlah_pinjaman"
-                    value="<?= $gadai['jumlah_pinjaman']; ?>">
-                <input type="text" class="form-control" id="inputtext4" name="kode_pinjaman"
-                    value="<?= $gadai['kode_pinjaman']; ?>">
                 <div class="card-footer">
                     <button class="btn btn-primary">Submit</button>
                 </div>

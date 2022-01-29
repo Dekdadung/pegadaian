@@ -9,7 +9,7 @@
         <h1>Form Perpanjangan Tempo</h1>
     </div>
     <div class="card">
-        <form action="/perpanjangan/savePerpanjang" method="post">
+        <form action="/pegadaian/savePerpanjang" method="post">
             <div class="card-body">
                 <div class="form-row">
                     <div class="form-group col-md-6" hidden>

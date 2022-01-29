@@ -4,7 +4,9 @@ $session = session();
 
 <nav class="navbar navbar-reverse navbar-expand-lg">
     <div class="container">
-        <a class="navbar-brand smooth" href="<?= site_url('homepage') ?>">FLOBAMORA</a>
+        <a class="navbar-brand smooth" href="<?= site_url('homepage') ?>">FLOBAMORA <br>
+            <center>Gadai</center>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
@@ -15,9 +17,9 @@ $session = session();
             <ul class="navbar-nav mr-auto ml-lg-3 align-items-lg-center">
                 <li class="nav-item"><a href="<?= site_url('dashboard') ?>" class="nav-link">Dashboard</a>
                 </li>
-                <li class="nav-item"><a href="<?= site_url('datagadai') ?>" class="nav-link">Pegadaian</a>
+                <li class="nav-item"><a href="<?= site_url('datagadai') ?>" class="nav-link">Pegadaian</a></li>
                 <li class="nav-item"><a href="<?= site_url('saldo') ?>" class="nav-link">Saldo</a></li>
-                <li class="nav-item"><a href="<?= site_url('datacabang') ?>" class="nav-link">Cabang</a>
+                <li class="nav-item"><a href="<?= site_url('datacabang') ?>" class="nav-link">Cabang</a></li>
                 <li class="nav-item dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle"
                         aria-expanded="false">Pengaturan</a>
                     <ul class="dropdown-menu">
@@ -29,7 +31,14 @@ $session = session();
                         <li><a href="<?= site_url('databarang') ?>" class="dropdown-item">Jenis Barang</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="<?= site_url('datalelang') ?>" class="nav-link">Lelang</a>
+                <li class="nav-item dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle"
+                        aria-expanded="false">Lelang</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="<?= site_url('terlelang') ?>" class="dropdown-item">Barang TerLelang</a></li>
+                        <li><a href="<?= site_url('datalelang') ?>" class="dropdown-item">Akan Di
+                                Lelang</a></li>
+                    </ul>
+                </li>
                 <li class="nav-item"><a href="<?= site_url('laporan') ?>" class="nav-link">Laporan</a>
                 </li>
             </ul>
@@ -41,6 +50,14 @@ $session = session();
                 <li class="nav-item"><a href="<?= site_url('datanasabah') ?>" class="nav-link">Data
                         Nasabah</a>
                 <li class="nav-item"><a href="<?= site_url('laporan') ?>" class="nav-link">Laporan</a>
+                </li>
+                <li class="nav-item dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle"
+                        aria-expanded="false">Lelang</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="<?= site_url('terlelang') ?>" class="dropdown-item">Barang TerLelang</a></li>
+                        <li><a href="<?= site_url('datalelang') ?>" class="dropdown-item">Akan Di
+                                Lelang</a></li>
+                    </ul>
                 </li>
             </ul>
             <?php endif ?>

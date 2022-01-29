@@ -12,13 +12,16 @@
 
     <div class="card-body table-responsive">
         <?php if (session()->getFlashdata('Pesan')) : ?>
-        <div class="alert alert-success alert-has-icon">
-            <div class="alert-icon"><i class="far fa-lightbulb"></i></div>
-            <div class="alert-body">
-                <div class="alert-title">Sukses !</div>
-                <?= session()->getFlashdata('Pesan'); ?>
-            </div>
-        </div>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            swal({
+                title: "Berhasil !",
+                text: "<?= session()->getFlashdata('Pesan'); ?>",
+                timer: 1500,
+                icon: "success"
+            });
+        });
+        </script>
         <?php endif; ?>
         <table class="table table-striped table-md" id="tabelCabang">
             <thead>
@@ -55,8 +58,8 @@
                                         data-nama-cabang="<?= $row['nama_cabang']; ?>"
                                         data-alamat="<?= $row['alamat']; ?>"
                                         data-kode-toko="<?= $row['kode_toko']; ?>">Edit</a>
-                                    <a class=" dropdown-item" href="/cabang/delete/<?= $row['kode_cabang']; ?>"
-                                        onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</a>
+                                    <a class="dropdown-item Cdelete-btn" href=""
+                                        data-kode-cabang="<?= $row['kode_cabang']; ?>">Delete</a>
                                 </div>
                             </div>
                         </td>
