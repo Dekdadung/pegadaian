@@ -1,0 +1,8 @@
+CRITICAL - 2022-02-08 23:59:25 --> Too few arguments to function App\Models\PegadaianModel::getDataGadaiLaporan(), 1 passed in C:\xampp\htdocs\pegadaian\app\Controllers\Excel.php on line 36 and at least 4 expected
+#0 C:\xampp\htdocs\pegadaian\app\Controllers\Excel.php(36): App\Models\PegadaianModel->getDataGadaiLaporan('FG00')
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Excel->tes()
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Excel))
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}

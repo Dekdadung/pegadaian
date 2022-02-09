@@ -19,16 +19,28 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Tanggal Perpanjangan</label>
-                        <input type="date" class="form-control " id="inputtext4" name="tgl_perpanjangan"
+                        <input type="text" class="form-control datepicker" id="inputtext4" name="tgl_perpanjangan"
                             value="<?= $perpanjang_ini; ?>">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Tanggal Lelang</label>
-                        <input type="date" class="form-control " id="inputtext4" name="tgl_lelang"
+                        <input type="text" class="form-control datepicker" id="inputtext4" name="tgl_lelang"
                             value="<?= $gadai['tgl_lelang']; ?>">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputtext4">Keterangan</label>
+                        <textarea type="text"
+                            class="form-control <?= ($validation->hasError('keterangan')) ? 'is-invalid' : ''; ?>"
+                            name="keterangan"></textarea>
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('keterangan'); ?>
+                        </div>
                     </div>
                 </div>
                 <input type="text" name="bunga" value="<?= $gadai['bunga']; ?>" hidden>
+                <h5>Jumlah Bunga Yang Harus Dibayar Nasabah :</h5>
+                <p>Jumlah Pembayaran adalah 5% dari jumlah pinjmanan sebelumnya</p>
+                <h3>Rp. <?= rupiah($gadai['bunga']); ?></h3>
             </div>
             <div class="card-footer">
                 <button class="btn btn-primary">Submit</button>

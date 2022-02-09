@@ -1,0 +1,190 @@
+CRITICAL - 2022-02-05 07:47:01 --> Undefined property: stdClass::$no_telp
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Views\nota.php(124): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\Users\\ASUS\\D...', 124, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\ASUS\\D...')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('nota', Array, true)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(716): view('nota', Array)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->cetaknota('FG1-450102')
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#7 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#10 {main}
+CRITICAL - 2022-02-05 07:53:34 --> Undefined property: stdClass::$no_telp
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Views\nota.php(124): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\Users\\ASUS\\D...', 124, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\ASUS\\D...')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('nota', Array, true)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(716): view('nota', Array)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->cetaknota('FG1-450102')
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#7 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#10 {main}
+CRITICAL - 2022-02-05 09:36:37 --> Undefined offset: 1
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\tanggalbaru_helper.php(20): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 20, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(826): tanggalbaru(NULL)
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-02-05 09:37:42 --> Undefined offset: 1
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\tanggalbaru_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 21, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(826): tanggalbaru(NULL)
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-02-05 09:39:10 --> Undefined offset: 1
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\tanggalbaru_helper.php(20): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 20, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(826): tanggalbaru(NULL)
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+ERROR - 2022-02-05 09:40:39 --> Duplicate entry 'FG2-10101' for key 'PRIMARY'
+CRITICAL - 2022-02-05 09:40:39 --> Duplicate entry 'FG2-10101' for key 'PRIMARY'
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pi...', 0)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pi...')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pi...')
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pi...', Array, false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(833): CodeIgniter\Model->insert(Array)
+#8 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#9 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#10 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#13 {main}
+CRITICAL - 2022-02-05 09:41:50 --> Undefined offset: 1
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\tanggalbaru_helper.php(22): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 22, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(826): tanggalbaru(NULL)
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-02-05 09:48:38 --> Undefined offset: 1
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\tanggalbaru_helper.php(22): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 22, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(826): tanggalbaru(NULL)
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-02-05 09:52:25 --> Undefined offset: 1
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\tanggalbaru_helper.php(22): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 22, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(826): tanggalbaru(NULL)
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-02-05 09:56:07 --> Undefined offset: 1
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\tanggalbaru_helper.php(22): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 22, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(826): tanggalbaru(NULL)
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-02-05 11:31:38 --> Undefined offset: 1
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(596): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 596, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list()
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#6 {main}
+CRITICAL - 2022-02-05 11:31:38 --> Undefined offset: 1
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(596): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 596, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list()
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#6 {main}
+CRITICAL - 2022-02-05 11:31:43 --> Undefined offset: 1
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(596): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 596, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list()
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#6 {main}
+CRITICAL - 2022-02-05 11:41:37 --> Undefined offset: 0
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\bulan_helper.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 19, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(700): bulan('0000-00-00')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list_laporan()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-02-05 11:41:49 --> Undefined offset: 0
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\bulan_helper.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 19, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(700): bulan('0000-00-00')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list_laporan()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-02-05 12:57:01 --> Undefined offset: 0
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\bulan_helper.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 19, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(700): bulan('0000-00-00')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list_laporan()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-02-05 13:39:20 --> Undefined offset: 1
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\tanggalbaru_helper.php(22): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 22, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(826): tanggalbaru(NULL)
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-02-05 13:42:37 --> Undefined offset: 1
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\tanggalbaru_helper.php(22): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 22, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(826): tanggalbaru(NULL)
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-02-05 15:13:34 --> Undefined offset: 1
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\tanggalbaru_helper.php(22): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 22, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(826): tanggalbaru(NULL)
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-02-05 15:14:32 --> Undefined offset: 1
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\tanggalbaru_helper.php(22): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 22, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(826): tanggalbaru(NULL)
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}

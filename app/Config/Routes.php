@@ -32,10 +32,13 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('a', 'Home::index');
-
+$routes->get('auth', 'Login::login', ['filter' => 'auth']);
 $routes->get('datagadai', 'Pegadaian::index', ['filter' => 'auth']);
 $routes->get('listgadai', 'Pegadaian::list', ['filter' => 'auth']);
+$routes->get('listlelang', 'Pegadaian::list', ['filter' => 'auth']);
+$routes->get('listLaporan', 'Pegadaian::list_laporan', ['filter' => 'auth']);
 $routes->get('formgadai', 'Pegadaian::create', ['filter' => 'auth']);
+$routes->post('importdata', 'Pegadaian::import', ['filter' => 'auth']);
 
 $routes->get('datanasabah', 'Nasabah::index', ['filter' => 'auth']);
 $routes->get('formnasabah', 'Nasabah::create', ['filter' => 'auth']);

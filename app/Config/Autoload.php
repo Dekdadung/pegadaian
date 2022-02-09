@@ -17,6 +17,9 @@ use CodeIgniter\Config\AutoloadConfig;
  */
 class Autoload extends AutoloadConfig
 {
+    // public $psr4 = [];
+
+    // public $classmap = [];
     /**
      * -------------------------------------------------------------------
      * Namespaces
@@ -41,6 +44,7 @@ class Autoload extends AutoloadConfig
      * @var array<string, string>
      */
     public $psr4 = [
+        'App'         => APPPATH,
         APP_NAMESPACE => APPPATH, // For custom app namespace
         'Config'      => APPPATH . 'Config',
     ];
@@ -64,7 +68,9 @@ class Autoload extends AutoloadConfig
      *
      * @var array<string, string>
      */
-    public $classmap = [];
+    public $classmap = [
+        'PHPExcel' => APPPATH . 'ThirdParty/PHPExcel/PHPExcel.php'
+    ];
 
     /**
      * -------------------------------------------------------------------
@@ -84,4 +90,12 @@ class Autoload extends AutoloadConfig
      * @var array<int, string>
      */
     public $files = [];
+
+    // public function __construct()
+    // {
+    //     parent::__construct();
+    //     $classmap = [
+    //         'PHPExcel' => APPPATH . 'ThirdParty/PHPExcel/PHPExcel.php'
+    //     ];
+    // }
 }

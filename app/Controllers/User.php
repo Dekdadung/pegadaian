@@ -24,7 +24,7 @@ class User extends BaseController
             'cabang' => $this->CabangModel->findAll(),
             'validation' => \Config\Services::validation()
         ];
-        return view('user/datauser', $data);
+        return view('User/datauser', $data);
     }
 
     public function create()
@@ -34,7 +34,7 @@ class User extends BaseController
             'cabang' => $this->CabangModel->findAll(),
             'validation' => \Config\Services::validation()
         ];
-        return view('user/formuser', $data);
+        return view('User/formuser', $data);
     }
 
     public function save()
@@ -90,7 +90,7 @@ class User extends BaseController
             'validation' => \Config\Services::validation()
         ];
 
-        return view('user/edit', $data);
+        return view('User/edit', $data);
     }
 
     public function update($id_user)

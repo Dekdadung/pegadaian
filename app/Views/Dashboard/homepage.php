@@ -32,7 +32,7 @@ $session = session();
     <?php else : ?>
     <div class="section-header">
         <h1>Dashboard</h1>
-        <div class="section-header-breadcrumb mt-3">
+        <div class="section-header-breadcrumb breadcrumb-item mt-3">
             <h6>Tanggal Hari Ini : <?= date('Y-m-d') ?></h6>
         </div>
     </div>
@@ -104,6 +104,23 @@ $session = session();
                     </div>
                 </div>
             </div>
+            <div class="cardmain col-lg-3 col-md-6 col-sm-6 col-12">
+                <a href="<?= site_url('datalelang'); ?>">
+                    <div class="card card-statistic-1">
+                        <div class="card-icon bg-dark">
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                        <div class="card-wrap">
+                            <div class="card-header">
+                                <h4>Barang Masuk Lelang</h4>
+                            </div>
+                            <div class="card-body">
+                                <h6><?php echo $masuk_lelang; ?></h6>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
         <?php else : ?>
         <div class="row">
@@ -119,6 +136,23 @@ $session = session();
                             </div>
                             <div class="card-body">
                                 <h6><?php echo $jTempo; ?></h6>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="cardmain col-lg-3 col-md-6 col-sm-6 col-12">
+                <a href="<?= site_url('datalelang'); ?>">
+                    <div class="card card-statistic-1">
+                        <div class="card-icon bg-dark">
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                        <div class="card-wrap">
+                            <div class="card-header">
+                                <h4>Barang Masuk Lelang</h4>
+                            </div>
+                            <div class="card-body">
+                                <h6><?php echo $masuk_lelang; ?></h6>
                             </div>
                         </div>
                     </div>
@@ -146,7 +180,12 @@ $session = session();
     <div class="text-center">
         <h2>Data Gadai Hari Ini</h2>
     </div>
-    <div class="card-body table-responsive">
+    <div class="">
+        <div class="petunjuk_warna">
+            <ul>
+                <li><i class="fas fa-square-full text-success"></i> Lunas (Nasabah Membayar Hari Ini)</li>
+            </ul>
+        </div>
         <table class="table table-striped table-sm">
             <tbody>
                 <tr class="text-center">

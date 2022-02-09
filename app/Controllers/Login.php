@@ -21,7 +21,7 @@ class Login extends BaseController
         if (session('id_user')) {
             return redirect()->to(site_url('dashboard'));
         }
-        return view('login/login', $data);
+        return view('Login/login', $data);
     }
 
     public function login()

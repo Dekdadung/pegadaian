@@ -34,7 +34,7 @@ class Saldo extends BaseController
             'cabang' => $this->CabangModel->findAll(),
             'kode_cabang_sekarang' => $kode_cabang
         ];
-        return view('saldo/saldo', $data);
+        return view('Saldo/saldo', $data);
     }
 
     public function save()

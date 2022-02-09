@@ -2134,11 +2134,12 @@ h6 .badge {
   right: 5px;*/
   position: absolute;
   z-index: 890;
-  background-color: #0aeb6f;
+  /* background-color: #0aeb6f; */
+  background-color: #fefe00;
   left: 0;
   right: 0;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 0px;
   height: auto;
 }
 .navbar.active {
@@ -2153,7 +2154,8 @@ h6 .badge {
   left: 0;
   width: 100%;
   height: 115px;
-  background-color: #6777ef;
+  background-color: #fefe00;
+  /* background-color: #6777ef; */
   z-index: -1;
 }
 
@@ -2272,14 +2274,16 @@ h6 .badge {
   border-radius: 50%;
 }
 .navbar .active .nav-link {
-  color: #fff;
+  /* color: #fff; */
+  color: #000;
   font-weight: 700;
 }
 .navbar .navbar-text {
   color: #fff;
 }
 .navbar .nav-link {
-  color: #f2f2f2;
+  /* color: #f2f2f2; */
+  color: #727272;
   padding-left: 15px !important;
   padding-right: 15px !important;
   padding-top: 0 !important;
@@ -2323,7 +2327,8 @@ h6 .badge {
 }
 
 .navbar .nav-link:hover {
-  color: #fff;
+  /* color: #fff; */
+  color: #000;
 }
 
 .navbar .nav-link.disabled {
@@ -3205,7 +3210,7 @@ pre {
   z-index: 1;
 }
 .section > *:first-child {
-  margin-top: -50px;
+  margin-top: 0px;
 }
 .section .section-header {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
@@ -3215,7 +3220,7 @@ pre {
   border: none;
   position: relative;
   margin-bottom: 30px;
-  padding: 20px;
+  padding: 15px;
   display: flex;
   align-items: center;
 }
@@ -3223,7 +3228,7 @@ pre {
   margin-bottom: 0;
   font-weight: 700;
   display: inline-block;
-  font-size: 24px;
+  font-size: 20px;
   margin-top: 3px;
   color: #34395e;
 }
@@ -3666,7 +3671,9 @@ body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item > .nav-link {
   color: #868e96;
   font-size: 13px;
   letter-spacing: 0.3px;
-  height: 70px;
+  /* height: 70px; */
+  padding-top: 30px !important;
+  padding-bottom: 15px !important;
   padding: 0;
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -3686,11 +3693,11 @@ body.layout-3
   .navbar-nav
   > .nav-item
   > .nav-link.has-dropdown:after {
-  content: "";
+  content: "";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   position: absolute;
-  top: 50%;
+  top: 60%;
   right: 20px;
   transform: translate(0, -50%);
   font-size: 12px;
@@ -3807,7 +3814,7 @@ body.layout-3
 body.layout-3 .main-content {
   padding-left: 0;
   padding-right: 0;
-  padding-top: 170px;
+  padding-top: 215px;
 }
 
 body.layout-3 .main-footer {

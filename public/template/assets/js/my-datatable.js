@@ -1,10 +1,29 @@
 $(document).ready(function() {
+  function numberString(nStr){
+      nStr += '';
+      var x = nStr.split('.');
+      var x1 = x[0];
+      var x2 = x.length > 1 ? '.' + x[1] : '';
+      var rgx = /(\d+)(\d{3})/;
+      while (rgx.test(x1)) {
+          x1 = x1.replace(rgx, '$1' + ',' + '$2');
+      }
+      return x1 + x2;
+  }
   // ---------------------------------------------------
 	// ----------------  datatable setting ---------------
 	// ---------------------------------------------------
 	var base_url = $('#base_url').val();
 	var list_url = $('#list_url').val();
-	var actionJSON = $("#table_action").html() != "" ? jQuery.parseJSON($("#table_action").html()) : "";
+	var type_data = $('#type_data').val();
+  var current_page = $('#current_page').val();
+  if($("#table_action").length > 0){
+    var actionJSON = $("#table_action").html() != "" ? jQuery.parseJSON($("#table_action").html()) : "";
+  }
+  var sumColumn = []
+  if($("#sumColumn").length > 0 && $("#sumColumn").html() != ""){
+      sumColumn = jQuery.parseJSON($("#sumColumn").html());
+  }
 	var actionInTitle = {
 		targets: -1,
 		responsivePriority: 2,
@@ -19,6 +38,10 @@ $(document).ready(function() {
 				<i class="far fa-paper-plane"></i>Kirim Notifikasi\
 			</a>\
 			'
+      if (actionJSON.print != undefined) body += '<a href="javascript:;" class="dropdown-item btn-cetakNota" data-urlnota="'+data.urlNota+'" title="Cetak Nota" '+(((actionJSON.print != undefined) && (actionJSON.print))? '':'style="display:none"')+'>\
+				<i class="fas fa-print"></i>Cetak Nota\
+			</a>\
+			'
       if (actionJSON.detail != undefined) body += '<a href="#" class="dropdown-item btn-edit-inline btn-detail" data-kdpinjaman="'+data.kode_pinjaman+'" title="Detail" '+(((actionJSON.detail != undefined) && (actionJSON.detail))? '':'style="display:none"')+'>\
 				<i class="far fa-eye"></i> Detail\
 			</a>\
@@ -27,7 +50,7 @@ $(document).ready(function() {
 				<i class="far fa-edit"></i> Edit\
 			</a>\
 			'
-      if (actionJSON.delete != undefined) body += '<a href="'+((data.delete_url != undefined) ? data.delete_url:"javascript:;")+'" class="dropdown-item btn-deletes" title="Delete" '+(((actionJSON.delete != undefined) && (actionJSON.delete))? '':'style="display:none"')+'>\
+      if (actionJSON.delete != undefined) body += '<a href="'+((data.delete_url != undefined) ? data.delete_url:"javascript:;")+'" class="dropdown-item btn-deletes" onclick="" title="Delete" '+(((actionJSON.delete != undefined) && (actionJSON.delete))? '':'style="display:none"')+'>\
 				<i class="far fa-trash-alt"></i> Hapus\
 			</a>\
 			'
@@ -39,12 +62,12 @@ $(document).ready(function() {
 				<i class="far fa-calendar-plus"></i> Perpanjangan\
 			</a>\
 			'
-      if (actionJSON.denda != undefined) body += '<a href="'+((data.denda_url != undefined) ? data.denda_url:"javascript:;")+'" class="dropdown-item btn-edit-inline" title="Denda" '+(((actionJSON.denda != undefined) && (actionJSON.denda))? '':'style="display:none"')+'>\
-				<i class="fas fa-money-check-alt"></i> Denda\
+      if (actionJSON.denda != undefined && data.sudah_jatuh_tempo == true) body += '<a href="'+((data.denda_url != undefined) ? data.denda_url:"javascript:;")+'" class="dropdown-item btn-edit-inline" title="Denda" '+(((actionJSON.denda != undefined) && (actionJSON.denda))? '':'style="display:none"')+'>\
+				<i class="fas fa-money-check-alt"></i> Perpanjang\
 			</a>\
 			'
-      if (actionJSON.lelang != undefined) body += '<a href="'+((data.lelang_url != undefined) ? data.lelang_url:"javascript:;")+'" class="dropdown-item btn-edit-inline" title="Lelang" '+(((actionJSON.lelang != undefined) && (actionJSON.lelang))? '':'style="display:none"')+'>\
-				<i class="fas fa-people-carry"></i> Lelang\
+      if (actionJSON.lelang != undefined && data.sudah_jatuh_tempo == true) body += '<a href="'+((data.lelang_url != undefined) ? data.lelang_url:"javascript:;")+'" class="dropdown-item btn-edit-inline" title="Lelang" '+(((actionJSON.lelang != undefined) && (actionJSON.lelang))? '':'style="display:none"')+'>\
+				<i class="fas fa-people-carry"></i> Tebus\
 			</a>\
 			'
       ;
@@ -97,15 +120,21 @@ $(document).ready(function() {
 	});
 	if ($('.datatable').length > 0){
 		var table = $('.datatable').DataTable({
+        // paging:   false,
+        // ordering: false,
+        // info:     false,
 				responsive: true,
 				searchDelay: 500,
 				processing: true,
 				serverSide: true,
-				ordering: true,
+				ordering: false,
 				lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
 				pageLength: 10,
 				dom : '<"top datatable_top"i>rt<"bottom row mt-3 mb-2"<"col-md-3"><"col-md-6 text-center"p><"col-md-3 text-right">><"clear">',
 				ajaxSource:list_url,
+        fnServerParams: function ( aoData ) {
+					aoData.push( { "name": "type_data", "value": type_data } );
+				},
 				columns:columnsTemp,
 				columnDefs:columnDef,
 				sScrollX: false,
@@ -126,12 +155,42 @@ $(document).ready(function() {
             $(row).addClass('bg-warning text-white');
           }
           if(data.sudah_jatuh_tempo || data.sudah_jatuh_tempo == true){
-            $(row).addClass('bg-dark text-danger');
+            $(row).addClass('bg-dark text-white');
+          }
+          if(data.sudah_harus_lelang || data.sudah_harus_lelang == true){
+            $(row).addClass('bg-dark text-dangerbanget');
+          }
+          if(data.sudah_bisa_lelang || data.sudah_bisa_lelang == true){
+            $(row).addClass('bg-dark text-warningbanget');
           }
 					// $(row).attr('id','post-');
 				},
 				footerCallback: function(row, data, start, end, display) {
-
+          var api = this.api(), data;
+          // Remove the formatting to get integer data for summation
+          var intVal = function(i) {
+              var rplc =  typeof i === 'string' ? i.replace('Rp ','') : i;
+              var temp  = typeof rplc === 'string' ? rplc.replace(/[\$,]/g, '') * 1 : typeof rplc === 'number' ? rplc : 0;
+              return temp
+          };
+          console.log(sumColumn)
+          $.each(sumColumn,function(i,value){
+              var column = value;
+              var currency = false;
+              // Total over all pages
+              var total = api.column(column).data().reduce(function(a, b) {
+                  return intVal(a) + intVal(b);
+              }, 0);
+              // Total over this page
+              var pageTotal = api.column(column, {page: 'current'}).data().reduce(function(a, b) {
+                  currency = b.indexOf('Rp. ') !== -1 ? true : false
+                  return intVal(a) + intVal(b);
+              }, 0);
+              // Update footer
+              $(api.column(column).footer()).html(
+                  (currency?'Rp. ':'')+numberString(pageTotal.toFixed(0)),
+              );
+          })
 				},
 
 			});
@@ -145,7 +204,38 @@ $(document).ready(function() {
               table.column(i).search(val ? val : '', false, false);
           });
           table.draw();
-      })
+      });
+
+      $(".searchInputRange").change(function(){
+            table.search($(".searchInputRange").val());
+            var params = {};
+            // $("#akses-pdf").attr('href',current_page+"pdf?key="+$("#generalSearch").val());
+            var generalSearch = '';
+            if($('#generalSearch').length > 0){
+              generalSearch = $("#generalSearch").val();
+            }
+            $("#akses-excel").attr('href',"excel/export?key="+generalSearch);
+            $('.searchInputRange').each(function() {
+
+                var i = $(this).data('col-index');
+                if (params[i]) {
+                    params[i] += '|' + $(this).val();
+                }
+                else {
+                    params[i] = $(this).val();
+                }
+                // var url = $("#akses-pdf").attr('href');
+                // $("#akses-pdf").attr('href',url+"&"+$(this).data('field')+"="+$(this).val())
+                var url = $("#akses-excel").attr('href');
+                $("#akses-excel").attr('href',url+"&"+$(this).data('field')+"="+$(this).val())
+
+            });
+            $.each(params, function(i, val) {
+                // apply search params to datatable
+                table.column(i).search(val ? val : '', false, false);
+            });
+            table.table().draw();
+        })
 
       // custom filter
       // function filterDataTahun() {
@@ -162,6 +252,13 @@ $(document).ready(function() {
           });
           table.draw();
       });
+
+      $('#dataGadai').on('click','.btn-cetakNota', function(){
+        $('#modalPrintNota').modal('show');
+        var srcNota = $(this).data('urlnota');
+        $('#iframeNota').attr('src',srcNota);
+      });
+
     }
 
 

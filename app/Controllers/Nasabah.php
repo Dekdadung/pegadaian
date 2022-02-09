@@ -31,7 +31,7 @@ class Nasabah extends BaseController
             'kode_cabang' => $kode_cabang,
             'validation' => \Config\Services::validation()
         ];
-        return view('nasabah/datanasabah', $data);
+        return view('Nasabah/datanasabah', $data);
     }
 
     public function create()
@@ -49,7 +49,7 @@ class Nasabah extends BaseController
             'kode_cabang' => $kode_cabang,
             'validation' => \Config\Services::validation()
         ];
-        return view('nasabah/formnasabah', $data);
+        return view('Nasabah/formnasabah', $data);
     }
 
     public function save()
@@ -184,7 +184,7 @@ class Nasabah extends BaseController
             'validation' => \Config\Services::validation()
         ];
 
-        return view('nasabah/edit', $data);
+        return view('Nasabah/edit', $data);
     }
 
     public function update($id_nasabah)

@@ -34,6 +34,7 @@ class Dashboard extends BaseController
         $saldo = ($kode_cabang == 'FG00') ? 0 : $saldo;
         $data_gadai = $this->PegadaianModel->getDataGadai($kode_cabang, 'hariIni');
         $jatuh_tempo = $this->PegadaianModel->sortDate($kode_cabang);
+        $masuk_lelang = $this->PegadaianModel->sortDateLelang($kode_cabang);
         $list_jatuh_tempo = $this->PegadaianModel->selectJatuhTempo($kode_cabang);
         // dd($list_jatuh_tempo);
         // die;
@@ -44,10 +45,12 @@ class Dashboard extends BaseController
             // $cek_ = $key->tgl_jatuh_tempo == date('Y-m-d') ? 'mark' : 'none';
 
             $hari_esok = date('Y-m-d', strtotime("+1 day"));
-            if ($key->tgl_jatuh_tempo == date('Y-m-d')) {
+            if ($key->tgl_jatuh_tempo == date('Y-m-d') && $key->status_bayar != 'Lunas') {
                 $cek_ = 'danger text-white';
-            } elseif ($key->tgl_jatuh_tempo == $hari_esok) {
+            } elseif ($key->tgl_jatuh_tempo == $hari_esok && $key->status_bayar != 'Lunas') {
                 $cek_ = 'warning text-white';
+            } elseif ($key->status_bayar == 'Lunas') {
+                $cek_ = 'success text-white';
             } else {
                 $cek_ = 'default';
             }
@@ -60,11 +63,12 @@ class Dashboard extends BaseController
             'cabang' => $this->CabangModel->findAll(),
             'kode_cabang_sekarang' => $kode_cabang,
             'jTempo' => $jatuh_tempo,
+            'masuk_lelang' => $masuk_lelang,
             'list_jatuh_tempo' => $list_jatuh_tempo,
             // 'sisa_saldo' => $this->SaldoModel->getTotalSaldo()[0]['jumlah_kas'],
             'totalpinjam' => $this->PegadaianModel->getTotalPinjaman($kode_cabang)[0]['jumlah_pinjaman'],
             'totaldapat' => $this->PendapatanModel->getTotalPendapatan($kode_cabang)[0]['total_pendapatan']
         ];
-        return view('dashboard/homepage', $data);
+        return view('Dashboard/homepage', $data);
     }
 }

@@ -30,6 +30,7 @@
                     <th>Kode Cabang</th>
                     <th>Nama Cabang</th>
                     <th>Alamat</th>
+                    <th>No. Telp/WA</th>
                     <th>Kode Toko</th>
                     <th>Action</th>
                 </tr>
@@ -45,6 +46,7 @@
                         <td><?= $row['kode_cabang']; ?></td>
                         <td><?= $row['nama_cabang']; ?></td>
                         <td><?= $row['alamat']; ?></td>
+                        <td><?= $row['no_telp']; ?></td>
                         <td><?= $row['kode_toko']; ?></td>
                         <td>
                             <div class="btn-group">
@@ -107,11 +109,12 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputtext4">Alamat</label>
-                            <textarea class="form-control <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>"
-                                name="alamat"></textarea>
+                            <label for="inputtext4">No.Telp / WA</label>
+                            <input type="text"
+                                class="form-control <?= ($validation->hasError('no_telp')) ? 'is-invalid' : ''; ?>"
+                                name="no_telp">
                             <div class="invalid-feedback">
-                                <?= $validation->getError('alamat'); ?>
+                                <?= $validation->getError('no_telp'); ?>
                             </div>
                         </div>
                         <div class="form-group col-md-6">
@@ -121,6 +124,16 @@
                                 id="inputtext4">
                             <div class="invalid-feedback">
                                 <?= $validation->getError('kode_toko'); ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputtext4">Alamat</label>
+                            <textarea class="form-control <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>"
+                                name="alamat"></textarea>
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('alamat'); ?>
                             </div>
                         </div>
                     </div>
@@ -166,11 +179,12 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputtext4">Alamat</label>
-                            <textarea class="form-control <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>"
-                                name="alamat" id="alamat"></textarea>
+                            <label for="inputtext4">No.Telp / WA</label>
+                            <input type="text"
+                                class="form-control <?= ($validation->hasError('no_telp')) ? 'is-invalid' : ''; ?>"
+                                name="no_telp" id="no_telp">
                             <div class="invalid-feedback">
-                                <?= $validation->getError('alamat'); ?>
+                                <?= $validation->getError('no_telp'); ?>
                             </div>
                         </div>
                         <div class="form-group col-md-6">
@@ -183,6 +197,16 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputtext4">Alamat</label>
+                            <textarea class="form-control <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>"
+                                name="alamat" id="alamat"></textarea>
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('alamat'); ?>
+                            </div>
+                        </div>
+                    </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
@@ -192,7 +216,9 @@
 
 <script>
 $(document).ready(function() {
-    $('#tabelCabang').DataTable();
+    $('#tabelCabang').DataTable({
+        responsive: true
+    });
 });
 </script>
 <?= $this->endSection(); ?>

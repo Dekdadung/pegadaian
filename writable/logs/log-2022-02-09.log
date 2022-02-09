@@ -1,0 +1,152 @@
+ERROR - 2022-02-09 10:53:43 --> Error connecting to the database: Unknown database 'pegadaian3'
+CRITICAL - 2022-02-09 10:53:43 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'pegadaian3'
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\xampp\htdocs\pegadaian\app\Controllers\Login.php(34): CodeIgniter\BaseModel->first()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Login->login()
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#7 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-02-09 11:01:55 --> Undefined offset: 0
+#0 C:\xampp\htdocs\pegadaian\app\Helpers\bulan_helper.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 19, Array)
+#1 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(700): bulan('0000-00-00')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list_laporan()
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-02-09 11:01:59 --> Undefined offset: 0
+#0 C:\xampp\htdocs\pegadaian\app\Helpers\bulan_helper.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 19, Array)
+#1 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(700): bulan('0000-00-00')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list_laporan()
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-02-09 11:03:52 --> Undefined offset: 1
+#0 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(596): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 596, Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list()
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-02-09 11:03:52 --> Undefined offset: 1
+#0 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(596): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 596, Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list()
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-02-09 11:03:58 --> Undefined offset: 1
+#0 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(596): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 596, Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list()
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-02-09 11:21:56 --> Undefined variable: data_cabang
+#0 C:\xampp\htdocs\pegadaian\app\Views\nota.php(123): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 123, Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('nota', Array, true)
+#4 C:\xampp\htdocs\pegadaian\app\Controllers\Home.php(14): view('nota')
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Home->nota()
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-02-09 11:36:56 --> Undefined offset: 0
+#0 C:\xampp\htdocs\pegadaian\app\Helpers\bulan_helper.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 19, Array)
+#1 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(700): bulan('0000-00-00')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list_laporan()
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-02-09 11:37:52 --> Undefined offset: 1
+#0 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(596): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 596, Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list()
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-02-09 11:37:52 --> Undefined offset: 1
+#0 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(596): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 596, Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list()
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-02-09 13:10:19 --> Undefined offset: 0
+#0 C:\xampp\htdocs\pegadaian\app\Helpers\bulan_helper.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 19, Array)
+#1 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(700): bulan('0000-00-00')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list_laporan()
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-02-09 15:56:06 --> Undefined property: stdClass::$jumlah_untung
+#0 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(702): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 702, Array)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list_laporan()
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2022-02-09 16:15:52 --> Duplicate entry 'FG1-3090222' for key 'PRIMARY'
+CRITICAL - 2022-02-09 16:15:52 --> Duplicate entry 'FG1-3090222' for key 'PRIMARY'
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pi...', 0)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pi...')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pi...')
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pi...', Array, false)
+#4 C:\xampp\htdocs\pegadaian\app\Models\PegadaianModel.php(206): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(142): App\Models\PegadaianModel->simpan(Array)
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->save()
+#7 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#8 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-02-09 16:17:14 --> Duplicate entry 'FG1-3090222' for key 'PRIMARY'
+CRITICAL - 2022-02-09 16:17:14 --> Duplicate entry 'FG1-3090222' for key 'PRIMARY'
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pi...', 0)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pi...')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pi...')
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pi...', Array, false)
+#4 C:\xampp\htdocs\pegadaian\app\Models\PegadaianModel.php(206): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(142): App\Models\PegadaianModel->simpan(Array)
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->save()
+#7 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#8 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-02-09 16:20:06 --> Duplicate entry 'FG1-3090222' for key 'PRIMARY'
+CRITICAL - 2022-02-09 16:20:06 --> Duplicate entry 'FG1-3090222' for key 'PRIMARY'
+#0 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pi...', 0)
+#1 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pi...')
+#2 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pi...')
+#3 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pi...', Array, false)
+#4 C:\xampp\htdocs\pegadaian\app\Models\PegadaianModel.php(206): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\pegadaian\app\Controllers\Pegadaian.php(142): App\Models\PegadaianModel->simpan(Array)
+#6 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->save()
+#7 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#8 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}

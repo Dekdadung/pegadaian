@@ -8,7 +8,7 @@ class LelangModel extends Model
 {
     protected $table = 'lelang';
     protected $primaryKey = 'id_lelang';
-    protected $allowedFields = ['kode_pinjaman, hasil_lelang, tgl_lelang, nama_barang, kodeCabang'];
+    protected $allowedFields = ['kode_pinjaman, hasil_lelang, tgl_lelang, nama_barang, kodeCabang, keterangan'];
     protected $returnType = 'array';
 
     public function getDataLelang($kode_cabang = null)

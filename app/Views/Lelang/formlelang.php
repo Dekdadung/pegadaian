@@ -57,7 +57,7 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputtext4">Harga Saat Ini</label>
+                        <label for="inputtext4">Jumlah Pinjaman</label>
                         <input hidden type="text" class="form-control" id="inputtext4" name="jumlah_pinjaman"
                             value="<?= $gadai['jumlah_pinjaman']; ?>">
                         <input disabled type="text" class="form-control" id="inputtext4" name="jumlah_pinjaman"
@@ -71,6 +71,15 @@
                             id="rupiah" name="hasil_lelang">
                         <div class="invalid-feedback">
                             <?= $validation->getError('hasil_lelang'); ?>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputtext4">Keterangan</label>
+                        <textarea type="text"
+                            class="form-control <?= ($validation->hasError('keterangan')) ? 'is-invalid' : ''; ?>"
+                            name="keterangan"></textarea>
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('keterangan'); ?>
                         </div>
                     </div>
                 </div>

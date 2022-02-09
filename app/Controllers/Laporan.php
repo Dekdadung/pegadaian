@@ -27,6 +27,7 @@ class Laporan extends BaseController
         $this->SaldoModel = new SaldoModel();
         $this->LaporanModel = new LaporanModel();
         helper('currency');
+        helper('tanggalbaru');
     }
 
     public function index()
@@ -55,12 +56,12 @@ class Laporan extends BaseController
             'title' => 'Data Gadai',
             'gadai' => $data_gadai
         ];
-        return view('laporan/datalaporan', $data);
+        return view('Laporan/datalaporan', $data);
     }
 
     public function nota()
     {
-        return view('laporan/nota');
+        return view('Laporan/nota');
     }
 
     public function uploadForm()
@@ -69,12 +70,12 @@ class Laporan extends BaseController
             'title' => 'Upload Data',
             // 'jTempo' => $jatuh_tempo
         ];
-        return view('laporan/upload', $data);
+        return view('Laporan/upload', $data);
     }
 
     public function pdf()
     {
-        return view('layout/pdf');
+        return view('Layout/pdf');
     }
 
     public function create()
@@ -87,7 +88,7 @@ class Laporan extends BaseController
             'title' => 'Form Data Gadai',
             'validation' => \Config\Services::validation()
         ];
-        return view('pegadaian/formgadai', $data);
+        return view('Pegadaian/formgadai', $data);
     }
 
     public function save()
@@ -228,7 +229,7 @@ class Laporan extends BaseController
             'validation' => \Config\Services::validation()
         ];
 
-        return view('pegadaian/edit', $data);
+        return view('Pegadaian/edit', $data);
     }
 
     public function update($kode_pinjaman)

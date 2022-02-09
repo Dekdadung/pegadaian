@@ -272,7 +272,9 @@ $session = session();
 
 <script>
 $(document).ready(function() {
-    $('#tabelNasabah').DataTable();
+    $('#tabelNasabah').DataTable({
+        responsive: true
+    });
 });
 </script>
 

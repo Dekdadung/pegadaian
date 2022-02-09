@@ -19,7 +19,7 @@ class Barang extends BaseController
             'title' => 'Data Barang',
             'barang' => $this->BarangModel->findAll()
         ];
-        return view('barang/databarang', $data);
+        return view('Barang/databarang', $data);
     }
 
     public function create()
@@ -29,7 +29,7 @@ class Barang extends BaseController
             'title' => 'Form Data barang',
             'validation' => \Config\Services::validation()
         ];
-        return view('barang/formbarang', $data);
+        return view('Barang/formbarang', $data);
     }
 
     public function save()
@@ -64,7 +64,7 @@ class Barang extends BaseController
             'validation' => \Config\Services::validation()
         ];
 
-        return view('barang/edit', $data);
+        return view('Barang/edit', $data);
     }
 
     public function update($id_barang)

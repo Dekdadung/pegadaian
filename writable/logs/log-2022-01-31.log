@@ -1,0 +1,474 @@
+CRITICAL - 2022-01-31 03:44:14 --> A non-numeric value encountered
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(737): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric v...', 'C:\\Users\\ASUS\\D...', 737, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list_laporan()
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#6 {main}
+CRITICAL - 2022-01-31 03:46:33 --> A non well formed numeric value encountered
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(738): CodeIgniter\Debug\Exceptions->errorHandler(8, 'A non well form...', 'C:\\Users\\ASUS\\D...', 738, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list_laporan()
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#6 {main}
+CRITICAL - 2022-01-31 03:46:47 --> A non well formed numeric value encountered
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(738): CodeIgniter\Debug\Exceptions->errorHandler(8, 'A non well form...', 'C:\\Users\\ASUS\\D...', 738, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list_laporan()
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#6 {main}
+CRITICAL - 2022-01-31 03:46:52 --> A non well formed numeric value encountered
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(738): CodeIgniter\Debug\Exceptions->errorHandler(8, 'A non well form...', 'C:\\Users\\ASUS\\D...', 738, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list_laporan()
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#6 {main}
+CRITICAL - 2022-01-31 04:12:37 --> Undefined variable: barang
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Views\Pegadaian\edit.php(84): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\Users\\ASUS\\D...', 84, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\ASUS\\D...')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('pegadaian/edit', Array, true)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(246): view('pegadaian/edit', Array)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->edit('FG1-93101')
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#7 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#10 {main}
+ERROR - 2022-01-31 05:00:28 --> Column 'kode_cabang' cannot be null
+CRITICAL - 2022-01-31 05:00:28 --> Column 'kode_cabang' cannot be null
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `ka...', 0)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ka...')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ka...')
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ka...', Array, false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(379): CodeIgniter\BaseModel->save(Array)
+#9 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->delete('FG1-93101')
+#10 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#11 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#14 {main}
+ERROR - 2022-01-31 05:01:59 --> Column 'kode_cabang' cannot be null
+CRITICAL - 2022-01-31 05:01:59 --> Column 'kode_cabang' cannot be null
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `ka...', 0)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ka...')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ka...')
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ka...', Array, false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(381): CodeIgniter\BaseModel->save(Array)
+#9 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->delete('FG1-93101')
+#10 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#11 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#14 {main}
+CRITICAL - 2022-01-31 13:00:02 --> Undefined variable: nama_nasabah
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Views\nota.php(108): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\Users\\ASUS\\D...', 108, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\ASUS\\D...')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('nota', Array, true)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(789): view('nota', Array)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->cetaknota('FG1-93101')
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#7 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#10 {main}
+CRITICAL - 2022-01-31 13:56:37 --> Cannot use object of type stdClass as array
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('nota', Array, true)
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(790): view('nota', Array)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->cetaknota('FG1-93101')
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#9 {main}
+CRITICAL - 2022-01-31 13:59:56 --> Undefined property: stdClass::$kode_pinjmanan
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Views\nota.php(132): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\Users\\ASUS\\D...', 132, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\Users\\ASUS\\D...')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('nota', Array, true)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(790): view('nota', Array)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->cetaknota('FG1-93101')
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#7 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#10 {main}
+CRITICAL - 2022-01-31 15:21:34 --> Undefined index: K
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(819): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\Users\\ASUS\\D...', 819, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#6 {main}
+ERROR - 2022-01-31 15:23:24 --> Column 'no_telp' cannot be null
+CRITICAL - 2022-01-31 15:23:24 --> Column 'no_telp' cannot be null
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `na...', 0)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `na...')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `na...')
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `na...', Array, false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Models\PegadaianModel.php(158): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(840): App\Models\PegadaianModel->simpan_nasabah_import(Array)
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#7 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#8 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#11 {main}
+ERROR - 2022-01-31 15:24:15 --> Duplicate entry '' for key 'PRIMARY'
+CRITICAL - 2022-01-31 15:24:15 --> Duplicate entry '' for key 'PRIMARY'
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pi...', 0)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pi...')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pi...')
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pi...', Array, false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(869): CodeIgniter\BaseModel->save(Array)
+#9 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#10 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#11 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#14 {main}
+ERROR - 2022-01-31 15:24:58 --> Duplicate entry '' for key 'PRIMARY'
+CRITICAL - 2022-01-31 15:24:58 --> Duplicate entry '' for key 'PRIMARY'
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pi...', 0)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pi...')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pi...')
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pi...', Array, false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(869): CodeIgniter\BaseModel->save(Array)
+#9 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#10 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#11 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#14 {main}
+ERROR - 2022-01-31 15:31:41 --> Duplicate entry '' for key 'PRIMARY'
+CRITICAL - 2022-01-31 15:31:41 --> Duplicate entry '' for key 'PRIMARY'
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pi...', 0)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pi...')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pi...')
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pi...', Array, false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(871): CodeIgniter\BaseModel->save(Array)
+#9 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#10 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#11 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#14 {main}
+CRITICAL - 2022-01-31 15:42:12 --> Undefined variable: last_id_nasabah
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(860): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\Users\\ASUS\\D...', 860, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#6 {main}
+ERROR - 2022-01-31 15:54:04 --> Duplicate entry '' for key 'PRIMARY'
+CRITICAL - 2022-01-31 15:54:04 --> Duplicate entry '' for key 'PRIMARY'
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pi...', 0)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pi...')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pi...')
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pi...', Array, false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(859): CodeIgniter\BaseModel->save(Array)
+#9 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#10 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#11 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#14 {main}
+ERROR - 2022-01-31 16:00:03 --> Duplicate entry '20220131040003' for key 'PRIMARY'
+CRITICAL - 2022-01-31 16:00:03 --> Duplicate entry '20220131040003' for key 'PRIMARY'
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pi...', 0)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pi...')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pi...')
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pi...', Array, false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(875): CodeIgniter\Model->insert(Array)
+#8 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#9 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#10 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#13 {main}
+CRITICAL - 2022-01-31 16:09:40 --> Undefined offset: 0
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\bulan_helper.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 19, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(776): bulan('0000-00-00')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list_laporan()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-01-31 16:09:47 --> Undefined offset: 0
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\bulan_helper.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 19, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(776): bulan('0000-00-00')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list_laporan()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-01-31 16:10:26 --> Undefined offset: 0
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\bulan_helper.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 19, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(776): bulan('0000-00-00')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list_laporan()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-01-31 16:11:45 --> Undefined offset: 0
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\bulan_helper.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 19, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(776): bulan('0000-00-00')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list_laporan()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-01-31 16:31:28 --> Undefined offset: 0
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\bulan_helper.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 19, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(776): bulan('0000-00-00')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list_laporan()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-01-31 16:31:29 --> Undefined offset: 0
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\bulan_helper.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 19, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(776): bulan('0000-00-00')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list_laporan()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-01-31 16:31:35 --> Undefined offset: 0
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\bulan_helper.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 19, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(776): bulan('0000-00-00')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list_laporan()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-01-31 16:35:05 --> Undefined offset: 0
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\bulan_helper.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 19, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(776): bulan('0000-00-00')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list_laporan()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-01-31 16:44:16 --> Undefined offset: 0
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\bulan_helper.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 19, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(776): bulan('0000-00-00')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list_laporan()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-01-31 16:45:12 --> Undefined offset: 0
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\bulan_helper.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 19, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(776): bulan('0000-00-00')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->list_laporan()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-01-31 17:05:12 --> Undefined offset: 0
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\tanggalbaru_helper.php(20): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 20, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(830): tanggalbaru('9-Nov-21')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-01-31 17:05:41 --> Undefined offset: 0
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\tanggalbaru_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 21, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(830): tanggalbaru('9-Nov-21')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-01-31 17:06:12 --> Undefined offset: 0
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\tanggalbaru_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 21, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(830): tanggalbaru('9-Nov-21')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-01-31 17:06:16 --> Undefined offset: 0
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\tanggalbaru_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 21, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(830): tanggalbaru('9-Nov-21')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-01-31 17:06:24 --> Undefined offset: 0
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\tanggalbaru_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 21, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(830): tanggalbaru('9-Nov-21')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-01-31 17:06:49 --> Undefined offset: 0
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\tanggalbaru_helper.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 21, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(830): tanggalbaru('9-Nov-21')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+CRITICAL - 2022-01-31 17:07:12 --> Undefined offset: 0
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Helpers\tanggalbaru_helper.php(20): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\ASUS\\D...', 20, Array)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(830): tanggalbaru('9-Nov-21')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->import()
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#7 {main}
+ERROR - 2022-01-31 18:10:50 --> Duplicate entry 'FG1-33101' for key 'PRIMARY'
+CRITICAL - 2022-01-31 18:10:50 --> Duplicate entry 'FG1-33101' for key 'PRIMARY'
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pi...', 0)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pi...')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pi...')
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pi...', Array, false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Models\PegadaianModel.php(151): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(207): App\Models\PegadaianModel->simpan(Array)
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->save()
+#7 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#8 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#11 {main}
+ERROR - 2022-01-31 18:11:01 --> Duplicate entry 'FG1-33101' for key 'PRIMARY'
+CRITICAL - 2022-01-31 18:11:01 --> Duplicate entry 'FG1-33101' for key 'PRIMARY'
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pi...', 0)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pi...')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pi...')
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pi...', Array, false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Models\PegadaianModel.php(151): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(207): App\Models\PegadaianModel->simpan(Array)
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->save()
+#7 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#8 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#11 {main}
+ERROR - 2022-01-31 18:13:36 --> Duplicate entry 'FG1-33101' for key 'PRIMARY'
+CRITICAL - 2022-01-31 18:13:36 --> Duplicate entry 'FG1-33101' for key 'PRIMARY'
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pi...', 0)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pi...')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pi...')
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pi...', Array, false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Models\PegadaianModel.php(151): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(207): App\Models\PegadaianModel->simpan(Array)
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->save()
+#7 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#8 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#11 {main}
+ERROR - 2022-01-31 18:16:00 --> Duplicate entry 'FG1-33101' for key 'PRIMARY'
+CRITICAL - 2022-01-31 18:16:00 --> Duplicate entry 'FG1-33101' for key 'PRIMARY'
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pi...', 0)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pi...')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pi...')
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pi...', Array, false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Models\PegadaianModel.php(151): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(214): App\Models\PegadaianModel->simpan(Array)
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->save()
+#7 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#8 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#11 {main}
+ERROR - 2022-01-31 18:16:48 --> Duplicate entry 'FG1-23101' for key 'PRIMARY'
+CRITICAL - 2022-01-31 18:16:48 --> Duplicate entry 'FG1-23101' for key 'PRIMARY'
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pi...', 0)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pi...')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pi...')
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pi...', Array, false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Models\PegadaianModel.php(151): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(215): App\Models\PegadaianModel->simpan(Array)
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->save()
+#7 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#8 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#11 {main}
+ERROR - 2022-01-31 18:24:42 --> Duplicate entry 'FG1-23101' for key 'PRIMARY'
+CRITICAL - 2022-01-31 18:24:42 --> Duplicate entry 'FG1-23101' for key 'PRIMARY'
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pi...', 0)
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pi...')
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pi...')
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pi...', Array, false)
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Models\PegadaianModel.php(151): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Pegadaian.php(215): App\Models\PegadaianModel->simpan(Array)
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Pegadaian->save()
+#7 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pegadaian))
+#8 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#11 {main}
+CRITICAL - 2022-01-31 12:54:20 --> Invalid file: excel.php
+#0 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('excel.php')
+#1 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('excel', Array, true)
+#2 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\app\Controllers\Excel.php(27): view('excel')
+#3 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Excel->index()
+#4 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Excel))
+#5 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\ASUS\Documents\su\wp\flobamoragadai\pegadaian\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\ASUS\\D...')
+#8 {main}

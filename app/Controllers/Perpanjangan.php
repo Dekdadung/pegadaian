@@ -30,7 +30,7 @@ class Perpanjangan extends BaseController
             'title' => 'Form Perpanjangan',
             'validation' => \Config\Services::validation()
         ];
-        return view('pegadaian/formperpanjang', $data);
+        return view('Pegadaian/formperpanjang', $data);
     }
 
     public function savePerpanjang()

@@ -19,7 +19,7 @@ class NasabahModel extends Model
         // return $this->db->table('nasabah')
         //     ->join('cabang', 'cabang.kode_cabang = nasabah.kode_cabang')
         //     ->get()->getResultArray();
-        $this->db->table('nasabah');
+        // $this->db->table('nasabah');
         $this->join('cabang', 'cabang.kode_cabang = nasabah.kode_cabang');
         if (!empty($kode_cabang) && $kode_cabang != 'FG00') {
             $this->where('nasabah.kode_cabang', $kode_cabang);

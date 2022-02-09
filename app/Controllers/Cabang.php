@@ -21,7 +21,7 @@ class Cabang extends BaseController
             'cabang' => $this->CabangModel->findAll(),
             'validation' => \Config\Services::validation()
         ];
-        return view('cabang/datacabang', $data);
+        return view('Cabang/datacabang', $data);
     }
 
     public function create()
@@ -30,7 +30,7 @@ class Cabang extends BaseController
             'title' => 'Form Data cabang',
             'validation' => \Config\Services::validation()
         ];
-        return view('cabang/formcabang', $data);
+        return view('Cabang/formcabang', $data);
     }
 
     public function save()
@@ -44,6 +44,12 @@ class Cabang extends BaseController
                 ]
             ],
             'nama_cabang' => [
+                'rules' => 'required',
+                'errors'    => [
+                    'required'  => '{field} Harus Diisi'
+                ]
+            ],
+            'no_telp' => [
                 'rules' => 'required',
                 'errors'    => [
                     'required'  => '{field} Harus Diisi'
@@ -72,6 +78,7 @@ class Cabang extends BaseController
             'kode_cabang' => $this->request->getVar('kode_cabang'),
             'nama_cabang' => $this->request->getVar('nama_cabang'),
             'alamat' => $this->request->getVar('alamat'),
+            'no_telp' => $this->request->getVar('no_telp'),
             'kode_toko' => $this->request->getVar('kode_toko')
         ];
 
@@ -89,7 +96,7 @@ class Cabang extends BaseController
             'validation' => \Config\Services::validation()
         ];
 
-        return view('cabang/edit', $data);
+        return view('Cabang/edit', $data);
     }
 
     public function update($kode_cabang)
@@ -113,6 +120,12 @@ class Cabang extends BaseController
                     'required'  => '{field} Harus Diisi'
                 ]
             ],
+            'no_telp' => [
+                'rules' => 'required',
+                'errors'    => [
+                    'required'  => '{field} Harus Diisi'
+                ]
+            ],
             'kode_toko' => [
                 'rules' => 'required',
                 'errors'    => [
@@ -128,6 +141,7 @@ class Cabang extends BaseController
             'kode_cabang' => $this->request->getVar('kode_cabang'),
             'nama_cabang' => $this->request->getVar('nama_cabang'),
             'alamat' => $this->request->getVar('alamat'),
+            'no_telp' => $this->request->getVar('no_telp'),
             'kode_toko' => $this->request->getVar('kode_toko')
         ]);
 

@@ -18,7 +18,7 @@ class Aturan extends BaseController
             'title' => 'Peraturan',
             'aturan' => $this->AturanModel->findAll()
         ];
-        return view('aturan/dataaturan', $data);
+        return view('Aturan/dataaturan', $data);
     }
 
     public function create()
@@ -28,7 +28,7 @@ class Aturan extends BaseController
             'title' => 'Form Data aturan',
             'validation' => \Config\Services::validation()
         ];
-        return view('aturan/formaturan', $data);
+        return view('Aturan/formaturan', $data);
     }
 
     public function save()
@@ -72,7 +72,7 @@ class Aturan extends BaseController
             'validation' => \Config\Services::validation()
         ];
 
-        return view('aturan/edit', $data);
+        return view('Aturan/edit', $data);
     }
 
     public function update($id_aturan)
