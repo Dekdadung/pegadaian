@@ -2168,6 +2168,16 @@ h6 .badge {
   letter-spacing: 3px;
   font-weight: 700;
 }
+
+.navbar .container h1 {
+  margin-bottom: 0;
+  font-weight: 700;
+  display: inline-block;
+  font-size: 20px;
+  margin-top: 3px;
+  color: #34395e;
+}
+
 .navbar .form-inline .form-control {
   background-color: #fff;
   border-color: transparent;
@@ -3232,6 +3242,7 @@ pre {
   margin-top: 3px;
   color: #34395e;
 }
+
 .section .section-header .section-header-back {
   margin-right: 15px;
 }

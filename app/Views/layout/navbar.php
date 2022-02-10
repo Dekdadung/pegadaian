@@ -6,6 +6,7 @@ $session = session();
         <a href="index.html" class="navbar-brand sidebar-gone-hide">
             <img src="<?= base_url('template/assets/img/logo-utama.png') ?>" alt="" style="width:130px">
         </a>
+        <h1>Solusi Keuangan Anda</h1>
         <a href="#" class="nav-link sidebar-gone-show" data-toggle="sidebar"><i class="fas fa-bars"></i></a>
         <div class="nav-collapse">
             <a href="<?= site_url('login/logout') ?>" class="btn btn-round smooth btn-icon icon-left">
