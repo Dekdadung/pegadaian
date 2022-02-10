@@ -47,6 +47,9 @@ $routes->get('datauser', 'User::index', ['filter' => 'auth']);
 $routes->get('formuser', 'User::create', ['filter' => 'auth']);
 
 $routes->get('datalaporan', 'Laporan::index', ['filter' => 'auth']);
+$routes->get('laporanakanlelang', 'Laporan::AkanLelang', ['filter' => 'auth']);
+$routes->get('laporanterlelang', 'Laporan::Terlelang', ['filter' => 'auth']);
+$routes->get('laporanlunas', 'Laporan::Lunas', ['filter' => 'auth']);
 $routes->get('formlaporan', 'Laporan::create', ['filter' => 'auth']);
 $routes->get('uploadForm', 'Laporan::uploadForm', ['filter' => 'auth']);
 

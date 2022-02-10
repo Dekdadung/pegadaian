@@ -59,9 +59,91 @@ class Laporan extends BaseController
         return view('Laporan/datalaporan', $data);
     }
 
-    public function nota()
+    public function AkanLelang()
     {
-        return view('Laporan/nota');
+        $cek_cabang_user = session('kode_cabang');
+        $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
+        $data_gadai = $this->PegadaianModel->getDataGadai($kode_cabang);
+
+        foreach ($data_gadai as $key) {
+            $cek_ = '';
+            // SELECT * FROM `pinjamangadai` WHERE tgl_jatuh_tempo >= date(NOW()) && tgl_jatuh_tempo <= date(NOW()) + 1
+            // $cek_ = $key->tgl_jatuh_tempo == date('Y-m-d') ? 'mark' : 'none';
+
+            $hari_esok = date('Y-m-d', strtotime("+1 day"));
+            if ($key->tgl_jatuh_tempo == date('Y-m-d')) {
+                $cek_ = 'danger text-white';
+            } elseif ($key->tgl_jatuh_tempo == $hari_esok) {
+                $cek_ = 'warning text-white';
+            } else {
+                $cek_ = 'default';
+            }
+            $key->jatuh_tempo_now = $cek_;
+        }
+
+        $data = [
+            'title' => 'Akan Lelang',
+            'gadai' => $data_gadai
+        ];
+        return view('Laporan/dataAlelang', $data);
+    }
+
+    public function Lunas()
+    {
+        $cek_cabang_user = session('kode_cabang');
+        $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
+        $data_gadai = $this->PegadaianModel->getDataGadai($kode_cabang);
+
+        foreach ($data_gadai as $key) {
+            $cek_ = '';
+            // SELECT * FROM `pinjamangadai` WHERE tgl_jatuh_tempo >= date(NOW()) && tgl_jatuh_tempo <= date(NOW()) + 1
+            // $cek_ = $key->tgl_jatuh_tempo == date('Y-m-d') ? 'mark' : 'none';
+
+            $hari_esok = date('Y-m-d', strtotime("+1 day"));
+            if ($key->tgl_jatuh_tempo == date('Y-m-d')) {
+                $cek_ = 'danger text-white';
+            } elseif ($key->tgl_jatuh_tempo == $hari_esok) {
+                $cek_ = 'warning text-white';
+            } else {
+                $cek_ = 'default';
+            }
+            $key->jatuh_tempo_now = $cek_;
+        }
+
+        $data = [
+            'title' => 'Data Lunas',
+            'gadai' => $data_gadai
+        ];
+        return view('Laporan/dataLunas', $data);
+    }
+
+    public function Terlelang()
+    {
+        $cek_cabang_user = session('kode_cabang');
+        $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
+        $data_gadai = $this->PegadaianModel->getDataGadai($kode_cabang);
+
+        foreach ($data_gadai as $key) {
+            $cek_ = '';
+            // SELECT * FROM `pinjamangadai` WHERE tgl_jatuh_tempo >= date(NOW()) && tgl_jatuh_tempo <= date(NOW()) + 1
+            // $cek_ = $key->tgl_jatuh_tempo == date('Y-m-d') ? 'mark' : 'none';
+
+            $hari_esok = date('Y-m-d', strtotime("+1 day"));
+            if ($key->tgl_jatuh_tempo == date('Y-m-d')) {
+                $cek_ = 'danger text-white';
+            } elseif ($key->tgl_jatuh_tempo == $hari_esok) {
+                $cek_ = 'warning text-white';
+            } else {
+                $cek_ = 'default';
+            }
+            $key->jatuh_tempo_now = $cek_;
+        }
+
+        $data = [
+            'title' => 'Barang Terlelang',
+            'gadai' => $data_gadai
+        ];
+        return view('Laporan/dataTerlelang', $data);
     }
 
     public function uploadForm()

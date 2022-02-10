@@ -45,10 +45,10 @@ $session = session();
             <li class="nav-item dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle"
                     aria-expanded="false">Laporan</a>
                 <ul class="dropdown-menu">
-                    <li><a href="<?= site_url('laporan') ?>" class="nav-link sc_load">Barang Lunas</a></li>
+                    <li><a href="<?= site_url('laporanlunas') ?>" class="nav-link sc_load">Barang Lunas</a></li>
                     <li><a href="<?= site_url('laporan') ?>" class="nav-link sc_load">Data Aktif</a></li>
-                    <li><a href="<?= site_url('laporan') ?>" class="nav-link sc_load">Akan Dilelang</a></li>
-                    <li><a href="<?= site_url('laporan') ?>" class="nav-link sc_load">Barang Terlelang</a></li>
+                    <li><a href="<?= site_url('laporanakanlelang') ?>" class="nav-link sc_load">Akan Dilelang</a></li>
+                    <li><a href="<?= site_url('laporanterlelang') ?>" class="nav-link sc_load">Barang Terlelang</a></li>
                 </ul>
             </li>
         </ul>
@@ -72,10 +72,10 @@ $session = session();
             <li class="nav-item dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle"
                     aria-expanded="false">Laporan</a>
                 <ul class="dropdown-menu">
-                    <li><a href="<?= site_url('laporan') ?>" class="nav-link sc_load">Barang Lunas</a></li>
+                    <li><a href="<?= site_url('laporanlunas') ?>" class="nav-link sc_load">Barang Lunas</a></li>
                     <li><a href="<?= site_url('laporan') ?>" class="nav-link sc_load">Data Aktif</a></li>
-                    <li><a href="<?= site_url('laporan') ?>" class="nav-link sc_load">Akan Dilelang</a></li>
-                    <li><a href="<?= site_url('laporan') ?>" class="nav-link sc_load">Barang Terlelang</a></li>
+                    <li><a href="<?= site_url('laporanakanlelang') ?>" class="nav-link sc_load">Akan Dilelang</a></li>
+                    <li><a href="<?= site_url('laporanterlelang') ?>" class="nav-link sc_load">Barang Terlelang</a></li>
                 </ul>
             </li>
         </ul>
