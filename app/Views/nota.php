@@ -123,7 +123,7 @@
                                     <br>
                                     <h5>Alamat : <?= $data_cabang->alamat ?></h5>
                                     <h5>Telp. / WA : <?= $data_cabang->telp_cabang ?></h5>
-                                    <h5>Operasional : Senin - Sabtu / 08:00 WIT - 20:00 WITA</h5>
+                                    <h5>Operasional : Senin - Sabtu / 08:00 WITA - 20:00 WITA</h5>
                                 </th>
                                 <th>
                                     <span style="text-decoration: underline;font-size: 20px;">SURAT BUKTI GADAI
@@ -210,14 +210,14 @@
                     kepada Nasabah untuk
                     digadaikan yang bukan berasal dari kejahatan, tidak dalam objek sengketa atau sita pinjaman.
                 </p>
-                <p class="sub-heading">2. Untuk menebus barang gadai nasabah harus datang sendiri atau dengan
+                <p class="sub-heading">2. Untuk menebus barang gadai, nasabah harus datang sendiri atau dengan
                     mengalihkan hak kepada orang lain
                     dengan melampirkan<b>Surat Kuasa Asli</b> dan <b>Foto Copy KTP</b> Nasabah yang menerima kuasa.
                 </p>
                 <p class="sub-heading">3. Nasabah tunduk pada peraturan - peraturan yang dibuat oleh <b>FLOBAMORA
                         GADAI</b>.</p>
                 <p class="sub-heading">4. Saya bersedia dan tidak akan ada <b>TUNTUTAN DALAM BENTUK APAPUN</b>, baik
-                    secara <b>PODANA/PERDATA</b>
+                    secara <b>PIDANA/PERDATA</b>
                     kepada pihak <b>FLOBAMORA GADAI</b>. Jika saya <b>LALAI</b>/tidak melakukan pelunasan sampai dengan
                     tanggal jatuh tempo.</p>
                 <p class="sub-heading">5. Saya bersedia menyetujui apabila barang yang saya gadaikan di Flobamora Gadai

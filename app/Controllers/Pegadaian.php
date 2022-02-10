@@ -364,6 +364,71 @@ class Pegadaian extends BaseController
         return redirect()->to('/datagadai');
     }
 
+    public function createTebus($kode_pinjaman)
+    {
+        $cek_cabang_user = session('kode_cabang');
+        $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
+
+        $data = [
+            'gadai' => $this->PegadaianModel->find($kode_pinjaman),
+            'nasabah' => $this->NasabahModel->findAll(),
+            'cabang' => $this->CabangModel->findAll(),
+            'saldo' => $this->SaldoModel->findAll(),
+            'kode_cabang' => $kode_cabang,
+            // 'telpNasabah' => $telp_nasabah,
+            'title' => 'Form Penebusan Lelang',
+            // 'kode_pinjaman' => $kode_pinjaman,
+            'validation' => \Config\Services::validation()
+        ];
+        return view('Lelang/formtebus', $data);
+    }
+
+    public function saveTebus()
+    {
+        $jumlah_bayar = preg_replace("/[^a-zA-Z0-9\s]/", "", $this->request->getVar('jumlah_bayar'));
+        $dendaP = $this->request->getVar('dendaP') / 100;
+
+        $this->PembayaranModel->save([
+            'kode_pinjaman' => $this->request->getVar('kode_pinjaman'),
+            'jumlah_bayar' => $jumlah_bayar,
+            'tgl_bayar' => $this->request->getVar('tgl_bayar'),
+            'keterangan' => $this->request->getVar('keterangan')
+        ]);
+
+        $kode_cabang = $this->request->getVar('kode_cabang');
+        $get_sisa_kas =  $this->SaldoModel->getSisa($kode_cabang);
+        if (!empty($this->SaldoModel->getSisa($kode_cabang))) {
+            $sisa_kas = $get_sisa_kas[0]['sisa_kas'];
+        } else {
+            $sisa_kas = 0;
+        }
+        $total_kas = $sisa_kas + $jumlah_bayar;
+        $this->SaldoModel->save([
+            'jumlah_kas' => $jumlah_bayar,
+            'sisa_kas' => $total_kas,
+            'keterangan' => $this->request->getVar('keterangan'),
+            'kode_cabang' => $this->request->getVar('kode_cabang'),
+            'jenis' => 'pembayaran'
+        ]);
+
+        $this->PegadaianModel->update($this->request->getVar('kode_pinjaman'), [
+            'status_bayar' => 'Lunas'
+        ]);
+
+        $untung = $jumlah_bayar * $dendaP;
+        $this->PendapatanModel->save([
+            'jumlah_untung' => $untung,
+            'kd_pinjaman' => $this->request->getVar('kode_pinjaman'),
+            'keterangan' => $this->request->getVar('keterangan'),
+            'tgl_masuk' => date('Y-m-d'),
+            'jenis' => 'denda'
+        ]);
+
+        session()->setFlashdata('Pesan', 'Data Berhasil Ditambahkan');
+        return redirect()->to('/datagadai');
+    }
+
+
     public function createBayar($kode_pinjaman)
     {
         $cek_cabang_user = session('kode_cabang');
@@ -624,6 +689,7 @@ class Pegadaian extends BaseController
             $key->update_url = base_url() . '/pegadaian/edit/' . $key->kode_pinjaman;
             $key->delete_url = base_url() . '/pegadaian/delete/' . $key->kode_pinjaman;
             $key->pembayaran_url = base_url() . '/pegadaian/createBayar/' . $key->kode_pinjaman;
+            $key->penebusan_url = base_url() . '/Pegadaian/createTebus/' . $key->kode_pinjaman;
             $key->perpanjangan_url = base_url() . '/pegadaian/createPerpanjang/' . $key->kode_pinjaman;
             $key->denda_url = base_url() . '/pegadaian/createDenda/' . $key->kode_pinjaman;
             $key->lelang_url = base_url() . '/pegadaian/createLelang/' . $key->kode_pinjaman;

@@ -58,6 +58,10 @@ $(document).ready(function() {
 				<i class="fas fa-hand-holding-usd"></i> Pembayaran\
 			</a>\
 			'
+      if (actionJSON.penebusan != undefined) body += '<a href="'+((data.penebusan_url != undefined) ? data.penebusan_url:"javascript:;")+'" class="dropdown-item btn-edit-inline" title="penebusan" '+(((actionJSON.penebusan != undefined) && (actionJSON.penebusan))? '':'style="display:none"')+'>\
+				<i class="fas fa-money-bill"></i> Penebusan\
+			</a>\
+			'
       if (actionJSON.perpanjangan != undefined) body += '<a href="'+((data.perpanjangan_url != undefined) ? data.perpanjangan_url:"javascript:;")+'" class="dropdown-item btn-edit-inline" title="perpanjangan" '+(((actionJSON.perpanjangan != undefined) && (actionJSON.perpanjangan))? '':'style="display:none"')+'>\
 				<i class="far fa-calendar-plus"></i> Perpanjangan\
 			</a>\
