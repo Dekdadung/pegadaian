@@ -31,6 +31,13 @@
         padding: 0;
     }
 
+    p.solid {
+        border-style: solid;
+        padding: 2px;
+        height: 40px;
+        width: 200px;
+    }
+
     .container {
         height: 148.5mm;
         width: 210mm;
@@ -116,20 +123,20 @@
                     <table style="margin-bottom: 10px;">
                         <thead>
                             <tr>
-                                <th><img width="100px" src="<?= base_url('template/assets/img/tangan.png') ?>" alt="">
+                                <th><img width="80px" src="<?= base_url('template/assets/img/tangan.png') ?>" alt="">
                                 </th>
                                 <th style="text-align: left;width:340px">
-                                    <img width="130px" src="<?= base_url('template/assets/img/tulisan.png') ?>" alt="">
+                                    <img width="100px" src="<?= base_url('template/assets/img/tulisan.png') ?>" alt="">
                                     <br>
                                     <h5>Alamat : <?= $data_cabang->alamat ?></h5>
                                     <h5>Telp. / WA : <?= $data_cabang->telp_cabang ?></h5>
                                     <h5>Operasional : Senin - Sabtu / 08:00 WITA - 20:00 WITA</h5>
                                 </th>
                                 <th>
-                                    <span style="text-decoration: underline;font-size: 20px;">SURAT BUKTI GADAI
+                                    <span style="text-decoration: underline;font-size: 18px;">SURAT BUKTI GADAI
                                         BARANG</span>
                                     <p>
-                                    <h4 style="margin-top: 5px;">No Nota. <?= $data_nota->kode_pinjaman ?></h4>
+                                    <h4 style="margin-top: 3px;">No Nota. <?= $data_nota->kode_pinjaman ?></h4>
                                     </p>
                                 </th>
                             </tr>
@@ -137,7 +144,7 @@
                     </table>
                 </div>
                 <div class="col-12">
-                    <table style="width: 100%;font-size:15px" class="my-tables">
+                    <table style="width: 100%;font-size:13px" class="my-tables">
                         <tbody>
                             <tr>
                                 <td style="width: 120px;">Nama</td>
@@ -178,7 +185,26 @@
                             <tr>
                                 <td style="width: 120px;">Jumlah Barang</td>
                                 <td style="width: 335px;">: <?= $data_nota->jumlah ?></td>
+                                <td style="width: 120px;">Password</td>
+                                <td>:<?= $data_nota->password ?> </td>
                             </tr>
+                            <table style="width: 100%;font-size:11px" class="my-tables">
+                                <tr>
+                                    <input type="checkbox">Januari
+                                    <input type="checkbox">Februari
+                                    <input type="checkbox">Maret
+                                    <input type="checkbox">April
+                                    <input type="checkbox">Mei
+                                    <input type="checkbox">Juni
+                                    <input type="checkbox">Juli
+                                    <input type="checkbox">Agustus
+                                    <input type="checkbox">September
+                                    <input type="checkbox">Oktober
+                                    <br>
+                                    <input type="checkbox">November
+                                    <input type="checkbox">Desember
+                                </tr>
+                            </table>
                         </tbody>
                     </table>
                 </div>
@@ -237,7 +263,7 @@
                     ini
                     ditandatangani oleh para pihak.
                 </p>
-                <p class="sub-heading"><b>Rekening Flobamora (Bank BRI) :
+                <p class="sub-heading solid"><b>Rekening Flobamora (Bank BRI) :
                         <br>
                         463901002599507
                         <br>
@@ -251,7 +277,6 @@
                         <p><b>Nasabah</b></p>
                         <br>
                         <br>
-                        <br>
                         <p>(..............................)</p>
                     </div>
                 </div>
@@ -261,7 +286,6 @@
                     <div style="margin-left: 90px;" class="card-footer">
                         <p>Denpasar,............................</p>
                         <p style="margin-left: 50px;"><b>Flobamora Gadai</b></p>
-                        <br>
                         <br>
                         <br>
                         <p style="text-align: right;">(..............................)</p>

@@ -12,6 +12,7 @@ use App\Models\AturanModel;
 use App\Models\BarangModel;
 use App\Models\LelangModel;
 use App\Models\PerpanjanganModel;
+use App\Models\HistoriModel;
 // use App\Libraries\PHPExcel;
 use PHPExcel;
 use PHPExcel_IOFactory;
@@ -30,6 +31,7 @@ class Pegadaian extends BaseController
     protected $PerpanjanganModel;
     protected $LelangModel;
     protected $BarangModel;
+    protected $HistoriModel;
 
     public function __construct()
     {
@@ -43,6 +45,7 @@ class Pegadaian extends BaseController
         $this->BarangModel = new BarangModel();
         $this->LelangModel = new LelangModel();
         $this->PerpanjanganModel = new PerpanjanganModel();
+        $this->HistoriModel = new HistoriModel();
         helper('currency');
     }
 
@@ -129,6 +132,7 @@ class Pegadaian extends BaseController
             'jenis_barang' => $this->request->getVar('jenis_barang'),
             'seri' => $this->request->getVar('seri'),
             'kelengkapan' => $this->request->getVar('kelengkapan'),
+            'password' => $this->request->getVar('password'),
             'jumlah' => $this->request->getVar('jumlah'),
             'kondisi' => $this->request->getVar('kondisi'),
             'tgl_gadai' => $this->request->getVar('tgl_gadai'),
@@ -237,6 +241,7 @@ class Pegadaian extends BaseController
             'jenis_barang' => $this->request->getVar('jenis_barang'),
             'seri' => $this->request->getVar('seri'),
             'kelengkapan' => $this->request->getVar('kelengkapan'),
+            'password' => $this->request->getVar('password'),
             'jumlah' => $this->request->getVar('jumlah'),
             'kondisi' => $this->request->getVar('kondisi'),
             // 'tgl_gadai' => $this->request->getVar('tgl_gadai'),
@@ -283,7 +288,7 @@ class Pegadaian extends BaseController
                 $sisa_kas = 0;
             }
             $total_kas = $sisa_kas + intval($jumlah_pinjaman);
-            $this->SaldoModel->save([
+            $update_saldo = $this->SaldoModel->save([
                 'jumlah_kas' => $jumlah_pinjaman,
                 'sisa_kas' => $total_kas,
                 'keterangan' => 'Pembatalan Transaksi ' . $kode_pinjaman . '. Dana Sudah dikembalikan ke saldo',
@@ -293,13 +298,15 @@ class Pegadaian extends BaseController
 
             // hapus data pendapatn
             $delete = $this->PendapatanModel->Pendapatan_batal($kode_pinjaman);
+            $hapus_pinjaman = $this->PegadaianModel->delete($kode_pinjaman);
 
-            $this->PegadaianModel->delete($kode_pinjaman);
-            $data = [
-                'status'  => 'Berhasil Dihapus',
-                'status_text' => 'Data Berhasil Dihapus',
-                'status_icon' => 'success'
-            ];
+            if ($delete == true && $hapus_pinjaman == true && $update_saldo == true) {
+                $data = [
+                    'status'  => 'Berhasil Dihapus',
+                    'status_text' => 'Data Berhasil Dihapus',
+                    'status_icon' => 'success'
+                ];
+            }
             return $this->response->setJSON($data);
         }
     }
@@ -342,26 +349,46 @@ class Pegadaian extends BaseController
 
     public function saveDenda()
     {
+        $data = [
+            'status'  => 'Gagal',
+            'status_text' => 'Gagal Update, terjadi Kesalahan!',
+            'status_icon' => 'warning',
+            'redirect_url' => base_url('datalelang')
+        ];
         $jumlah_pinjaman = preg_replace("/[^a-zA-Z0-9\s]/", "", $this->request->getVar('jumlah_pinjaman'));
         $dendaP = $this->request->getVar('dendaP') / 100;
         $bunga = $this->request->getVar('bunga');
         $denda = floatval($bunga) + (intval($jumlah_pinjaman) * $dendaP);
-        $this->PendapatanModel->save([
+        $save_pendapatan = $this->PendapatanModel->save([
             'jumlah_untung' => $denda,
             'kd_pinjaman' => $this->request->getVar('kode_pinjaman'),
-            'keterangan' => $this->request->getVar('keterangan'),
             'tgl_masuk' => date('Y-m-d'),
-            'jenis' => 'denda'
+            'jenis' => 'denda',
+            'keterangan' => $this->request->getVar('keterangan'),
         ]);
-
-        $this->PegadaianModel->update($this->request->getVar('kode_pinjaman'), [
+        $update_tgl = $this->PegadaianModel->update($this->request->getVar('kode_pinjaman'), [
             'tgl_lelang' => $this->request->getVar('tgl_lelang'),
             'tgl_jatuh_tempo' => $this->request->getVar('tgl_jatuh_tempo')
         ]);
+        $simpan_histori = $this->HistoriModel->save([
+            'kode_pinjaman_gadai' => $this->request->getVar('kode_pinjaman'),
+            'tanggal' => date('Y-m-d'),
+            'dana' => $denda,
+            'jenis' => 'denda',
+            'keterangan' => 'Keuntungan Denda'
+        ]);
 
-
-        session()->setFlashdata('Pesan', 'Pinjaman telah diAktifkan kembali');
-        return redirect()->to('/datagadai');
+        if ($save_pendapatan == true && $update_tgl == true && $simpan_histori == true) {
+            $data = [
+                'status'  => 'Berhasil',
+                'status_text' => 'Pinjaman telah diAktifkan kembali',
+                'status_icon' => 'success',
+                'redirect_url' => base_url('datalelang')
+            ];
+        }
+        return $this->response->setJSON($data);
+        // session()->setFlashdata('Pesan', 'Pinjaman telah diAktifkan kembali');
+        // return redirect()->to('/datagadai');
     }
 
     public function createTebus($kode_pinjaman)
@@ -385,16 +412,20 @@ class Pegadaian extends BaseController
 
     public function saveTebus()
     {
+        $data = [
+            'status'  => 'Gagal',
+            'status_text' => 'Gagal Update, terjadi Kesalahan!',
+            'status_icon' => 'warning',
+            'redirect_url' => base_url('datalelang')
+        ];
         $jumlah_bayar = preg_replace("/[^a-zA-Z0-9\s]/", "", $this->request->getVar('jumlah_bayar'));
         $dendaP = $this->request->getVar('dendaP') / 100;
-
-        $this->PembayaranModel->save([
+        $save_pembayaran = $this->PembayaranModel->save([
             'kode_pinjaman' => $this->request->getVar('kode_pinjaman'),
             'jumlah_bayar' => $jumlah_bayar,
             'tgl_bayar' => $this->request->getVar('tgl_bayar'),
             'keterangan' => $this->request->getVar('keterangan')
         ]);
-
         $kode_cabang = $this->request->getVar('kode_cabang');
         $get_sisa_kas =  $this->SaldoModel->getSisa($kode_cabang);
         if (!empty($this->SaldoModel->getSisa($kode_cabang))) {
@@ -403,29 +434,50 @@ class Pegadaian extends BaseController
             $sisa_kas = 0;
         }
         $total_kas = $sisa_kas + $jumlah_bayar;
-        $this->SaldoModel->save([
+        $update_saldo = $this->SaldoModel->save([
             'jumlah_kas' => $jumlah_bayar,
             'sisa_kas' => $total_kas,
             'keterangan' => $this->request->getVar('keterangan'),
             'kode_cabang' => $this->request->getVar('kode_cabang'),
             'jenis' => 'pembayaran'
         ]);
-
-        $this->PegadaianModel->update($this->request->getVar('kode_pinjaman'), [
+        $update_status_bayar = $this->PegadaianModel->update($this->request->getVar('kode_pinjaman'), [
             'status_bayar' => 'Lunas'
         ]);
-
         $untung = $jumlah_bayar * $dendaP;
-        $this->PendapatanModel->save([
+        $insert_pendapatan = $this->PendapatanModel->save([
             'jumlah_untung' => $untung,
             'kd_pinjaman' => $this->request->getVar('kode_pinjaman'),
-            'keterangan' => $this->request->getVar('keterangan'),
             'tgl_masuk' => date('Y-m-d'),
-            'jenis' => 'denda'
+            'jenis' => 'denda',
+            'keterangan' => $this->request->getVar('keterangan'),
         ]);
+        $simpan_histori = $this->HistoriModel->save([
+            'kode_pinjaman_gadai' => $this->request->getVar('kode_pinjaman'),
+            'tanggal' => date('Y-m-d'),
+            'dana' => $jumlah_bayar,
+            'jenis' => 'penebusan',
+            'keterangan' => 'Jumlah Pinjaman'
+        ]);
+        $simpan_histori2 = $this->HistoriModel->save([
+            'kode_pinjaman_gadai' => $this->request->getVar('kode_pinjaman'),
+            'tanggal' => date('Y-m-d'),
+            'dana' => $untung,
+            'jenis' => 'denda',
+            'keterangan' => 'Keuntungan Tebus'
+        ]);
+        if ($save_pembayaran == true && $update_saldo == true && $update_status_bayar == true && $simpan_histori == true && $simpan_histori2 == true && $insert_pendapatan == true) {
+            $data = [
+                'status'  => 'Berhasil',
+                'status_text' => 'Barang Berhasil Ditebus!',
+                'status_icon' => 'success',
+                'redirect_url' => base_url('datalelang')
+            ];
+        }
+        return $this->response->setJSON($data);
 
-        session()->setFlashdata('Pesan', 'Data Berhasil Ditambahkan');
-        return redirect()->to('/datagadai');
+        // session()->setFlashdata('Pesan', 'Data Berhasil Ditambahkan');
+        // return redirect()->to('/datagadai');
     }
 
 
@@ -451,13 +503,27 @@ class Pegadaian extends BaseController
 
     public function saveBayar()
     {
+        $data = [
+            'status'  => 'Gagal',
+            'status_text' => 'Gagal Update, terjadi Kesalahan!',
+            'status_icon' => 'warning',
+            'redirect_url' => base_url('datagadai')
+        ];
         $jumlah_bayar = preg_replace("/[^a-zA-Z0-9\s]/", "", $this->request->getVar('jumlah_bayar'));
 
-        $this->PembayaranModel->save([
+        $simpan_pembayaran = $this->PembayaranModel->save([
             'kode_pinjaman' => $this->request->getVar('kode_pinjaman'),
             'jumlah_bayar' => $jumlah_bayar,
             'tgl_bayar' => $this->request->getVar('tgl_bayar'),
             'keterangan' => $this->request->getVar('keterangan')
+        ]);
+
+        $simpan_histori = $this->HistoriModel->save([
+            'kode_pinjaman_gadai' => $this->request->getVar('kode_pinjaman'),
+            'tanggal' => $this->request->getVar('tgl_bayar'),
+            'dana' => $jumlah_bayar,
+            'jenis' => 'penebusan',
+            'keterangan' => 'Penebusan Barang'
         ]);
 
         $kode_cabang = $this->request->getVar('kode_cabang');
@@ -468,7 +534,7 @@ class Pegadaian extends BaseController
             $sisa_kas = 0;
         }
         $total_kas = $sisa_kas + $jumlah_bayar;
-        $this->SaldoModel->save([
+        $update_saldo = $this->SaldoModel->save([
             'jumlah_kas' => $jumlah_bayar,
             'sisa_kas' => $total_kas,
             'keterangan' => $this->request->getVar('keterangan'),
@@ -476,12 +542,21 @@ class Pegadaian extends BaseController
             'jenis' => 'pembayaran'
         ]);
 
-        $this->PegadaianModel->update($this->request->getVar('kode_pinjaman'), [
+        $update_status_bayar = $this->PegadaianModel->update($this->request->getVar('kode_pinjaman'), [
             'status_bayar' => 'Lunas'
         ]);
+        if ($simpan_pembayaran == true && $update_saldo == true && $simpan_histori == true && $update_status_bayar == true) {
+            $data = [
+                'status'  => 'Berhasil',
+                'status_text' => 'Barang Berhasil Ditebus!',
+                'status_icon' => 'success',
+                'redirect_url' => base_url('datagadai')
+            ];
+        }
+        return $this->response->setJSON($data);
 
-        session()->setFlashdata('Pesan', 'Data Berhasil Ditambahkan');
-        return redirect()->to('/datagadai');
+        // session()->setFlashdata('Pesan', 'Data Berhasil Ditambahkan');
+        // return redirect()->to('/datagadai');
     }
 
     public function TerLelang()
@@ -515,9 +590,9 @@ class Pegadaian extends BaseController
     public function createLelang($kode_pinjaman)
     {
         $data = [
-            'lelang' => $this->LelangModel->findAll(),
+            // 'lelang' => $this->LelangModel->findAll(),
             'title' => 'Form Lelang',
-            'gadai'  => $this->PegadaianModel->find($kode_pinjaman),
+            'gadai'  => $this->PegadaianModel->get_detail_pegadaian($kode_pinjaman),
             'validation' => \Config\Services::validation()
         ];
         return view('Lelang/formlelang', $data);
@@ -525,41 +600,6 @@ class Pegadaian extends BaseController
 
     public function saveLelang()
     {
-        if (!$this->validate([
-            'nama_barang' => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => '{field} Harus Diisi'
-                ]
-            ],
-            'kode_pinjaman' => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => '{field} Harus Diisi'
-                ]
-            ],
-            'hasil_lelang' => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => '{field} Harus Diisi'
-                ]
-            ],
-            'keterangan' => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => '{field} Harus Diisi'
-                ]
-            ],
-            'tgl_lelang' => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => '{field} Harus Diisi'
-                ]
-            ],
-        ])) {
-            session()->setFlashdata('errors', $this->validator->listErrors());
-            return redirect()->back()->withInput();
-        }
         $jumlah_pinjaman = preg_replace("/[^a-zA-Z0-9\s]/", "", $this->request->getVar('jumlah_pinjaman'));
         $hasil_lelang = preg_replace("/[^a-zA-Z0-9\s]/", "", $this->request->getVar('hasil_lelang'));
         $keuntungan = $hasil_lelang - $jumlah_pinjaman;
@@ -578,16 +618,14 @@ class Pegadaian extends BaseController
             'keterangan' => $this->request->getVar('keterangan')
         ];
 
-        $this->LelangModel->simpan($data);
-
-        $this->PendapatanModel->save([
+        $save_lelang = $this->LelangModel->simpan($data);
+        $insert_pendapatan = $this->PendapatanModel->save([
             'jumlah_untung' => $keuntungan,
             'kd_pinjaman' => $this->request->getVar('kode_pinjaman'),
             'tgl_masuk' => date('Y-m-d'),
             'jenis' => 'Lelang',
             'keterangan' => $this->request->getVar('keterangan')
         ]);
-
         $kode_cabang = $this->request->getVar('kode_cabang');
         $get_sisa_kas =  $this->SaldoModel->getSisa($kode_cabang);
         if (!empty($this->SaldoModel->getSisa($kode_cabang))) {
@@ -596,20 +634,49 @@ class Pegadaian extends BaseController
             $sisa_kas = 0;
         }
         $total_kas = $sisa_kas + $jumlah_pinjaman;
-        $this->SaldoModel->save([
+        $update_saldo = $this->SaldoModel->save([
             'jumlah_kas' => $jumlah_pinjaman,
             'sisa_kas' => $total_kas,
             'keterangan' => 'Lelang',
             'kode_cabang' => $this->request->getVar('kode_cabang'),
             'jenis' => 'lelang'
         ]);
-
-        $this->PegadaianModel->update($this->request->getVar('kode_pinjaman'), [
+        $update_status_bayar = $this->PegadaianModel->update($this->request->getVar('kode_pinjaman'), [
             'status_bayar' => 'TERLELANG'
         ]);
+        $simpan_histori = $this->HistoriModel->save([
+            'kode_pinjaman_gadai' => $this->request->getVar('kode_pinjaman'),
+            'tanggal' => date('Y-m-d'),
+            'dana' => $keuntungan,
+            'jenis' => 'denda',
+            'keterangan' => 'Keuntungan Lelang'
+        ]);
+        $simpan_histori2 = $this->HistoriModel->save([
+            'kode_pinjaman_gadai' => $this->request->getVar('kode_pinjaman'),
+            'tanggal' => date('Y-m-d'),
+            'dana' => $jumlah_pinjaman,
+            'jenis' => 'penebusan',
+            'keterangan' => 'Jumlah Pinjaman'
+        ]);
+        if ($save_lelang == true && $update_saldo == true && $simpan_histori == true && $simpan_histori2 == true && $update_status_bayar == true && $insert_pendapatan == true) {
+            $data = [
+                'status'  => 'Berhasil',
+                'status_text' => 'Barang Berhasil diLelang!',
+                'status_icon' => 'success',
+                'redirect_url' => base_url('datalelang')
+            ];
+        } else {
+            $data = [
+                'status'  => 'Gagal',
+                'status_text' => 'Gagal Update, terjadi Kesalahan!',
+                'status_icon' => 'warning',
+                'redirect_url' => base_url('datalelang')
+            ];
+        }
+        return $this->response->setJSON($data);
 
-        session()->setFlashdata('Pesan', 'Data Berhasil Ditambahkan');
-        return redirect()->to('/terlelang');
+        // session()->setFlashdata('Pesan', 'Data Berhasil Ditambahkan');
+        // return redirect()->to('/terlelang');
     }
 
     public function createPerpanjang($kode_pinjamann)
@@ -629,26 +696,50 @@ class Pegadaian extends BaseController
     public function savePerpanjang()
     {
         $kode_pinjamann = $this->request->getVar('kode_pinjaman');
-        $this->PerpanjanganModel->save([
+        $save_perpanjang = $this->PerpanjanganModel->save([
             'kode_pinjamann' => $kode_pinjamann,
             'tgl_perpanjangan' => $this->request->getVar('tgl_perpanjangan')
         ]);
 
-        $this->PegadaianModel->update($kode_pinjamann, [
+        $update_tgl = $this->PegadaianModel->update($kode_pinjamann, [
             'tgl_jatuh_tempo' => $this->request->getVar('tgl_perpanjangan'),
             'tgl_lelang' => $this->request->getVar('tgl_lelang'),
         ]);
 
         $bunga = preg_replace("/[^a-zA-Z0-9\s]/", "", $this->request->getVar('bunga'));
-        $this->PendapatanModel->save([
+        $update_pendapatan = $this->PendapatanModel->save([
             'jumlah_untung' => $bunga,
             'kd_pinjaman' => $kode_pinjamann,
             'keterangan' => $this->request->getVar('keterangan'),
             'jenis' => 'bunga'
         ]);
 
-        session()->setFlashdata('Pesan', 'Perpanjangan ' . $kode_pinjamann . ' berhasil dibuat');
-        return redirect()->to('/datagadai');
+        $simpan_histori = $this->HistoriModel->save([
+            'kode_pinjaman_gadai' => $kode_pinjamann,
+            'tanggal' => date('Y-m-d'),
+            'dana' => $bunga,
+            'jenis' => 'perpanjangan',
+            'keterangan' => 'Bunga Perpanjangan'
+        ]);
+
+        if ($save_perpanjang == true && $update_tgl == true && $simpan_histori == true && $update_pendapatan == true) {
+            $data = [
+                'status'  => 'Berhasil',
+                'status_text' => 'Berhasil Diperpanjang!',
+                'status_icon' => 'success',
+                'redirect_url' => base_url('datagadai')
+            ];
+        } else {
+            $data = [
+                'status'  => 'Gagal',
+                'status_text' => 'Gagal Update, terjadi Kesalahan!',
+                'status_icon' => 'warning',
+                'redirect_url' => base_url('datagadai')
+            ];
+        }
+        return $this->response->setJSON($data);
+        // session()->setFlashdata('Pesan', 'Perpanjangan ' . $kode_pinjamann . ' berhasil dibuat');
+        // return redirect()->to('/datagadai');
     }
 
 
@@ -658,26 +749,43 @@ class Pegadaian extends BaseController
         $cek_cabang_user = session('kode_cabang');
         $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
         // echo $this->request->getGet('halo');
-        $query = $this->request->getGet('sSearch');
-        $start = $this->request->getGet('iDisplayStart');
-        $length = $this->request->getGet('iDisplayLength');
-        $type_data = $this->request->getGet('type_data');
+        // $query = $this->request->getGet('sSearch');
+        // $start = $this->request->getGet('iDisplayStart');
+        // $length = $this->request->getGet('iDisplayLength');
+        if (
+            isset($_GET["columns"][1]["search"]["value"]) && $_GET["columns"][1]["search"]["value"] != ""
+        ) {
+            $temp = explode("|", $_GET["columns"][1]["search"]["value"]);
+            $_GET['tanggal_start'] = (isset($temp[1]) ? $temp[0] : date("Y-m-d", 0));
+            $_GET['tanggal_end'] = (isset($temp[1]) ? $temp[1] : date("Y-m-d"));
+        }
+        // echo $_GET['tanggal_start'];
+        // echo '<br>';
+        // echo $_GET['tanggal_end'];
+        // $date = date("Y-m-d", $temp);
+        $tgl_besok = date('Y-m-d', strtotime("+1 day"));
+        $query = $this->request->getGet('search')["value"];
+        $start = $this->request->getGet('start');
+        $length = $this->request->getGet('length');
+        $date_range_type = strtotime($query);
+
+        $type_data = (!empty($this->request->getGet('type_data'))) ? $this->request->getGet('type_data') : '';
         $keySearch = 'kode_pinjaman';
-        // var_dump($query);
-        // die;
-        if (!empty($query)) {
+        if (!empty($query) && $date_range_type == false) {
             $extract = explode("_", $query);
             $query = $extract[0];
             $keySearch = $extract[1];
             if (count($extract) >= 3) {
                 $keySearch = $extract[1] . '_' . $extract[2];
             }
+        } else {
+            $keySearch = 'tgl_gadai';
         }
         // echo $this->PegadaianModel->count_filter('CB01');
         // die;
         $result['sEcho'] = intval($this->request->getGet('sEcho'));
-        $result['iTotalRecords'] = $this->PegadaianModel->countResultTable();
-        $result['iTotalDisplayRecords'] = $this->PegadaianModel->count_filter($query, $kode_cabang, $type_data);
+        $result['iTotalRecords'] = $this->PegadaianModel->countResultTable($kode_cabang, $type_data);
+        $result['iTotalDisplayRecords'] = $this->PegadaianModel->count_filter($query, $kode_cabang, $type_data, $keySearch);
         if ($length == -1) $length = $result['iTotalDisplayRecords'];
         $data_gadai = $this->PegadaianModel->listDataGadai($start, $length, $query, $keySearch, $kode_cabang, $type_data);
         $i = $start + 1;
@@ -695,7 +803,6 @@ class Pegadaian extends BaseController
             $key->lelang_url = base_url() . '/pegadaian/createLelang/' . $key->kode_pinjaman;
             $key->urlNota = base_url() . '/Pegadaian/cetaknota/' . $key->kode_pinjaman;
 
-            $tgl_besok = date('Y-m-d', strtotime("+1 day"));
             $key->sudah_jatuh_tempo = ($key->tgl_jatuh_tempo < date('Y-m-d')) ? true : false;
             $key->sudah_harus_lelang = ($key->tgl_lelang < date('Y-m-d')) ? true : false;
             $key->sudah_bisa_lelang = ($key->tgl_lelang == date('Y-m-d')) ? true : false;
@@ -703,7 +810,7 @@ class Pegadaian extends BaseController
             $key->jatuh_tempo_besok = ($key->tgl_jatuh_tempo == $tgl_besok) ? true : false;
             $key->mark_status = ($key->jatuh_tempo_hari_ini == true || $key->jatuh_tempo_besok == true) ? true : false;
             $key->tgl_jatuh_tempo = bulan($key->tgl_jatuh_tempo);
-            // $key->tgl_lelang = bulan($key->tgl_lelang);
+            $key->tgl_lelang = bulan($key->tgl_lelang);
             // $key->tgl_perpanjangan = (!empty($key->tgl_perpanjangan)) ? bulan($key->tgl_perpanjangan) : '-';
             $key->jumlah_pinjaman = rupiah($key->jumlah_pinjaman);
             $key->bunga = rupiah($key->bunga);
@@ -717,7 +824,9 @@ class Pegadaian extends BaseController
     {
         helper('bulan');
 
-        if (isset($_GET["columns"][1]["search"]["value"]) && $_GET["columns"][1]["search"]["value"] != "") {
+        if (
+            isset($_GET["columns"][1]["search"]["value"]) && $_GET["columns"][1]["search"]["value"] != ""
+        ) {
             $temp = explode("|", $_GET["columns"][1]["search"]["value"]);
             $_GET['tanggal_start'] = (isset($temp[1]) ? $temp[0] : date("Y-m-d", 0));
             $_GET['tanggal_end'] = (isset($temp[1]) ? $temp[1] : date("Y-m-d"));
@@ -729,20 +838,22 @@ class Pegadaian extends BaseController
         $start = $this->request->getGet('iDisplayStart');
         $length = $this->request->getGet('iDisplayLength');
         $type_data = $this->request->getGet('type_data');
-
+        $date_range_type = strtotime($query);
         $keySearch = 'kode_pinjaman';
-        if (!empty($query)) {
+        if (!empty($query) && $date_range_type == false) {
             $extract = explode("_", $query);
             $query = $extract[0];
             $keySearch = $extract[1];
             if (count($extract) >= 3) {
                 $keySearch = $extract[1] . '_' . $extract[2];
             }
+        } else {
+            $keySearch = 'tgl_gadai';
         }
 
         $result['sEcho'] = intval($this->request->getGet('sEcho'));
         $result['iTotalRecords'] = $this->PegadaianModel->countResultTable();
-        $result['iTotalDisplayRecords'] = $this->PegadaianModel->count_filter($query, $kode_cabang, $type_data);
+        $result['iTotalDisplayRecords'] = $this->PegadaianModel->count_filter($query, $kode_cabang, $type_data, $keySearch);
         if ($length == -1) $length = $result['iTotalDisplayRecords'];
         $data_gadai = $this->PegadaianModel->getDataGadaiLaporan($start, $length, $query, $keySearch, $kode_cabang, $type_data);
 

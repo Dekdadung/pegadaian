@@ -40,8 +40,11 @@ $session = session();
             </ul>
         </div>
         <input type="hidden" id="base_url" value="<?= base_url() ?>" name="">
+        <?php
+        $getType = @$_GET['type'];
+        ?>
         <input type="hidden" id="list_url" value="<?= base_url('listgadai') ?>" name="">
-        <input type="hidden" id="type_data" value="" name="">
+        <input type="hidden" id="type_data" value="<?= $getType ?>" name="">
         <div style="display: none;" id="table_column">
             [{"data":"no"},{"data":"kode_pinjaman"},{"data":"nama"},{"data":"nama_barang"},{"data":"tgl_gadai"},{"data":"tgl_jatuh_tempo"},{"data":"jumlah_pinjaman"},{"data":"bunga"}]
         </div>
@@ -96,13 +99,13 @@ $session = session();
             </div> -->
             <div class="col-md-2">
                 <div class="input-group-prepend">
-                    <select class="custom-select" id="inputGroupSelect03">
-                        <option value="" selected="">Semua Data</option>
-                        <option value="">Lunas</option>
-                        <option value="">Akan Jatuh Tempo</option>
-                        <option value="">Jatuh Tempo</option>
-                        <option value="">Menunggu Pembayaran</option>
-                    </select>
+                    <form action="" method="get">
+                        <select class="custom-select" id="inputGroupSelect03" onchange="this.form.submit()" name="type">
+                            <option value="">Semua Data</option>
+                            <option value="akan_jatuh_tempo" <?= ($getType == 'akan_jatuh_tempo') ? 'selected' : ''; ?>>Akan Jatuh Tempo</option>
+                            <option value="jatuh_tempo_sekarang" <?= ($getType == 'jatuh_tempo_sekarang') ? 'selected' : ''; ?>>Jatuh Tempo Hari Ini</option>
+                        </select>
+                    </form>
                 </div>
             </div>
             <div class="col-md-4">
@@ -157,7 +160,7 @@ $session = session();
                     <div class="card-body">
                         <h5 class="card-title"></h5>
                         <p class="card-text"><b>Kode Pinjaman : <span class="row_kode_pinjaman"></span></b></p>
-                        <p class="card-text"><b>Id Nasabah : <span class="row_id_nasabah"></span></b></p>
+                        <!-- <p class="card-text"><b>Id Nasabah : <span class="row_id_nasabah"></span></b></p> -->
                         <p class="card-text"><b>Nama Nasabah : <span class="row_nama"></span></b></p>
                         <p class="card-text"><b>No. Telpon : <span class="row_no_telp"></span></b></p>
                         <p class="card-text"><b>Tgl. Gadai: <span class="row_tgl_gadai"></span></b></p>
@@ -167,7 +170,7 @@ $session = session();
                         <p class="card-text"><b>Bunga : <span class="row_bunga"></span></b></p>
                         <p class="card-text"><b>Kode Cabang : <span class="row_kode_cabang"></span></b></p>
                         <p class="card-text"><b>Status : <span class="row_status_bayar"></span></b></p>
-                        <p class="card-text"><b>Jenis Barang : <span class="row_jenis_barang"></span></b></p>
+                        <p class="card-text"><b>Jenis Barang : <span class="row_nama_barang"></span></b></p>
                     </div>
                 </div>
             </div>

@@ -255,6 +255,115 @@ $(document).ready(function(){
     });
   });
 
+  $('#form_save_with_date').on('submit', function(e){
+    e.preventDefault();
+    var formSmbt = $(this).attr('action');
+    var serializedData = $(this).serialize();
+    $('#button_submit').attr('disabled','true');
+    $('#button_submit').text('Mohon Tunggu...');
+    if($('.datepicker').length > 0){
+      if($('#tgl_jatuh_tempo').data('datenow') == $('#tgl_jatuh_tempo').val()){
+        swal({
+            title: 'Peringatan!',
+            text: 'Maaf, Mohon Rubah Tanggal Jatuh Tempo',
+            icon: 'warning',
+            button: "OK",
+        }).then((confirmed) => {
+          $('#button_submit').removeAttr('disabled');
+          $('#button_submit').text('Perpanjang');
+          $('#tgl_jatuh_tempo').focus();
+        })
+      }else if($('#tgl_lelang').data('datenow') == $('#tgl_lelang').val()){
+        swal({
+            title: 'Peringatan!',
+            text: 'Maaf, Mohon Rubah Tanggal Lelang',
+            icon: 'warning',
+            button: "OK",
+        }).then((confirmed) => {
+          $('#button_submit').removeAttr('disabled');
+          $('#button_submit').text('Perpanjang');
+          $('#tgl_lelang').focus();
+        })
+      }else{
+        swal({
+            title: "Apa data sudah benar?",
+            text: "Mohon dicek kembali, apakah data sudah benar!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+            buttons: ["Kembali", "Ya, Sudah benar"],
+        }).then((confirmed) =>{
+          if(confirmed){
+            $.ajax({
+                url: formSmbt,
+                type: "post",
+                data: serializedData,
+                success: function(response) {
+                  console.log(response);
+                  swal({
+                      title: response.status,
+                      text: response.status_text,
+                      icon: response.status_icon,
+                      button: "OK",
+                  })
+                  .then((confirmed) => {
+                    $('#button_submit').removeAttr('disabled');
+                    $('#button_submit').text('Perpanjang');
+                    window.location.href = response.redirect_url;
+                  });
+                }
+            });
+          }else{
+            $('#button_submit').removeAttr('disabled');
+            $('#button_submit').text('Perpanjang');
+          }
+        })
+      }
+    }
+  });
+
+
+  // ajx_action_save
+  $('#ajx_action_save').on('submit', function(e){
+    e.preventDefault();
+    var formSmbt = $(this).attr('action');
+    var serializedData = $(this).serialize();
+    var btn_action_title = $('#button_submit').data('title');
+    $('#button_submit').attr('disabled','true');
+    $('#button_submit').text('Mohon Tunggu...');
+    swal({
+        title: "Apa data sudah benar?",
+        text: "Mohon dicek kembali, apakah data sudah benar!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+        buttons: ["Kembali", "Ya, Sudah benar"],
+    }).then((confirmed) =>{
+      if(confirmed){
+        $.ajax({
+            url: formSmbt,
+            type: "post",
+            data: serializedData,
+            success: function(response) {
+              swal({
+                  title: response.status,
+                  text: response.status_text,
+                  icon: response.status_icon,
+                  button: "OK",
+              })
+              .then((confirmed) => {
+                $('#button_submit').removeAttr('disabled');
+                $('#button_submit').text(btn_action_title);
+                window.location.href = response.redirect_url;
+              });
+            }
+        });
+      }else{
+        $('#button_submit').removeAttr('disabled');
+        $('#button_submit').text(btn_action_title);
+      }
+    })
+  });
 
 })
 

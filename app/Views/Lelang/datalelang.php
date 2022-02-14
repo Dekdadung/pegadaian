@@ -12,7 +12,7 @@ $session = session();
         <div class="petunjuk_warna">
             <ul>
                 <li><i class="fas fa-square-full text-white"></i> Masih Bisa diperpanjang</li>
-                <li><i class="fas fa-square-full text-warning"></i> Sudah Masuk Lelang</li>
+                <!-- <li><i class="fas fa-square-full text-warning"></i> Sudah Masuk Lelang</li> -->
                 <li><i class="fas fa-square-full text-danger"></i> Sudah Melewati Tanggal Batas lelang dan Harus Segera
                     Dilelang</li>
                 <!-- <li><i class="fas fa-square-full text-dark"></i> Sudah lewat Jatuh Tempo</li> -->
@@ -26,13 +26,13 @@ $session = session();
         </div>
         <div style="display: none;" id="table_columnDef">{"className":"white_space","targets":[2]}</div>
         <?php if ($session->get('level') == 'superadmin') :  ?>
-        <div style="display: none;" data-style="dropdown" id="table_action">
-            {"edit":false,"delete":false,"print":false,"notifWa":false,"detail":true,"pembayaran":false,"perpanjangan":false,"denda":true,"lelang":true,"penebusan":true}
-        </div>
+            <div style="display: none;" data-style="dropdown" id="table_action">
+                {"edit":false,"delete":false,"print":false,"notifWa":false,"detail":true,"pembayaran":false,"perpanjangan":false,"denda":true,"lelang":true,"penebusan":true}
+            </div>
         <?php else : ?>
-        <div style="display: none;" data-style="dropdown" id="table_action">
-            {"edit":false,"delete":false,"print":false,"notifWa":false,"detail":true,"pembayaran":false,"perpanjangan":false,"denda":true,"lelang":true,"penebusan":true}
-        </div>
+            <div style="display: none;" data-style="dropdown" id="table_action">
+                {"edit":false,"delete":false,"print":false,"notifWa":false,"detail":true,"pembayaran":false,"perpanjangan":false,"denda":true,"lelang":true,"penebusan":true}
+            </div>
         <?php endif; ?>
         <div class="my_box row">
             <div class="col-md-6">
@@ -82,18 +82,18 @@ $session = session();
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title"></h5>
-                        <p class="card-text"><b>Kode Pinjaman : <span class="row_kode_pinjaman"></span></b></p>
-                        <p class="card-text"><b>Id Nasabah : <span class="row_id_nasabah"></span></b></p>
-                        <p class="card-text"><b>Nama Nasabah : <span class="row_nama"></span></b></p>
-                        <p class="card-text"><b>No. Telpon : <span class="row_no_telp"></span></b></p>
-                        <p class="card-text"><b>Tgl. Gadai: <span class="row_tgl_gadai"></span></b></p>
-                        <p class="card-text"><b>Tgl. Jatuh Tempo: <span class="row_tgl_jatuh_tempo"></span></b></p>
-                        <p class="card-text"><b>Tgl. Lelang: <span class="row_tgl_lelang"></span></b></p>
-                        <p class="card-text"><b>Jumlah Pinjaman : <span class="row_jumlah_pinjaman"></span></b></p>
-                        <p class="card-text"><b>Bunga : <span class="row_bunga"></span></b></p>
-                        <p class="card-text"><b>Kode Cabang : <span class="row_kode_cabang"></span></b></p>
-                        <p class="card-text"><b>Status : <span class="row_status_bayar"></span></b></p>
-                        <p class="card-text"><b>Jenis Barang : <span class="row_jenis_barang"></span></b></p>
+                        <p class="card-text">Kode Pinjaman : <b><span class="row_kode_pinjaman"></span></b></p>
+                        <!-- <p class="card-text">Id Nasabah : <b><span class="row_id_nasabah"></span></b></p> -->
+                        <p class="card-text">Nama Nasabah : <b><span class="row_nama"></span></b></p>
+                        <p class="card-text">No. Telpon : <b><span class="row_no_telp"></span></b></p>
+                        <p class="card-text">Tgl. Gadai: <b><span class="row_tgl_gadai"></span></b></p>
+                        <p class="card-text">Tgl. Jatuh Tempo: <b><span class="row_tgl_jatuh_tempo"></span></b></p>
+                        <p class="card-text">Tgl. Lelang: <b><span class="row_tgl_lelang"></span></b></p>
+                        <p class="card-text">Jumlah Pinjaman : <b><span class="row_jumlah_pinjaman"></span></b></p>
+                        <p class="card-text">Bunga : <b><span class="row_bunga"></span></b></p>
+                        <p class="card-text">Kode Cabang : <b><span class="row_kode_cabang"></span></b></p>
+                        <p class="card-text">Status : <b><span class="row_status_bayar"></span></b></p>
+                        <p class="card-text">Jenis Barang : <b><span class="row_nama_barang"></span></b></p>
                     </div>
                 </div>
             </div>

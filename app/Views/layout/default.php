@@ -7,25 +7,28 @@
     <meta name="robots" content="noindex, nofollow">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <title><?= $title; ?></title>
+    <?php
+    $versions_ = '?ver=1.1.0';
+    ?>
 
     <!-- General CSS Files -->
-    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/datatables/css/datatables.min.css">
-    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/datatables.net-select-bs4/css/select.bootstrap4.min.css">
-    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/datatables/css/datatables.min.css<?= $versions_ ?>">
+    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/datatables.net-bs4/css/dataTables.bootstrap4.min.css<?= $versions_ ?>">
+    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/datatables.net-select-bs4/css/select.bootstrap4.min.css<?= $versions_ ?>">
+    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/bootstrap-datepicker/css/bootstrap-datepicker3.min.css<?= $versions_ ?>">
     <link rel="stylesheet" href="<?= base_url() ?>/template/assets/bootstrap/scss/_navbar.scss">
     <link rel="stylesheet" href="<?= base_url() ?>/template/assets/bootstrap/scss/_reboot.scss">
-    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/@fortawesome/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/jquery/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/select2/dist/css/select2.min.css" />
+    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/bootstrap/dist/css/bootstrap.min.css<?= $versions_ ?>">
+    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/@fortawesome/fontawesome-free/css/all.min.css<?= $versions_ ?>">
+    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/jquery/jquery.dataTables.min.css<?= $versions_ ?>">
+    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/select2/dist/css/select2.min.css<?= $versions_ ?>" />
 
     <script src="<?= base_url() ?>/template/assets/jquery/dist/jquery.min.js"></script>
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/css/style.css?ver=1.0.1">
-    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/css/custom.css">
-    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/css/components.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/css/style.css<?= $versions_ ?>">
+    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/css/custom.css<?= $versions_ ?>">
+    <link rel="stylesheet" href="<?= base_url() ?>/template/assets/css/components.css<?= $versions_ ?>">
 </head>
 
 <body class="layout-3">
@@ -81,9 +84,9 @@
     <!-- <script src="<?= base_url() ?>/template/assets/js/page/modules-datatables.js"></script> -->
 
     <!-- Template JS File -->
-    <script src="<?= base_url() ?>/template/assets/js/my-datatable.js"></script>
-    <script src="<?= base_url() ?>/template/assets/js/scripts.js"></script>
-    <script src="<?= base_url() ?>/template/assets/js/custom.js"></script>
+    <script src="<?= base_url() ?>/template/assets/js/my-datatable.js<?= $versions_ ?>"></script>
+    <script src="<?= base_url() ?>/template/assets/js/scripts.js<?= $versions_ ?>"></script>
+    <script src="<?= base_url() ?>/template/assets/js/custom.js<?= $versions_ ?>"></script>
 </body>
 
 </html>

@@ -8,7 +8,7 @@ class PegadaianModel extends Model
 {
     protected $table = 'pinjamangadai';
     protected $primaryKey = 'kode_pinjaman';
-    protected $allowedFields = ['kode_pinjaman', 'id_nasabah', 'jenis_barang', 'seri', 'kelengkapan', 'jumlah', 'kondisi', 'tgl_gadai', 'tgl_jatuh_tempo', 'tgl_lelang', 'jumlah_pinjaman', 'bunga', 'kode_cabang', 'status_bayar'];
+    protected $allowedFields = ['kode_pinjaman', 'id_nasabah', 'jenis_barang', 'seri', 'kelengkapan', 'password', 'jumlah', 'kondisi', 'tgl_gadai', 'tgl_jatuh_tempo', 'tgl_lelang', 'jumlah_pinjaman', 'bunga', 'kode_cabang', 'status_bayar'];
     protected $returnType = 'array';
 
     public function getDataGadai($kode_cabang = null, $dataSekarang = null, $tanggal_start = null, $tanggal_end = null)
@@ -49,18 +49,19 @@ class PegadaianModel extends Model
         $request = \Config\Services::request();
         $kolom = ['kode_pinjaman', 'id_nasabah', 'tgl_gadai', 'tgl_jatuh_tempo', 'tgl_lelang', 'jumlah_pinjaman', 'bunga', 'kode_cabang'];
         $this->db->table('pinjamangadai');
-
-        $this->groupStart();
-        $this->orLike($keysearch, $query, 'BOTH');
-        $this->groupEnd();
-
-        if ($request->getGet('iSortCol_0')) {
-            for ($i = 0; $i < intval($request->getGet('iSortingCols', TRUE)); $i++) {
-                if ($request->getGet('bSortable_' . intval($request->getGet('iSortCol_' . $i)), TRUE) == "true") {
-                    $this->orderBy($kolom[intval($request->getGet('iSortCol_' . $i, TRUE))], $request->getGet('sSortDir_' . $i, TRUE));
-                }
-            }
+        if ($keysearch != 'tgl_gadai') {
+            $this->groupStart();
+            $this->orLike($keysearch, $query, 'BOTH');
+            $this->groupEnd();
         }
+
+        // if ($request->getGet('iSortCol_0')) {
+        //     for ($i = 0; $i < intval($request->getGet('iSortingCols', TRUE)); $i++) {
+        //         if ($request->getGet('bSortable_' . intval($request->getGet('iSortCol_' . $i)), TRUE) == "true") {
+        //             $this->orderBy($kolom[intval($request->getGet('iSortCol_' . $i, TRUE))], $request->getGet('sSortDir_' . $i, TRUE));
+        //         }
+        //     }
+        // }
 
         $this->join('nasabah', 'nasabah.id_nasabah = pinjamangadai.id_nasabah');
         $this->join('cabang', 'cabang.kode_cabang = pinjamangadai.kode_cabang');
@@ -155,9 +156,9 @@ class PegadaianModel extends Model
     public function sortDateLelang($kode_cabang = null)
     {
         if (!empty($kode_cabang) && $kode_cabang != 'FG00') {
-            $query = $this->query("SELECT count(kode_pinjaman) as total FROM pinjamangadai WHERE tgl_jatuh_tempo < date(NOW()) && kode_cabang = '$kode_cabang' AND status_bayar != 'Lunas' ");
+            $query = $this->query("SELECT count(kode_pinjaman) as total FROM pinjamangadai WHERE tgl_jatuh_tempo < date(NOW()) && kode_cabang = '$kode_cabang' AND status_bayar != 'Lunas' AND status_bayar != 'TERLELANG' ");
         } else {
-            $query = $this->query("SELECT count(kode_pinjaman) as total FROM pinjamangadai WHERE tgl_jatuh_tempo < date(NOW()) AND status_bayar != 'Lunas' ");
+            $query = $this->query("SELECT count(kode_pinjaman) as total FROM pinjamangadai WHERE tgl_jatuh_tempo < date(NOW()) AND status_bayar != 'Lunas' AND status_bayar != 'TERLELANG' ");
         }
         $data = $query->getRow()->total;
         return $data;
@@ -241,39 +242,15 @@ class PegadaianModel extends Model
         $query = $this->get()->getRow()->kode_pinjaman;
         return $query;
     }
-    public function count_filter($query, $kode_cabang = null, $type_data = null)
+    public function count_filter($query, $kode_cabang = null, $type_data = null, $keySearch)
     {
         $this->select('count("kode_pinjaman") as qty');
-        $this->groupStart();
-        $this->orLike('kode_pinjaman', $query, 'BOTH');
-        $this->groupEnd();
-        if (!empty($kode_cabang) && $kode_cabang != 'FG00') {
-            $this->where('pinjamangadai.kode_cabang', $kode_cabang);
+        if ($keySearch != 'tgl_gadai') {
+            $this->groupStart();
+            $this->orLike('kode_pinjaman', $query, 'BOTH');
+            $this->groupEnd();
         }
-        if (!empty($type_data) && $type_data == "TERLELANG") {
-            $this->where('pinjamangadai.tgl_jatuh_tempo <', date('Y-m-d'));
-        } else {
-            $this->where('pinjamangadai.tgl_jatuh_tempo >=', date('Y-m-d'));
-        }
-        $this->where('pinjamangadai.status_bayar !=', 'TERLELANG');
-        $this->where('pinjamangadai.status_bayar !=', 'Lunas');
-        return $this->get()->getRow()->qty;
-    }
-    public function listDataGadai($start, $length, $query, $keysearch, $kode_cabang = null, $type_data = null)
-    {
-        $request = \Config\Services::request();
-        $kolom = ['kode_pinjaman', 'id_nasabah', 'tgl_gadai', 'tgl_jatuh_tempo', 'tgl_lelang', 'jumlah_pinjaman', 'bunga', 'kode_cabang'];
-        $this->groupStart();
-        $this->orLike($keysearch, $query, 'BOTH');
-        $this->groupEnd();
 
-        if ($request->getGet('iSortCol_0')) {
-            for ($i = 0; $i < intval($request->getGet('iSortingCols', TRUE)); $i++) {
-                if ($request->getGet('bSortable_' . intval($request->getGet('iSortCol_' . $i)), TRUE) == "true") {
-                    $this->orderBy($kolom[intval($request->getGet('iSortCol_' . $i, TRUE))], $request->getGet('sSortDir_' . $i, TRUE));
-                }
-            }
-        }
         $this->join('nasabah', 'nasabah.id_nasabah = pinjamangadai.id_nasabah');
         $this->join('perpanjangan', 'perpanjangan.kode_pinjamann = pinjamangadai.kode_pinjaman', 'left');
         $this->join('kategori_barang', 'kategori_barang.id_barang = pinjamangadai.jenis_barang', 'left');
@@ -284,6 +261,71 @@ class PegadaianModel extends Model
             $this->where('pinjamangadai.tgl_jatuh_tempo <', date('Y-m-d'));
         } else {
             $this->where('pinjamangadai.tgl_jatuh_tempo >=', date('Y-m-d'));
+        }
+        // filter jaatuh tempo hari ini
+        if (!empty($type_data) && $type_data == "jatuh_tempo_sekarang") {
+            $this->where('pinjamangadai.tgl_jatuh_tempo ', date('Y-m-d'));
+        }
+        // filter Akan jaatuh tempo
+        if (!empty($type_data) && $type_data == "akan_jatuh_tempo") {
+            $this->where('pinjamangadai.tgl_jatuh_tempo ', date('Y-m-d', strtotime("+1 day")));
+        }
+        // select_by date range
+        if (isset($_GET['tanggal_start']) && $_GET['tanggal_start'] != "") {
+            $this->where('pinjamangadai.tgl_gadai >=', $_GET['tanggal_start']);
+        }
+        if (isset($_GET['tanggal_end']) && $_GET['tanggal_end'] != "") {
+            $this->where('pinjamangadai.tgl_gadai <=', $_GET['tanggal_end']);
+        }
+        $this->where('pinjamangadai.status_bayar !=', 'TERLELANG');
+        $this->where('pinjamangadai.status_bayar !=', 'Lunas');
+        $this->orderBy('tgl_gadai', 'desc');
+        $this->orderBy('kode_pinjaman', 'desc');
+        return $this->get()->getRow()->qty;
+    }
+    public function listDataGadai($start, $length, $query, $keysearch, $kode_cabang = null, $type_data = null)
+    {
+        $request = \Config\Services::request();
+        $kolom = ['kode_pinjaman', 'id_nasabah', 'tgl_gadai', 'tgl_jatuh_tempo', 'tgl_lelang', 'jumlah_pinjaman', 'bunga', 'kode_cabang'];
+        if ($keysearch != 'tgl_gadai') {
+            $this->groupStart();
+            $this->orLike($keysearch, $query, 'BOTH');
+            $this->groupEnd();
+        }
+
+        // if ($request->getGet('iSortCol_0')) {
+        //     for ($i = 0; $i < intval($request->getGet('iSortingCols', TRUE)); $i++) {
+        //         if ($request->getGet('bSortable_' . intval($request->getGet('iSortCol_' . $i)), TRUE) == "true") {
+        //             $this->orderBy($kolom[intval($request->getGet('iSortCol_' . $i, TRUE))], $request->getGet('sSortDir_' . $i, TRUE));
+        //         }
+        //     }
+        // }
+
+        $this->join('nasabah', 'nasabah.id_nasabah = pinjamangadai.id_nasabah');
+        $this->join('perpanjangan', 'perpanjangan.kode_pinjamann = pinjamangadai.kode_pinjaman', 'left');
+        $this->join('kategori_barang', 'kategori_barang.id_barang = pinjamangadai.jenis_barang', 'left');
+        if (!empty($kode_cabang) && $kode_cabang != 'FG00') {
+            $this->where('pinjamangadai.kode_cabang', $kode_cabang);
+        }
+        if (!empty($type_data) && $type_data == "TERLELANG") {
+            $this->where('pinjamangadai.tgl_jatuh_tempo <', date('Y-m-d'));
+        } else {
+            $this->where('pinjamangadai.tgl_jatuh_tempo >=', date('Y-m-d'));
+        }
+        // filter jaatuh tempo hari ini
+        if (!empty($type_data) && $type_data == "jatuh_tempo_sekarang") {
+            $this->where('pinjamangadai.tgl_jatuh_tempo ', date('Y-m-d'));
+        }
+        // filter Akan jaatuh tempo
+        if (!empty($type_data) && $type_data == "akan_jatuh_tempo") {
+            $this->where('pinjamangadai.tgl_jatuh_tempo ', date('Y-m-d', strtotime("+1 day")));
+        }
+        // select_by date range
+        if (isset($_GET['tanggal_start']) && $_GET['tanggal_start'] != "") {
+            $this->where('pinjamangadai.tgl_gadai >=', $_GET['tanggal_start']);
+        }
+        if (isset($_GET['tanggal_end']) && $_GET['tanggal_end'] != "") {
+            $this->where('pinjamangadai.tgl_gadai <=', $_GET['tanggal_end']);
         }
         $this->where('pinjamangadai.status_bayar !=', 'TERLELANG');
         $this->where('pinjamangadai.status_bayar !=', 'Lunas');
@@ -309,5 +351,14 @@ class PegadaianModel extends Model
             return $data;
         }
         return null;
+    }
+
+    public function get_detail_pegadaian($kode_pinjaman)
+    {
+        $this->db->table('pinjamangadai');
+        $this->join('nasabah', 'nasabah.id_nasabah = pinjamangadai.id_nasabah');
+        $this->join('kategori_barang', 'kategori_barang.id_barang = pinjamangadai.jenis_barang', 'left');
+        $this->where('pinjamangadai.kode_pinjaman', $kode_pinjaman);
+        return $this->get()->getRow();
     }
 }

@@ -56,6 +56,7 @@ class Dashboard extends BaseController
             }
             $key->jatuh_tempo_now = $cek_;
         }
+        $pendapatanBulanIni = 'asd';
         $data = [
             'title' => 'Dashboard',
             'home' => $data_gadai,
@@ -67,7 +68,8 @@ class Dashboard extends BaseController
             'list_jatuh_tempo' => $list_jatuh_tempo,
             // 'sisa_saldo' => $this->SaldoModel->getTotalSaldo()[0]['jumlah_kas'],
             'totalpinjam' => $this->PegadaianModel->getTotalPinjaman($kode_cabang)[0]['jumlah_pinjaman'],
-            'totaldapat' => $this->PendapatanModel->getTotalPendapatan($kode_cabang)[0]['total_pendapatan']
+            'totaldapat' => $this->PendapatanModel->getTotalPendapatan($kode_cabang)[0]['total_pendapatan'],
+            'totalDapatBulanIni' => $this->PendapatanModel->getTotalPendapatanBulan($kode_cabang)[0]['total_pendapatan']
         ];
         return view('Dashboard/homepage', $data);
     }

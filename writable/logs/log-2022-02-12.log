@@ -1,0 +1,16 @@
+CRITICAL - 2022-02-12 22:01:04 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 /Users/macbook2017/Documents/kantor/flobamoragadai/pegadaian/vendor/codeigniter4/framework/system/bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 /Users/macbook2017/Documents/kantor/flobamoragadai/pegadaian/spark(45): require('/Users/macbook2...')
+#2 {main}
+CRITICAL - 2022-02-12 22:10:15 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 /Users/macbook2017/Documents/kantor/flobamoragadai/pegadaian/vendor/codeigniter4/framework/system/bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 /Users/macbook2017/Documents/kantor/flobamoragadai/pegadaian/spark(45): require('/Users/macbook2...')
+#2 {main}
+CRITICAL - 2022-02-12 22:10:42 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 /Users/macbook2017/Documents/kantor/flobamoragadai/pegadaian/vendor/codeigniter4/framework/system/bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 /Users/macbook2017/Documents/kantor/flobamoragadai/pegadaian/spark(45): require('/Users/macbook2...')
+#2 {main}
+CRITICAL - 2022-02-12 22:14:49 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 /Users/macbook2017/Documents/kantor/flobamoragadai/pegadaian/vendor/codeigniter4/framework/system/bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 /Users/macbook2017/Documents/kantor/flobamoragadai/pegadaian/spark(45): require('/Users/macbook2...')
+#2 {main}

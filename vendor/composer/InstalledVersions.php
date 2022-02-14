@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'a7734e2098b66ed849576e8c068424cd67602982',
+    'reference' => '577e24bedb8525c64e311596d1bc038c16a33819',
     'name' => 'codeigniter4/appstarter',
   ),
   'versions' => 
@@ -41,7 +41,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'a7734e2098b66ed849576e8c068424cd67602982',
+      'reference' => '577e24bedb8525c64e311596d1bc038c16a33819',
     ),
     'codeigniter4/framework' => 
     array (
@@ -72,12 +72,12 @@ private static $installed = array (
     ),
     'fakerphp/faker' => 
     array (
-      'pretty_version' => 'v1.18.0',
-      'version' => '1.18.0.0',
+      'pretty_version' => 'v1.19.0',
+      'version' => '1.19.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '2e77a868f6540695cf5ebf21e5ab472c65f47567',
+      'reference' => 'd7f08a622b3346766325488aa32ddc93ccdecc75',
     ),
     'kint-php/kint' => 
     array (
@@ -171,12 +171,12 @@ private static $installed = array (
     ),
     'phar-io/version' => 
     array (
-      'pretty_version' => '3.1.0',
-      'version' => '3.1.0.0',
+      'pretty_version' => '3.1.1',
+      'version' => '3.1.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'bae7c545bef187884426f042434e561ab1ddb182',
+      'reference' => '15a90844ad40f127afd244c0cad228de2a80052a',
     ),
     'phpdocumentor/reflection-common' => 
     array (
@@ -405,12 +405,12 @@ private static $installed = array (
     ),
     'sebastian/global-state' => 
     array (
-      'pretty_version' => '5.0.3',
-      'version' => '5.0.3.0',
+      'pretty_version' => '5.0.4',
+      'version' => '5.0.4.0',
       'aliases' => 
       array (
       ),
-      'reference' => '23bd5951f7ff26f12d4e3242864df3e08dec4e49',
+      'reference' => '19c519631c5a511b7ed0ad64a6713fdb3fd25fe4',
     ),
     'sebastian/lines-of-code' => 
     array (

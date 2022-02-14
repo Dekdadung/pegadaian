@@ -6,48 +6,43 @@
         <div class="section-header-back">
             <a href="<?= site_url('datalelang') ?>" class="btn"><i class="fas fa-arrow-left"></i></a>
         </div>
-        <h1>Form Denda Nasabah</h1>
+        <h1>Form Perpanjang</h1>
     </div>
     <div class="card">
-        <form action="/pegadaian/saveDenda" method="post">
+        <form action="/pegadaian/saveDenda" method="post" id="form_save_with_date">
             <div class="card-body">
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="inputtext4">Kode Pinjaman</label>
-                        <input type="text" class="form-control" id="inputtext4" name="kode_pinjaman"
-                            value="<?= $gadai['kode_pinjaman']; ?>" disabled>
-                        <input hidden type="text" class="form-control" id="inputtext4" name="kode_pinjaman"
-                            value="<?= $gadai['kode_pinjaman']; ?>">
+                        <input type="text" class="form-control" id="inputtext4" name="kode_pinjaman" value="<?= $gadai['kode_pinjaman']; ?>" disabled>
+                        <input hidden type="text" class="form-control" id="inputtext4" name="kode_pinjaman" value="<?= $gadai['kode_pinjaman']; ?>">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Tanggal Jatuh Tempo</label>
-                        <input type="text" class="form-control datepicker" id="inputtext4" name="tgl_jatuh_tempo"
-                            value="<?= $gadai['tgl_jatuh_tempo']; ?>">
+                        <input type="text" class="form-control datepicker" id="tgl_jatuh_tempo" data-datenow="<?= $gadai['tgl_jatuh_tempo']; ?>" name="tgl_jatuh_tempo" value="<?= $gadai['tgl_jatuh_tempo']; ?>">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputtext4">Tanggal Lelang</label>
-                        <input type="text" class="form-control datepicker" id="inputtext4" name="tgl_lelang"
-                            value="<?= $gadai['tgl_lelang']; ?>">
+                        <input type="text" class="form-control datepicker" id="tgl_lelang" data-datenow="<?= $gadai['tgl_lelang']; ?>" name="tgl_lelang" value="<?= $gadai['tgl_lelang']; ?>">
                     </div>
                 </div>
-                <div class="form-group col-md-12">
-                    <label for="inputtext4">Keterangan</label>
-                    <textarea type="text"
-                        class="form-control <?= ($validation->hasError('keterangan')) ? 'is-invalid' : ''; ?>"
-                        name="keterangan"></textarea>
-                    <div class="invalid-feedback">
-                        <?= $validation->getError('keterangan'); ?>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="inputtext4">Keterangan</label>
+                        <input type="text" class="form-control <?= ($validation->hasError('keterangan')) ? 'is-invalid' : ''; ?>" name="keterangan" required>
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('keterangan'); ?>
+                        </div>
                     </div>
                 </div>
                 <h5>Jumlah Yang Harus dibayarkan Nasabah :</h5>
-                <p>Jumlah Denda adalah <b>5% Pinjaman</b> + <b>10% Pinjaman(Sesuai Bunga yang diberikan diawal)</b></p>
+                <p>Jumlah Denda adalah <b>5% Pinjaman</b> + <b><?= ($gadai['jumlah_pinjaman'] / $gadai['bunga']); ?>% Pinjaman(Sesuai Bunga yang diberikan diawal)</b></p>
                 <div class="form-row" hidden>
                     <div class="form-group col-md-4">
                         <label for="inputtext4">Jumlah Pinjaman</label>
-                        <input type="text" class="form-control" id="inputtext4" name="jumlah_pinjaman"
-                            value="<?= $gadai['jumlah_pinjaman']; ?>">
+                        <input type="text" class="form-control" id="inputtext4" name="jumlah_pinjaman" value="<?= $gadai['jumlah_pinjaman']; ?>">
                     </div>
                     <div class="form-group col-md-4" hidden>
                         <label for="inputtext4">Denda %</label>
@@ -55,8 +50,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputtext4">Bunga </label>
-                        <input type="text" class="form-control" id="inputtext4" name="bunga"
-                            value="<?= $gadai['bunga'] ?>">
+                        <input type="text" class="form-control" id="inputtext4" name="bunga" value="<?= $gadai['bunga'] ?>">
                     </div>
                 </div>
                 <h5>Jumlah Pinjaman : Rp. <?= rupiah($gadai['jumlah_pinjaman']); ?></h5>
@@ -75,7 +69,7 @@
                 <h3>Rp. <?= rupiah(($gadai['jumlah_pinjaman'] * (5 / 100)) + $gadai['bunga']); ?></h3>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Bayar Denda</button>
+                <button type="submit" class="btn btn-primary" id="button_submit">Perpanjang</button>
             </div>
         </form>
     </div>
