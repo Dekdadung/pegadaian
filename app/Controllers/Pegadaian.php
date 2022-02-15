@@ -349,6 +349,9 @@ class Pegadaian extends BaseController
 
     public function saveDenda()
     {
+        $cek_cabang_user = session('kode_cabang');
+        $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
+
         $data = [
             'status'  => 'Gagal',
             'status_text' => 'Gagal Update, terjadi Kesalahan!',
@@ -372,6 +375,7 @@ class Pegadaian extends BaseController
         ]);
         $simpan_histori = $this->HistoriModel->save([
             'kode_pinjaman_gadai' => $this->request->getVar('kode_pinjaman'),
+            'kode_cb' => $kode_cabang,
             'tanggal' => date('Y-m-d'),
             'dana' => $denda,
             'jenis' => 'denda',
@@ -454,6 +458,7 @@ class Pegadaian extends BaseController
         ]);
         $simpan_histori = $this->HistoriModel->save([
             'kode_pinjaman_gadai' => $this->request->getVar('kode_pinjaman'),
+            'kode_cb' => $kode_cabang,
             'tanggal' => date('Y-m-d'),
             'dana' => $jumlah_bayar,
             'jenis' => 'penebusan',
@@ -461,6 +466,7 @@ class Pegadaian extends BaseController
         ]);
         $simpan_histori2 = $this->HistoriModel->save([
             'kode_pinjaman_gadai' => $this->request->getVar('kode_pinjaman'),
+            'kode_cb' => $kode_cabang,
             'tanggal' => date('Y-m-d'),
             'dana' => $untung,
             'jenis' => 'denda',
@@ -518,15 +524,17 @@ class Pegadaian extends BaseController
             'keterangan' => $this->request->getVar('keterangan')
         ]);
 
+        $kode_cabang = $this->request->getVar('kode_cabang');
+
         $simpan_histori = $this->HistoriModel->save([
             'kode_pinjaman_gadai' => $this->request->getVar('kode_pinjaman'),
+            'kode_cb' => $kode_cabang,
             'tanggal' => $this->request->getVar('tgl_bayar'),
             'dana' => $jumlah_bayar,
             'jenis' => 'penebusan',
             'keterangan' => 'Penebusan Barang'
         ]);
 
-        $kode_cabang = $this->request->getVar('kode_cabang');
         $get_sisa_kas =  $this->SaldoModel->getSisa($kode_cabang);
         if (!empty($this->SaldoModel->getSisa($kode_cabang))) {
             $sisa_kas = $get_sisa_kas[0]['sisa_kas'];
@@ -646,6 +654,7 @@ class Pegadaian extends BaseController
         ]);
         $simpan_histori = $this->HistoriModel->save([
             'kode_pinjaman_gadai' => $this->request->getVar('kode_pinjaman'),
+            'kode_cb' => $kode_cabang,
             'tanggal' => date('Y-m-d'),
             'dana' => $keuntungan,
             'jenis' => 'denda',
@@ -653,6 +662,7 @@ class Pegadaian extends BaseController
         ]);
         $simpan_histori2 = $this->HistoriModel->save([
             'kode_pinjaman_gadai' => $this->request->getVar('kode_pinjaman'),
+            'kode_cb' => $kode_cabang,
             'tanggal' => date('Y-m-d'),
             'dana' => $jumlah_pinjaman,
             'jenis' => 'penebusan',
@@ -695,6 +705,8 @@ class Pegadaian extends BaseController
 
     public function savePerpanjang()
     {
+        $cek_cabang_user = session('kode_cabang');
+        $kode_cabang = (!empty($_GET['kode_cabang'])) ? $_GET['kode_cabang'] : $cek_cabang_user;
         $kode_pinjamann = $this->request->getVar('kode_pinjaman');
         $save_perpanjang = $this->PerpanjanganModel->save([
             'kode_pinjamann' => $kode_pinjamann,
@@ -716,6 +728,7 @@ class Pegadaian extends BaseController
 
         $simpan_histori = $this->HistoriModel->save([
             'kode_pinjaman_gadai' => $kode_pinjamann,
+            'kode_cb' => $kode_cabang,
             'tanggal' => date('Y-m-d'),
             'dana' => $bunga,
             'jenis' => 'perpanjangan',

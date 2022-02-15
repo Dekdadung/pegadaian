@@ -7,6 +7,7 @@ use App\Models\SaldoModel;
 use App\Models\PembayaranModel;
 use App\Models\CabangModel;
 use App\Models\PendapatanModel;
+use App\Models\HistoriModel;
 
 class Dashboard extends BaseController
 {
@@ -15,6 +16,7 @@ class Dashboard extends BaseController
     protected $PembayaranModel;
     protected $CabangModel;
     protected $PendapatanModel;
+    protected $HistoriModel;
 
     public function __construct()
     {
@@ -23,6 +25,7 @@ class Dashboard extends BaseController
         $this->PembayaranModel = new PembayaranModel();
         $this->CabangModel = new CabangModel();
         $this->PendapatanModel = new PendapatanModel();
+        $this->HistoriModel = new HistoriModel();
         helper('currency');
     }
 
@@ -33,6 +36,9 @@ class Dashboard extends BaseController
         $saldo = (!empty($this->SaldoModel->getSisa($kode_cabang)[0]['sisa_kas']) ? $this->SaldoModel->getSisa($kode_cabang)[0]['sisa_kas'] : '0');
         $saldo = ($kode_cabang == 'FG00') ? 0 : $saldo;
         $data_gadai = $this->PegadaianModel->getDataGadai($kode_cabang, 'hariIni');
+        $histori_tebus = $this->PegadaianModel->HistoriTebus($kode_cabang);
+        $histori_perpanjangan = $this->PegadaianModel->HistoriPerpanjangan($kode_cabang);
+        $histori_denda = $this->PegadaianModel->HistoriDenda($kode_cabang);
         $jatuh_tempo = $this->PegadaianModel->sortDate($kode_cabang);
         $masuk_lelang = $this->PegadaianModel->sortDateLelang($kode_cabang);
         $list_jatuh_tempo = $this->PegadaianModel->selectJatuhTempo($kode_cabang);
@@ -60,6 +66,9 @@ class Dashboard extends BaseController
         $data = [
             'title' => 'Dashboard',
             'home' => $data_gadai,
+            'historiD' => $histori_denda,
+            'historiP' => $histori_perpanjangan,
+            'historiT' => $histori_tebus,
             'saldo' => $saldo,
             'cabang' => $this->CabangModel->findAll(),
             'kode_cabang_sekarang' => $kode_cabang,
