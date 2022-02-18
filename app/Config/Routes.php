@@ -53,6 +53,11 @@ $routes->get('laporanlunas', 'Laporan::Lunas', ['filter' => 'auth']);
 $routes->get('formlaporan', 'Laporan::create', ['filter' => 'auth']);
 $routes->get('uploadForm', 'Laporan::uploadForm', ['filter' => 'auth']);
 
+$routes->get('historiP', 'Histori::HistoriPerpanjangan', ['filter' => 'auth']);
+$routes->get('historiD', 'Histori::HistoriDenda', ['filter' => 'auth']);
+$routes->get('historiT', 'Histori::HistoriTebus', ['filter' => 'auth']);
+$routes->get('historiG', 'Histori::HistoriGadai', ['filter' => 'auth']);
+
 $routes->get('datacabang', 'Cabang::index', ['filter' => 'auth']);
 $routes->get('formcabang', 'Cabang::create', ['filter' => 'auth']);
 

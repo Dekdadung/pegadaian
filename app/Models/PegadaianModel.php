@@ -164,40 +164,6 @@ class PegadaianModel extends Model
         return $data;
     }
 
-    public function HistoriTebus($kode_cabang = null)
-    {
-        if (!empty($kode_cabang) && $kode_cabang != 'FG00') {
-            $query = $this->query("SELECT * FROM histori WHERE tanggal = date(NOW()) && kode_cb = '$kode_cabang' AND jenis = 'penebusan'");
-        } else {
-            $query = $this->query("SELECT * FROM histori WHERE tanggal = date(NOW()) AND jenis = 'penebusan'");
-        }
-        return $query->getResultObject();
-
-        // $data = $query->getRow();
-        // return $data;
-    }
-    public function HistoriPerpanjangan($kode_cabang = null)
-    {
-        if (!empty($kode_cabang) && $kode_cabang != 'FG00') {
-            $query = $this->query("SELECT * FROM histori WHERE tanggal = date(NOW()) && kode_cb = '$kode_cabang' AND jenis = 'perpanjangan'");
-        } else {
-            $query = $this->query("SELECT * FROM histori WHERE tanggal = date(NOW()) AND jenis = 'perpanjangan'");
-        }
-        // $data = $query->getRow();
-        // return $data;
-        return $query->getResultObject();
-    }
-    public function HistoriDenda($kode_cabang = null)
-    {
-        if (!empty($kode_cabang) && $kode_cabang != 'FG00') {
-            $query = $this->query("SELECT * FROM histori WHERE tanggal = date(NOW()) && kode_cb = '$kode_cabang' AND jenis = 'denda'");
-        } else {
-            $query = $this->query("SELECT * FROM histori WHERE tanggal = date(NOW()) AND jenis = 'denda'");
-        }
-        // $data = $query->getRow();
-        // return $data;
-        return $query->getResultObject();
-    }
     public function selectJatuhTempo($kode_cabang = null)
     {
         if (!empty($kode_cabang) && $kode_cabang != 'FG00') {

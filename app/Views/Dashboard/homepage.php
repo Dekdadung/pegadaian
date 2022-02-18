@@ -269,17 +269,12 @@ $session = session();
                         </div>
                         <div class="tab-pane fade" id="tebus" role="tabpanel" aria-labelledby="profile-tab">
                             <div class="">
-                                <div class="petunjuk_warna">
-                                    <ul>
-                                        <li><i class="fas fa-square-full text-success"></i> Lunas (Nasabah Membayar Hari
-                                            Ini)</li>
-                                    </ul>
-                                </div>
                                 <table class="table table-striped table-sm">
                                     <tbody>
                                         <tr class="text-center">
                                             <th>No</th>
                                             <th>Kode Pinjaman</th>
+                                            <th>Nama Nasabah</th>
                                             <th>Tgl. Penebusan</th>
                                             <th>Jumlah Dana</th>
                                             <th>Keterangan</th>
@@ -293,6 +288,7 @@ $session = session();
                                             <tr class="text-center">
                                                 <td><?= $no++; ?></td>
                                                 <td><?= $row->kode_pinjaman_gadai; ?></td>
+                                                <td><?= $row->nama; ?></td>
                                                 <td><?= $row->tanggal; ?></td>
                                                 <td>Rp.<?= rupiah($row->dana); ?></td>
                                                 <td><?= $row->keterangan ?></td>
@@ -311,17 +307,12 @@ $session = session();
                         </div>
                         <div class="tab-pane fade" id="perpanjang" role="tabpanel" aria-labelledby="contact-tab">
                             <div class="">
-                                <div class="petunjuk_warna">
-                                    <ul>
-                                        <li><i class="fas fa-square-full text-success"></i> Lunas (Nasabah Membayar Hari
-                                            Ini)</li>
-                                    </ul>
-                                </div>
                                 <table class="table table-striped table-sm">
                                     <tbody>
                                         <tr class="text-center">
                                             <th>No</th>
                                             <th>Kode Pinjaman</th>
+                                            <th>Nama Nasabah</th>
                                             <th>Jumlah Dana</th>
                                             <th>Keterangan</th>
                                             <th>Kode Cabang</th>
@@ -334,6 +325,7 @@ $session = session();
                                             <tr class="text-center">
                                                 <td><?= $no++; ?></td>
                                                 <td><?= $row->kode_pinjaman_gadai; ?></td>
+                                                <td><?= $row->nama; ?></td>
                                                 <td>Rp.<?= rupiah($row->dana); ?></td>
                                                 <td><?= $row->keterangan ?></td>
                                                 <td><?= $row->kode_cb; ?></td>
@@ -351,17 +343,12 @@ $session = session();
                         </div>
                         <div class="tab-pane fade" id="denda" role="tabpanel" aria-labelledby="contact-tab">
                             <div class="">
-                                <div class="petunjuk_warna">
-                                    <ul>
-                                        <li><i class="fas fa-square-full text-success"></i> Lunas (Nasabah Membayar Hari
-                                            Ini)</li>
-                                    </ul>
-                                </div>
                                 <table class="table table-striped table-sm">
                                     <tbody>
                                         <tr class="text-center">
                                             <th>No</th>
                                             <th>Kode Pinjaman</th>
+                                            <th>Nama Nasabah</th>
                                             <th>Jumlah Dana</th>
                                             <th>Keterangan</th>
                                             <th>Kode Cabang</th>
@@ -374,6 +361,7 @@ $session = session();
                                             <tr class="text-center">
                                                 <td><?= $no++; ?></td>
                                                 <td><?= $row->kode_pinjaman_gadai; ?></td>
+                                                <td><?= $row->nama; ?></td>
                                                 <td>Rp.<?= rupiah($row->dana); ?></td>
                                                 <td><?= $row->keterangan ?></td>
                                                 <td><?= $row->kode_cb; ?></td>

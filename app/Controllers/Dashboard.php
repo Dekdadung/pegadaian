@@ -36,9 +36,9 @@ class Dashboard extends BaseController
         $saldo = (!empty($this->SaldoModel->getSisa($kode_cabang)[0]['sisa_kas']) ? $this->SaldoModel->getSisa($kode_cabang)[0]['sisa_kas'] : '0');
         $saldo = ($kode_cabang == 'FG00') ? 0 : $saldo;
         $data_gadai = $this->PegadaianModel->getDataGadai($kode_cabang, 'hariIni');
-        $histori_tebus = $this->PegadaianModel->HistoriTebus($kode_cabang);
-        $histori_perpanjangan = $this->PegadaianModel->HistoriPerpanjangan($kode_cabang);
-        $histori_denda = $this->PegadaianModel->HistoriDenda($kode_cabang);
+        $histori_tebus = $this->HistoriModel->HistoriTebus($kode_cabang, 'penebusan', 'now');
+        $histori_perpanjangan = $this->HistoriModel->HistoriPerpanjangan($kode_cabang, 'perpanjangan', 'now');
+        $histori_denda = $this->HistoriModel->HistoriDenda($kode_cabang, 'denda', 'now');
         $jatuh_tempo = $this->PegadaianModel->sortDate($kode_cabang);
         $masuk_lelang = $this->PegadaianModel->sortDateLelang($kode_cabang);
         $list_jatuh_tempo = $this->PegadaianModel->selectJatuhTempo($kode_cabang);
@@ -62,7 +62,6 @@ class Dashboard extends BaseController
             }
             $key->jatuh_tempo_now = $cek_;
         }
-        $pendapatanBulanIni = 'asd';
         $data = [
             'title' => 'Dashboard',
             'home' => $data_gadai,
